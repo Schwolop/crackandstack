@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crack and Stack!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .game-header {
+            margin-bottom: 30px;
+        }
+
+        .game-header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .puzzle-date {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .date-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .nav-button {
+            padding: 8px 15px;
+            font-size: 0.9em;
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .nav-button:hover:not(:disabled) {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .puzzle-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .puzzle-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .puzzle-image.cropped {
+            clip-path: inset(20% 20% 20% 20%);
+        }
+
+        .timer-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: none;
+            z-index: 10;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+        }
+
+        .answer-input {
+            padding: 15px 20px;
+            font-size: 1.2em;
+            border: 3px solid #ddd;
+            border-radius: 50px;
+            width: 300px;
+            max-width: 90%;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s ease;
+            margin-right: 15px;
+            text-transform: uppercase;
+        }
+
+        .answer-input:focus {
+            border-color: #667eea;
+        }
+
+        .check-button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-weight: 600;
+        }
+
+        .check-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .check-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .message {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: 600;
+            display: none;
+            min-height: 50px; /* Fixed height to prevent layout shifts */
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .stats {
+            display: none;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .stats h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .stat-item {
+            display: inline-block;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .click-area {
+            position: absolute;
+            cursor: pointer;
+            z-index: 5;
+            border: 2px solid red;
+        }
+
+        .game-controls {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .control-button {
+            padding: 12px 20px;
+            font-size: 1em;
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .control-button:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 50px;
+            color: #721c24;
+            font-size: 1.2em;
+            background: #f8d7da;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .answer-input {
+                width: 100%;
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            
+            .check-button {
+                width: 100%;
+            }
+            
+            .stat-item {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .date-navigation {
+                flex-wrap: wrap;
+            }
+
+            .control-button {
+                margin: 5px;
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Crack and Stack</h1>
+            <div class="puzzle-date" id="puzzle-date"></div>
+            <div class="date-navigation">
+                <button class="nav-button" id="prev-day">← Previous Day</button>
+                <button class="nav-button" id="today">Today</button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">Loading puzzle...</div>
+
+        <div class="error-message" id="error-message" style="display: none;"></div>
+
+        <div id="game-content" style="display: none;">
+            <div class="puzzle-container" id="puzzle-container">
+              <div class="image-wrapper" style="position: relative; display: inline-block;">
+                <img class="puzzle-image" id="puzzle-image">
+              </div>
+              <div class="timer-overlay" id="timer-overlay">00:00</div>
+            </div>
+
+            <div class="input-section" id="input-section">
+                <input type="text" class="answer-input" id="answer-input" placeholder="Enter your answer..." maxlength="20">
+                <button class="check-button" id="check-button">Check Answer</button>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <div class="stats" id="stats">
+                <h3>Puzzle Complete!</h3>
+                <div class="stat-item">
+                    <div class="stat-value" id="final-time">--:--</div>
+                    <div class="stat-label">Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="penalty-clicks">0</div>
+                    <div class="stat-label">Wrong Clicks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="penalty-time">0s</div>
+                    <div class="stat-label">Penalty</div>
+                </div>
+            </div>
+
+            <div class="game-controls" id="game-controls">
+                <button class="control-button" id="reset-button">Reset This Puzzle</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class DailyPuzzleGame {
+            constructor() {
+                this.puzzles = [];
+                this.currentPuzzle = null;
+                this.gameState = 'loading'; // loading, input, searching, completed
+                this.startTime = null;
+                this.timerInterval = null;
+                this.wrongClicks = 0;
+                this.penaltyTime = 0;
+                this.currentDateOffset = 0; // 0 = today, -1 = yesterday, 1 = tomorrow
+                
+                this.initializeElements();
+                this.loadPuzzles();
+            }
+
+            initializeElements() {
+                this.elements = {
+                    loading: document.getElementById('loading'),
+                    errorMessage: document.getElementById('error-message'),
+                    gameContent: document.getElementById('game-content'),
+                    puzzleDate: document.getElementById('puzzle-date'),
+                    puzzleImage: document.getElementById('puzzle-image'),
+                    puzzleContainer: document.getElementById('puzzle-container'),
+                    timerOverlay: document.getElementById('timer-overlay'),
+                    inputSection: document.getElementById('input-section'),
+                    answerInput: document.getElementById('answer-input'),
+                    checkButton: document.getElementById('check-button'),
+                    message: document.getElementById('message'),
+                    stats: document.getElementById('stats'),
+                    finalTime: document.getElementById('final-time'),
+                    penaltyClicks: document.getElementById('penalty-clicks'),
+                    penaltyTimeDisplay: document.getElementById('penalty-time'),
+                    gameControls: document.getElementById('game-controls'),
+                    prevDay: document.getElementById('prev-day'),
+                    today: document.getElementById('today'),
+                    resetButton: document.getElementById('reset-button')
+                };
+
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                this.elements.checkButton.addEventListener('click', () => this.checkAnswer());
+                this.elements.answerInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.checkAnswer();
+                });
+                this.elements.answerInput.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.toUpperCase();
+                });
+
+                // Date navigation
+                this.elements.prevDay.addEventListener('click', () => this.navigateToDay(this.currentDateOffset - 1));
+                this.elements.today.addEventListener('click', () => this.navigateToDay(0));
+
+                // Game controls
+                this.elements.resetButton.addEventListener('click', () => this.resetGame());
+            }
+
+            async loadPuzzles() {
+                try {
+                    const response = await fetch('puzzles.json');
+                    if (!response.ok) {
+                        throw new Error(`Failed to load puzzles.json: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    this.puzzles = data.puzzles;
+                    
+                    if (!this.puzzles || this.puzzles.length === 0) {
+                        throw new Error('No puzzles found in puzzles.json');
+                    }
+                    
+                    this.initializeGame();
+                } catch (error) {
+                    console.error('Error loading puzzles:', error);
+                    this.showError(`Error loading puzzles: ${error.message}`);
+                }
+            }
+
+            showError(message) {
+                this.elements.loading.style.display = 'none';
+                this.elements.errorMessage.textContent = message;
+                this.elements.errorMessage.style.display = 'block';
+            }
+
+            navigateToDay(offset) {
+                this.currentDateOffset = offset;
+                this.resetGame();
+            }
+
+            initializeGame() {
+                this.currentPuzzle = this.getPuzzleForDate(this.currentDateOffset);
+                this.updateDateDisplay();
+
+                this.elements.puzzleImage.src = `images/${this.currentPuzzle.image}`;
+                this.elements.puzzleImage.onload = () => {
+                    this.elements.loading.style.display = 'none';
+                    this.elements.gameContent.style.display = 'block';
+                    this.gameState = 'input';
+                };
+                
+                this.elements.puzzleImage.onerror = () => {
+                    this.showError(`Could not load image: images/${this.currentPuzzle.image}`);
+                };
+            }
+
+            updateDateDisplay() {
+                const targetDate = new Date();
+                targetDate.setDate(targetDate.getDate() + this.currentDateOffset);
+                
+                let dateText = targetDate.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                if (this.currentDateOffset === 0) {
+                    dateText += " (Today)";
+                } else if (this.currentDateOffset < 0) {
+                    const daysAgo = Math.abs(this.currentDateOffset);
+                    dateText += ` (${daysAgo} day${daysAgo === 1 ? '' : 's'} ago)`;
+                }
+
+                this.elements.puzzleDate.textContent = dateText;
+            }
+
+            getPuzzleForDate(dayOffset) {
+                const targetDate = new Date();
+                targetDate.setDate(targetDate.getDate() + dayOffset);
+                const dayOfYear = Math.floor((targetDate - new Date(targetDate.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+                const puzzleIndex = dayOfYear % this.puzzles.length;
+                return this.puzzles[puzzleIndex];
+            }
+
+            resetGame() {
+                // Reset game state
+                this.gameState = 'loading';
+                this.startTime = null;
+                this.wrongClicks = 0;
+                this.penaltyTime = 0;
+                
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+
+                // Remove any existing click areas and event listeners
+                const existingClickArea = document.querySelector('.click-area');
+                if (existingClickArea) {
+                    existingClickArea.remove();
+                }
+
+                // Reset UI elements
+                this.elements.answerInput.value = '';
+                this.elements.message.style.display = 'none';
+                this.elements.stats.style.display = 'none';
+                this.elements.gameControls.style.display = 'none';
+                this.elements.inputSection.style.display = 'block';
+                this.elements.timerOverlay.style.display = 'none';
+                this.elements.puzzleImage.classList.add('cropped');
+                this.elements.puzzleImage.style.filter = 'none';
+
+                // Clone the image element to remove all event listeners
+                const oldImage = this.elements.puzzleImage;
+                const newImage = oldImage.cloneNode(true);
+                oldImage.parentNode.replaceChild(newImage, oldImage);
+                this.elements.puzzleImage = newImage;
+
+                // Reinitialize the game
+                this.elements.loading.style.display = 'block';
+                this.elements.gameContent.style.display = 'none';
+                this.initializeGame();
+            }
+
+            checkAnswer() {
+                if (this.gameState !== 'input') return;
+
+                const userAnswer = this.elements.answerInput.value.trim().toUpperCase();
+                if (!userAnswer) {
+                    this.showMessage('Please enter an answer first!', 'error');
+                    return;
+                }
+
+                if (userAnswer === this.currentPuzzle.answer) {
+                    this.showMessage('Correct! Now find the answer in the border words.', 'success');
+                    this.revealFullImage();
+                } else {
+                    this.showMessage('Not quite right. Try again!', 'error');
+                }
+            }
+
+            revealFullImage() {
+                this.gameState = 'searching';
+                this.elements.puzzleImage.classList.remove('cropped');
+                this.elements.inputSection.style.display = 'none';
+                
+                setTimeout(() => {
+                    this.startTimer();
+                    this.showMessage('Click on the correct answer word in the border!', 'info');
+                }, 500);
+            }
+
+            startTimer() {
+                this.startTime = Date.now();
+                this.elements.timerOverlay.style.display = 'block';
+
+                // Create area for detecting clicks on the solution word.
+                this.createClickableArea();
+                
+                this.timerInterval = setInterval(() => {
+                    const elapsed = Date.now() - this.startTime + this.penaltyTime;
+                    const seconds = Math.floor(elapsed / 1000);
+                    const minutes = Math.floor(seconds / 60);
+                    const displaySeconds = seconds % 60;
+                    this.elements.timerOverlay.textContent = 
+                        `${minutes.toString().padStart(2, '0')}:${displaySeconds.toString().padStart(2, '0')}`;
+                }, 100);
+            }
+
+            createClickableArea() {
+                const wrapper = this.elements.puzzleImage.parentNode;
+
+                const clickArea = document.createElement('div');
+                clickArea.className = 'click-area';
+                clickArea.style.position = 'absolute';
+                clickArea.style.pointerEvents = 'auto';
+
+                const box = this.currentPuzzle.clickBox;
+                const imageRect = this.elements.puzzleImage.getBoundingClientRect();
+                const scaleX = imageRect.width / this.elements.puzzleImage.naturalWidth;
+                const scaleY = imageRect.height / this.elements.puzzleImage.naturalHeight;
+
+                clickArea.style.left = `${box.x * scaleX}px`;
+                clickArea.style.top = `${box.y * scaleY}px`;
+                clickArea.style.width = `${box.width * scaleX}px`;
+                clickArea.style.height = `${box.height * scaleY}px`;
+
+                wrapper.appendChild(clickArea);
+
+                // Add event listeners
+                clickArea.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.handleCorrectClick();
+                });
+
+                this.elements.puzzleImage.addEventListener('click', (e) => {
+                    if (this.gameState === 'searching') {
+                        this.handleWrongClick();
+                    }
+                });
+            }
+
+            handleCorrectClick() {
+                if (this.gameState !== 'searching') return;
+                
+                clearInterval(this.timerInterval);
+                this.gameState = 'completed';
+                
+                const totalTime = Date.now() - this.startTime + this.penaltyTime;
+                this.showMessage('Puzzle completed! Great job!', 'success');
+                this.showStats(totalTime);
+                this.elements.gameControls.style.display = 'block';
+                
+                // Remove click handlers
+                const clickArea = document.querySelector('.click-area');
+                if (clickArea) clickArea.remove();
+            }
+
+            handleWrongClick() {
+                this.wrongClicks++;
+                this.penaltyTime += 5000; // 5 second penalty
+                
+                // Visual feedback
+                this.elements.puzzleImage.style.filter = 'hue-rotate(0deg) brightness(0.7)';
+                setTimeout(() => {
+                    this.elements.puzzleImage.style.filter = 'none';
+                }, 200);
+                
+                this.showMessage(`Wrong spot! +5 second penalty. (${this.wrongClicks} wrong clicks)`, 'error');
+            }
+
+            showStats(totalTime) {
+                const minutes = Math.floor(totalTime / 60000);
+                const seconds = Math.floor((totalTime % 60000) / 1000);
+                
+                this.elements.finalTime.textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                this.elements.penaltyClicks.textContent = this.wrongClicks;
+                this.elements.penaltyTimeDisplay.textContent = `${this.penaltyTime / 1000}s`;
+                this.elements.stats.style.display = 'block';
+                this.elements.timerOverlay.style.display = 'none';
+            }
+
+            showMessage(text, type) {
+                const message = this.elements.message;
+                message.textContent = text;
+                message.className = `message ${type}`;
+                message.style.display = 'block';
+                
+                if (type === 'error') {
+                    setTimeout(() => {
+                        // Instead of hiding, show empty message to maintain layout
+                        message.textContent = '';
+                        message.className = 'message';
+                        // Keep it displayed but invisible to maintain space
+                    }, 3000);
+                }
+            }
+        }
+
+        // Initialize the game when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new DailyPuzzleGame();
+        });
+    </script>
+</body>
+</html>
