@@ -111,7 +111,7 @@
             font-weight: bold;
             display: none;
             z-index: 10;
-            width: 78%;
+            width: 82.5%;
             min-height: 115px;
             text-align: center;
             display: flex;
@@ -789,7 +789,12 @@
                 targetDate.setDate(targetDate.getDate() + dayOffset);
                 const dayOfYear = Math.floor((targetDate - new Date(targetDate.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
                 const puzzleIndex = dayOfYear % this.puzzles.length;
-                return this.puzzles[puzzleIndex];
+                const puzzle = this.puzzles[puzzleIndex];
+                
+                // Debug logging to track current puzzle
+                console.log('📅 Current puzzle:', puzzle.answer, '| Day offset:', dayOffset, '| Puzzle index:', puzzleIndex);
+                
+                return puzzle;
             }
 
             resetGame() {
