@@ -17,14 +17,15 @@ python3 -m http.server 8001
 python3 -m http.server 8000
 ```
 
-### Testing with Playwright
-```bash
-# Run Playwright tests
-npx playwright test
+### Testing with Puppeteer
+The puppeteer MCP server is available. When I mention a visual bug you should consider
+whether it's appropriate to run a test where you drive the app and take screenshots to
+review at various points. Screenshots are a bit slow, so only do them at the point you
+need to see something, not at every step.
 
-# Run specific test file
-npx playwright test test-app.spec.js
-```
+If you need to drive the app, e.g. navigating to a different puzzle, you can add debug
+logging to the console and use that information to determine where you are, rather than
+relying on visual features and additional screenshots.
 
 ### Bounding Box Definition Workflow
 The app includes a special mode for defining click areas on puzzle cards:
