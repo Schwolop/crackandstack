@@ -883,142 +883,310 @@
     {
       "id": 81,
       "image": "RESERVING -_ REVERSING[face,1].png",
-      "answer": "REVERSING"
+      "answer": "REVERSING",
+      "clickBox": {
+        "x": 74,
+        "y": 467,
+        "width": 32,
+        "height": 106
+      }
     },
     {
       "id": 82,
       "image": "RESORTING -_ RESTORING[face,1].png",
-      "answer": "RESTORING"
+      "answer": "RESTORING",
+      "clickBox": {
+        "x": 76,
+        "y": 96,
+        "width": 30,
+        "height": 106
+      }
     },
     {
       "id": 83,
       "image": "RETOOL -_ LOOTER[face,1].png",
-      "answer": "LOOTER"
+      "answer": "LOOTER",
+      "clickBox": {
+        "x": 1020,
+        "y": 522,
+        "width": 29,
+        "height": 76
+      }
     },
     {
       "id": 84,
       "image": "REVEL -_ LEVER[face,1].png",
-      "answer": "LEVER"
+      "answer": "LEVER",
+      "clickBox": {
+        "x": 1017,
+        "y": 220,
+        "width": 30,
+        "height": 68
+      }
     },
     {
       "id": 85,
       "image": "REVILED -_ DELIVER[face,1].png",
-      "answer": "DELIVER"
+      "answer": "DELIVER",
+      "clickBox": {
+        "x": 70,
+        "y": 158,
+        "width": 40,
+        "height": 88
+      }
     },
     {
       "id": 86,
       "image": "REWARDING -_ REDRAWING[face,1].png",
-      "answer": "REDRAWING"
+      "answer": "REDRAWING",
+      "clickBox": {
+        "x": 1012,
+        "y": 621,
+        "width": 40,
+        "height": 112
+      }
     },
     {
       "id": 87,
       "image": "SHATTERING -_ STRAIGHTEN[face,1].png",
-      "answer": "STRAIGHTEN"
+      "answer": "STRAIGHTEN",
+      "clickBox": {
+        "x": 91,
+        "y": 718,
+        "width": 122,
+        "height": 35
+      }
     },
     {
       "id": 88,
       "image": "SLEEP -_ PEELS[face,1].png",
-      "answer": "PEELS"
+      "answer": "PEELS",
+      "clickBox": {
+        "x": 417,
+        "y": 716,
+        "width": 61,
+        "height": 39
+      }
     },
     {
       "id": 89,
       "image": "SNAKE -_ SNEAK[face,1].png",
-      "answer": "SNEAK"
+      "answer": "SNEAK",
+      "clickBox": {
+        "x": 433,
+        "y": 76,
+        "width": 71,
+        "height": 32
+      }
     },
     {
       "id": 90,
       "image": "SNAPS -_ SPANS[face,1].png",
-      "answer": "SPANS"
+      "answer": "SPANS",
+      "clickBox": {
+        "x": 74,
+        "y": 153,
+        "width": 36,
+        "height": 64
+      }
     },
     {
       "id": 91,
       "image": "SNIPS -_ SPINS[face,1].png",
-      "answer": "SPINS"
+      "answer": "SPINS",
+      "clickBox": {
+        "x": 287,
+        "y": 712,
+        "width": 71,
+        "height": 41
+      }
     },
     {
       "id": 92,
       "image": "SNORES -_ SENSOR[face,1].png",
-      "answer": "SENSOR"
+      "answer": "SENSOR",
+      "clickBox": {
+        "x": 73,
+        "y": 429,
+        "width": 36,
+        "height": 80
+      }
     },
     {
       "id": 93,
       "image": "SPANS -_ SNAPS[face,1].png",
-      "answer": "SNAPS"
+      "answer": "SNAPS",
+      "clickBox": {
+        "x": 964,
+        "y": 73,
+        "width": 71,
+        "height": 38
+      }
     },
     {
       "id": 94,
       "image": "SPEED -_ DEEPS[face,1].png",
-      "answer": "DEEPS"
+      "answer": "DEEPS",
+      "clickBox": {
+        "x": 631,
+        "y": 73,
+        "width": 68,
+        "height": 38
+      }
     },
     {
       "id": 95,
       "image": "SPINS -_ SNIPS[face,1].png",
-      "answer": "SNIPS"
+      "answer": "SNIPS",
+      "clickBox": {
+        "x": 813,
+        "y": 76,
+        "width": 76,
+        "height": 38
+      }
     },
     {
       "id": 96,
       "image": "STEAMSHIP -_ SHIPMATES[face,1].png",
-      "answer": "SHIPMATES"
+      "answer": "SHIPMATES",
+      "clickBox": {
+        "x": 733,
+        "y": 73,
+        "width": 105,
+        "height": 38
+      }
     },
     {
       "id": 97,
       "image": "STINGRAY -_ STRAYING[face,1].png",
-      "answer": "STRAYING"
+      "answer": "STRAYING",
+      "clickBox": {
+        "x": 933,
+        "y": 73,
+        "width": 96,
+        "height": 39
+      }
     },
     {
       "id": 98,
       "image": "STRAW -_ WARTS[face,1].png",
-      "answer": "WARTS"
+      "answer": "WARTS",
+      "clickBox": {
+        "x": 278,
+        "y": 718,
+        "width": 81,
+        "height": 30
+      }
     },
     {
       "id": 99,
       "image": "STRESSED -_ DESSERTS[face,1].png",
-      "answer": "DESSERTS"
+      "answer": "DESSERTS",
+      "clickBox": {
+        "x": 73,
+        "y": 519,
+        "width": 35,
+        "height": 96
+      }
     },
     {
       "id": 100,
       "image": "STUN -_ NUTS[face,1].png",
-      "answer": "NUTS"
+      "answer": "NUTS",
+      "clickBox": {
+        "x": 76,
+        "y": 187,
+        "width": 32,
+        "height": 62
+      }
     },
     {
       "id": 101,
       "image": "TENNER -_ RENNET[face,1].png",
-      "answer": "RENNET"
+      "answer": "RENNET",
+      "clickBox": {
+        "x": 73,
+        "y": 451,
+        "width": 40,
+        "height": 82
+      }
     },
     {
       "id": 102,
       "image": "TONS -_ SNOT[face,1].png",
-      "answer": "SNOT"
+      "answer": "SNOT",
+      "clickBox": {
+        "x": 91,
+        "y": 719,
+        "width": 62,
+        "height": 32
+      }
     },
     {
       "id": 103,
       "image": "TOOL -_ LOOT[face,1].png",
-      "answer": "LOOT"
+      "answer": "LOOT",
+      "clickBox": {
+        "x": 71,
+        "y": 385,
+        "width": 43,
+        "height": 62
+      }
     },
     {
       "id": 104,
       "image": "UNRELATED -_ UNALTERED[face,1].png",
-      "answer": "UNALTERED"
+      "answer": "UNALTERED",
+      "clickBox": {
+        "x": 325,
+        "y": 73,
+        "width": 109,
+        "height": 36
+      }
     },
     {
       "id": 105,
       "image": "WAIST -_ WAITS[face,1].png",
-      "answer": "WAITS"
+      "answer": "WAITS",
+      "clickBox": {
+        "x": 73,
+        "y": 419,
+        "width": 41,
+        "height": 68
+      }
     },
     {
       "id": 106,
       "image": "WARTS -_ STRAW[face,1].png",
-      "answer": "STRAW"
+      "answer": "STRAW",
+      "clickBox": {
+        "x": 1017,
+        "y": 176,
+        "width": 32,
+        "height": 73
+      }
     },
     {
       "id": 107,
       "image": "WAS -_ SAW[face,1].png",
-      "answer": "SAW"
+      "answer": "SAW",
+      "clickBox": {
+        "x": 1016,
+        "y": 530,
+        "width": 38,
+        "height": 50
+      }
     },
     {
       "id": 108,
       "image": "WON -_ NOW[face,1].png",
-      "answer": "NOW"
+      "answer": "NOW",
+      "clickBox": {
+        "x": 265,
+        "y": 715,
+        "width": 58,
+        "height": 39
+      }
     }
   ]
 }
