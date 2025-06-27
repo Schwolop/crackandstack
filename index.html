@@ -497,6 +497,10 @@
                 // Instructions
                 this.showInstructions = !localStorage.getItem('crack-and-stack-instructions-seen');
                 
+                // Resize handling
+                this.resizeTimeout = null;
+                this.currentClickAreaBox = null;
+                
                 this.initializeElements();
                 this.loadPuzzles();
             }
@@ -559,6 +563,15 @@
                 
                 // Instructions event listener
                 this.elements.startGame.addEventListener('click', () => this.hideInstructions());
+                
+                // Screen orientation and resize handlers
+                window.addEventListener('orientationchange', () => {
+                    setTimeout(() => this.recalculateClickArea(), 100);
+                });
+                window.addEventListener('resize', () => {
+                    clearTimeout(this.resizeTimeout);
+                    this.resizeTimeout = setTimeout(() => this.recalculateClickArea(), 150);
+                });
             }
 
             async loadPuzzles() {
@@ -695,6 +708,7 @@
                 if (existingClickArea) {
                     existingClickArea.remove();
                 }
+                this.currentClickAreaBox = null;
 
                 this.elements.answerInput.value = '';
                 this.elements.message.style.display = 'none';
@@ -729,6 +743,7 @@
                 if (existingClickArea) {
                     existingClickArea.remove();
                 }
+                this.currentClickAreaBox = null;
 
                 this.elements.answerInput.value = '';
                 this.elements.message.style.display = 'none';
@@ -832,33 +847,12 @@
                 clickArea.className = 'click-area';
                 
                 const box = this.currentPuzzle.clickBox;
+                this.currentClickAreaBox = box; // Store for recalculation
                 console.log('Click box:', box); // Debug log
                 
                 // Wait for image to be fully loaded and positioned
                 setTimeout(() => {
-                    const imageRect = this.elements.puzzleImage.getBoundingClientRect();
-                    const containerRect = this.elements.puzzleContainer.getBoundingClientRect();
-                    
-                    console.log('Image rect:', imageRect); // Debug log
-                    console.log('Container rect:', containerRect); // Debug log
-                    
-                    const offsetX = imageRect.left - containerRect.left;
-                    const offsetY = imageRect.top - containerRect.top;
-                    
-                    const naturalWidth = this.elements.puzzleImage.naturalWidth || 400;
-                    const naturalHeight = this.elements.puzzleImage.naturalHeight || 300;
-                    
-                    clickArea.style.left = `${offsetX + (box.x / naturalWidth) * imageRect.width}px`;
-                    clickArea.style.top = `${offsetY + (box.y / naturalHeight) * imageRect.height}px`;
-                    clickArea.style.width = `${(box.width / naturalWidth) * imageRect.width}px`;
-                    clickArea.style.height = `${(box.height / naturalHeight) * imageRect.height}px`;
-                    
-                    console.log('Click area position:', {
-                        left: clickArea.style.left,
-                        top: clickArea.style.top,
-                        width: clickArea.style.width,
-                        height: clickArea.style.height
-                    }); // Debug log
+                    this.positionClickArea(clickArea, box);
                     
                     clickArea.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -874,10 +868,45 @@
                         }
                     });
                     
-                    // Fixed: Use correct container reference
                     this.elements.puzzleContainer.appendChild(clickArea);
                     console.log('Click area added to container'); // Debug log
                 }, 100);
+            }
+
+            positionClickArea(clickArea, box) {
+                const imageRect = this.elements.puzzleImage.getBoundingClientRect();
+                const containerRect = this.elements.puzzleContainer.getBoundingClientRect();
+                
+                console.log('Image rect:', imageRect); // Debug log
+                console.log('Container rect:', containerRect); // Debug log
+                
+                const offsetX = imageRect.left - containerRect.left;
+                const offsetY = imageRect.top - containerRect.top;
+                
+                const naturalWidth = this.elements.puzzleImage.naturalWidth || 400;
+                const naturalHeight = this.elements.puzzleImage.naturalHeight || 300;
+                
+                clickArea.style.left = `${offsetX + (box.x / naturalWidth) * imageRect.width}px`;
+                clickArea.style.top = `${offsetY + (box.y / naturalHeight) * imageRect.height}px`;
+                clickArea.style.width = `${(box.width / naturalWidth) * imageRect.width}px`;
+                clickArea.style.height = `${(box.height / naturalHeight) * imageRect.height}px`;
+                
+                console.log('Click area position:', {
+                    left: clickArea.style.left,
+                    top: clickArea.style.top,
+                    width: clickArea.style.width,
+                    height: clickArea.style.height
+                }); // Debug log
+            }
+
+            recalculateClickArea() {
+                if (this.gameState !== 'searching' || !this.currentClickAreaBox) return;
+                
+                const existingClickArea = document.querySelector('.click-area');
+                if (existingClickArea) {
+                    this.positionClickArea(existingClickArea, this.currentClickAreaBox);
+                    console.log('Click area recalculated after resize/rotation'); // Debug log
+                }
             }
 
             handleCorrectClick() {
