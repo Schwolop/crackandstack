@@ -508,6 +508,10 @@
                 // Resize handling
                 this.resizeTimeout = null;
                 this.currentClickAreaBox = null;
+                this.instructionTimeout = null;
+                
+                // Desktop detection for auto-focus
+                this.isDesktop = !('ontouchstart' in window || navigator.maxTouchPoints > 0);
                 
                 this.initializeElements();
                 this.loadPuzzles();
@@ -622,7 +626,9 @@
             hideInstructions() {
                 this.elements.instructionsOverlay.style.display = 'none';
                 localStorage.setItem('crack-and-stack-instructions-seen', 'true');
-                this.elements.answerInput.focus();
+                if (this.isDesktop) {
+                    this.elements.answerInput.focus();
+                }
             }
 
             checkShowInstructions() {
@@ -680,7 +686,9 @@
                     this.elements.loading.style.display = 'none';
                     this.elements.gameContent.style.display = 'block';
                     this.checkShowInstructions();
-                    this.elements.answerInput.focus();
+                    if (this.isDesktop) {
+                        this.elements.answerInput.focus();
+                    }
                 };
             }
 
@@ -821,7 +829,9 @@
                 this.elements.puzzleImage.src = `images/${this.currentPuzzle.image}`;
                 // No loading screen - direct transition
                 this.elements.gameContent.style.display = 'block';
-                this.elements.answerInput.focus();
+                if (this.isDesktop) {
+                    this.elements.answerInput.focus();
+                }
             }
 
             checkAnswer() {
@@ -849,7 +859,10 @@
                 setTimeout(() => {
                     this.startTimer();
                     this.createClickableArea();
-                    this.showMessage('Click on the correct answer word in the border!', 'info');
+                    // Show blue instruction message after 10 seconds if no action
+                    this.instructionTimeout = setTimeout(() => {
+                        this.showMessage('Click on the correct answer word in the border!', 'info');
+                    }, 10000);
                 }, 500);
             }
 
@@ -939,6 +952,12 @@
             handleCorrectClick() {
                 if (this.gameState !== 'searching') return;
                 
+                // Clear the instruction timeout since puzzle is completed
+                if (this.instructionTimeout) {
+                    clearTimeout(this.instructionTimeout);
+                    this.instructionTimeout = null;
+                }
+                
                 clearInterval(this.timerInterval);
                 this.gameState = 'completed';
                 
@@ -953,6 +972,12 @@
             handleWrongClick() {
                 this.wrongClicks++;
                 this.penaltyTime += 5000;
+                
+                // Clear the instruction timeout since user has now tried clicking
+                if (this.instructionTimeout) {
+                    clearTimeout(this.instructionTimeout);
+                    this.instructionTimeout = null;
+                }
                 
                 this.elements.puzzleImage.style.filter = 'hue-rotate(0deg) brightness(0.7)';
                 setTimeout(() => {
