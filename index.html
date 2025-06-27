@@ -103,16 +103,17 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.9);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 15px;
-            font-size: 2em;
+            background: white;
+            color: black;
+            padding: 40px 50px;
+            border-radius: 19px;
+            font-size: 2.5em;
             font-weight: bold;
             display: none;
             z-index: 10;
-            min-width: 200px;
-            min-height: 80px;
+            width: 78%;
+            min-height: 115px;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -163,12 +164,19 @@
         }
 
         .message {
-            padding: 15px;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 20px;
             border-radius: 10px;
-            margin: 20px 0;
             font-weight: 600;
             display: none;
             min-height: 50px;
+            z-index: 10;
+            max-width: 80%;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .message.success {
@@ -419,6 +427,7 @@
             <div class="date-navigation">
                 <button class="nav-button" id="prev-day">← Previous Day</button>
                 <button class="nav-button" id="today">Today</button>
+                <button class="nav-button" id="next-day">Next Day →</button>
                 <button class="nav-button" id="bbox-mode" style="background: #ff6b35; color: white;">📦 Define Boxes</button>
             </div>
         </div>
@@ -431,14 +440,13 @@
             <div class="puzzle-container" id="puzzle-container">
                 <img class="puzzle-image cropped" id="puzzle-image" alt="Crack and Stack - Daily Puzzle">
                 <div class="timer-overlay" id="timer-overlay">00:00</div>
+                <div class="message" id="message"></div>
             </div>
 
             <div class="input-section" id="input-section">
                 <input type="text" class="answer-input" id="answer-input" placeholder="Enter your answer..." maxlength="20">
                 <button class="check-button" id="check-button">Check Answer</button>
             </div>
-
-            <div class="message" id="message"></div>
 
             <div class="bbox-info" id="bbox-info" style="display: none;">
                 <strong>Bounding Box Definition Mode</strong><br>
@@ -525,6 +533,7 @@
                     gameControls: document.getElementById('game-controls'),
                     prevDay: document.getElementById('prev-day'),
                     today: document.getElementById('today'),
+                    nextDay: document.getElementById('next-day'),
                     bboxMode: document.getElementById('bbox-mode'),
                     bboxInfo: document.getElementById('bbox-info'),
                     bboxPuzzleName: document.getElementById('bbox-puzzle-name'),
@@ -554,6 +563,7 @@
 
                 this.elements.prevDay.addEventListener('click', () => this.navigateToDay(this.currentDateOffset - 1));
                 this.elements.today.addEventListener('click', () => this.navigateToDay(0));
+                this.elements.nextDay.addEventListener('click', () => this.navigateToDay(this.currentDateOffset + 1));
                 
                 // Bounding box mode event listeners
                 this.elements.bboxMode.addEventListener('click', () => this.enterBboxMode());
@@ -590,6 +600,14 @@
                     
                     console.log(`Loaded ${this.puzzles.length} complete puzzles out of ${this.allPuzzles.length} total`);
                     
+                    // Hide Define Boxes button if all puzzles have click boxes
+                    const bboxButton = document.getElementById('bbox-mode');
+                    if (this.puzzles.length === this.allPuzzles.length) {
+                        bboxButton.style.display = 'none';
+                    } else {
+                        bboxButton.style.display = 'inline-block';
+                    }
+                    
                     if (this.puzzles.length === 0) {
                         throw new Error('No complete puzzles found. Please define bounding boxes first.');
                     }
@@ -604,6 +622,7 @@
             hideInstructions() {
                 this.elements.instructionsOverlay.style.display = 'none';
                 localStorage.setItem('crack-and-stack-instructions-seen', 'true');
+                this.elements.answerInput.focus();
             }
 
             checkShowInstructions() {
@@ -661,6 +680,7 @@
                     this.elements.loading.style.display = 'none';
                     this.elements.gameContent.style.display = 'block';
                     this.checkShowInstructions();
+                    this.elements.answerInput.focus();
                 };
             }
 
@@ -680,9 +700,15 @@
                 } else if (this.currentDateOffset < 0) {
                     const daysAgo = Math.abs(this.currentDateOffset);
                     dateText += ` (${daysAgo} day${daysAgo === 1 ? '' : 's'} ago)`;
+                } else if (this.currentDateOffset > 0) {
+                    const daysAhead = this.currentDateOffset;
+                    dateText += ` (${daysAhead} day${daysAhead === 1 ? '' : 's'} ahead)`;
                 }
 
                 this.elements.puzzleDate.textContent = dateText;
+                
+                // Disable Next Day button when at today's date (offset 0)
+                this.elements.nextDay.disabled = (this.currentDateOffset >= 0);
             }
 
             getPuzzleForDate(dayOffset) {
@@ -795,6 +821,7 @@
                 this.elements.puzzleImage.src = `images/${this.currentPuzzle.image}`;
                 // No loading screen - direct transition
                 this.elements.gameContent.style.display = 'block';
+                this.elements.answerInput.focus();
             }
 
             checkAnswer() {
@@ -957,6 +984,7 @@
                     setTimeout(() => {
                         message.textContent = '';
                         message.className = 'message';
+                        message.style.display = 'none';
                     }, 3000);
                 }
             }
