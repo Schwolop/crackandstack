@@ -416,6 +416,7 @@
             .stat-item {
                 display: block;
                 margin: 10px 0;
+                text-align: center;
             }
             
             .stat-value {
@@ -1082,7 +1083,7 @@
                 this.elements.searchTime.textContent = 
                     `${searchMinutes.toString().padStart(2, '0')}:${searchSeconds.toString().padStart(2, '0')}`;
                 this.elements.penaltyDisplay.textContent = 
-                    `${this.wrongClicks} Clicks = ${this.penaltyTime / 1000}s Penalty`;
+                    `${this.wrongClicks}x = ${this.penaltyTime / 1000}s Penalty`;
                 this.elements.overallTime.textContent = 
                     `${totalMinutes.toString().padStart(2, '0')}:${totalSeconds.toString().padStart(2, '0')}`;
                 this.elements.performanceRating.textContent = rating;
