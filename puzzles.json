@@ -256,77 +256,167 @@
     {
       "id": 24,
       "image": "DOG -_ GOD[face,1].png",
-      "answer": "GOD"
+      "answer": "GOD",
+      "clickBox": {
+        "x": 79,
+        "y": 208,
+        "width": 24,
+        "height": 49
+      }
     },
     {
       "id": 25,
       "image": "DON -_ NOD[face,1].png",
-      "answer": "NOD"
+      "answer": "NOD",
+      "clickBox": {
+        "x": 79,
+        "y": 536,
+        "width": 26,
+        "height": 44
+      }
     },
     {
       "id": 26,
       "image": "DOOM -_ MOOD[face,1].png",
-      "answer": "MOOD"
+      "answer": "MOOD",
+      "clickBox": {
+        "x": 470,
+        "y": 715,
+        "width": 61,
+        "height": 36
+      }
     },
     {
       "id": 27,
       "image": "DRAW -_ WARD[face,1].png",
-      "answer": "WARD"
+      "answer": "WARD",
+      "clickBox": {
+        "x": 1016,
+        "y": 354,
+        "width": 36,
+        "height": 62
+      }
     },
     {
       "id": 28,
       "image": "DYING -_ DINGY[face,1].png",
-      "answer": "DINGY"
+      "answer": "DINGY",
+      "clickBox": {
+        "x": 1016,
+        "y": 507,
+        "width": 32,
+        "height": 67
+      }
     },
     {
       "id": 29,
       "image": "ENDURES -_ ENSURED[face,1].png",
-      "answer": "ENSURED"
+      "answer": "ENSURED",
+      "clickBox": {
+        "x": 79,
+        "y": 490,
+        "width": 26,
+        "height": 83
+      }
     },
     {
       "id": 30,
       "image": "ETERNITY -_ ENTIRETY[face,1].png",
-      "answer": "ENTIRETY"
+      "answer": "ENTIRETY",
+      "clickBox": {
+        "x": 342,
+        "y": 74,
+        "width": 102,
+        "height": 36
+      }
     },
     {
       "id": 31,
       "image": "EXCEPTING -_ EXPECTING[face,1].png",
-      "answer": "EXPECTING"
+      "answer": "EXPECTING",
+      "clickBox": {
+        "x": 730,
+        "y": 79,
+        "width": 108,
+        "height": 27
+      }
     },
     {
       "id": 32,
       "image": "EXITS -_ EXIST[face,1].png",
-      "answer": "EXIST"
+      "answer": "EXIST",
+      "clickBox": {
+        "x": 73,
+        "y": 349,
+        "width": 33,
+        "height": 64
+      }
     },
     {
       "id": 33,
       "image": "FAKER -_ FREAK[face,1].png",
-      "answer": "FREAK"
+      "answer": "FREAK",
+      "clickBox": {
+        "x": 357,
+        "y": 76,
+        "width": 62,
+        "height": 32
+      }
     },
     {
       "id": 34,
       "image": "FEIGNED -_ FEEDING[face,1].png",
-      "answer": "FEEDING"
+      "answer": "FEEDING",
+      "clickBox": {
+        "x": 76,
+        "y": 313,
+        "width": 29,
+        "height": 86
+      }
     },
     {
       "id": 35,
       "image": "FERAL -_ FLARE[face,1].png",
-      "answer": "FLARE"
+      "answer": "FLARE",
+      "clickBox": {
+        "x": 491,
+        "y": 719,
+        "width": 64,
+        "height": 30
+      }
     },
     {
       "id": 36,
       "image": "FIENDISH -_ FINISHED[face,1].png",
-      "answer": "FINISHED"
+      "answer": "FINISHED",
+      "clickBox": {
+        "x": 1019,
+        "y": 646,
+        "width": 27,
+        "height": 86
+      }
     },
     {
       "id": 37,
       "image": "FINDERS -_ FRIENDS[face,1].png",
-      "answer": "FRIENDS"
+      "answer": "FRIENDS",
+      "clickBox": {
+        "x": 515,
+        "y": 71,
+        "width": 79,
+        "height": 38
+      }
     },
     {
       "id": 38,
       "image": "FRAMED -_ FARMED[face,1].png",
-      "answer": "FARMED"
+      "answer": "FARMED",
+      "clickBox": {
+        "x": 76,
+        "y": 164,
+        "width": 32,
+        "height": 88
+      }
     },
     {
       "id": 39,
