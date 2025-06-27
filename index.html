@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Word Puzzle</title>
+    <title>Crack and Stack</title>
     <style>
         * {
             margin: 0;
@@ -429,7 +429,7 @@
 
         <div id="game-content" style="display: none;">
             <div class="puzzle-container" id="puzzle-container">
-                <img class="puzzle-image cropped" id="puzzle-image" alt="Daily Puzzle">
+                <img class="puzzle-image cropped" id="puzzle-image" alt="Crack and Stack - Daily Puzzle">
                 <div class="timer-overlay" id="timer-overlay">00:00</div>
             </div>
 
@@ -475,7 +475,7 @@
     </div>
 
     <script>
-        class DailyPuzzleGame {
+        class CrackAndStackGame {
             constructor() {
                 this.puzzles = [];
                 this.currentPuzzle = null;
@@ -1180,7 +1180,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            new DailyPuzzleGame();
+            new CrackAndStackGame();
         });
     </script>
 </body>
