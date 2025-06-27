@@ -226,6 +226,103 @@
             z-index: 5;
         }
 
+        .bbox-mode {
+            border: 2px dashed #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+            cursor: crosshair;
+        }
+
+        .drawing-box {
+            position: absolute;
+            border: 3px solid #ff6b35;
+            background-color: rgba(255, 107, 53, 0.3);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .bbox-info {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .bbox-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .instructions-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .instructions-panel {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .instructions-panel h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+
+        .instructions-panel p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .card-type {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 5px;
+        }
+
+        .card-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .instructions-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .instructions-button:hover {
+            transform: translateY(-2px);
+        }
+
         .game-controls {
             margin-top: 20px;
             display: none;
@@ -296,6 +393,23 @@
     </style>
 </head>
 <body>
+    <div class="instructions-overlay" id="instructions-overlay">
+        <div class="instructions-panel">
+            <h2>Welcome to Crack and Stack!</h2>
+            <p>Crack and Stack is an upcoming card game from <strong>Triple Point Publishing</strong>. This game lets you solve its puzzle cards and then race to find the solution hidden in the card's border.</p>
+            
+            <p>There are two types of puzzle cards:</p>
+            
+            <p><strong>Semordnilaps</strong> use this symbol: <span class="card-type"><img src="assets/simply_reverse_symbol.png" class="card-icon" alt="Semordnilap symbol"></span> and require you to spell the clue word backwards to get the answer.</p>
+            
+            <p><strong>Anagrams</strong> use this symbol: <span class="card-type"><img src="assets/anagram_symbol.png" class="card-icon" alt="Anagram symbol"></span> and require you to find the ONE valid anagram of the clue word. The anagram will always start with the same letter as the clue.</p>
+            
+            <p>Once you've typed in the solution (and got it right!) the border will be revealed. Try to find the hidden answer as fast as you can!</p>
+            
+            <button class="instructions-button" id="start-game">Start Playing!</button>
+        </div>
+    </div>
+
     <div class="game-container">
         <div class="game-header">
             <h1>Daily Word Puzzle</h1>
@@ -303,6 +417,7 @@
             <div class="date-navigation">
                 <button class="nav-button" id="prev-day">← Previous Day</button>
                 <button class="nav-button" id="today">Today</button>
+                <button class="nav-button" id="bbox-mode" style="background: #ff6b35; color: white;">📦 Define Boxes</button>
             </div>
         </div>
 
@@ -323,6 +438,19 @@
 
             <div class="message" id="message"></div>
 
+            <div class="bbox-info" id="bbox-info" style="display: none;">
+                <strong>Bounding Box Definition Mode</strong><br>
+                Puzzle: <span id="bbox-puzzle-name"></span> → <span id="bbox-answer"></span><br>
+                Progress: <span id="bbox-progress"></span><br>
+                <em>Drag from top-left to bottom-right around the answer word in the border</em>
+            </div>
+
+            <div class="bbox-controls" id="bbox-controls" style="display: none;">
+                <button class="control-button" id="bbox-skip">⏭️ Skip This Card</button>
+                <button class="control-button" id="bbox-save-json">💾 Save JSON</button>
+                <button class="control-button" id="bbox-exit">❌ Exit Mode</button>
+            </div>
+
             <div class="stats" id="stats">
                 <h3>Puzzle Complete!</h3>
                 <div class="stat-item">
@@ -339,9 +467,7 @@
                 </div>
             </div>
 
-            <div class="game-controls" id="game-controls">
-                <button class="control-button" id="reset-button">Reset This Puzzle</button>
-                <button class="control-button" id="new-player-button">New Player</button>
+            <div class="game-controls" id="game-controls" style="display: none;">
             </div>
         </div>
     </div>
@@ -357,6 +483,17 @@
                 this.wrongClicks = 0;
                 this.penaltyTime = 0;
                 this.currentDateOffset = 0;
+                
+                // Bounding box mode
+                this.bboxMode = false;
+                this.bboxPuzzles = [];
+                this.bboxCurrentIndex = 0;
+                this.isDrawing = false;
+                this.startPoint = null;
+                this.currentBox = null;
+                
+                // Instructions
+                this.showInstructions = !localStorage.getItem('crack-and-stack-instructions-seen');
                 
                 this.initializeElements();
                 this.loadPuzzles();
@@ -382,8 +519,17 @@
                     gameControls: document.getElementById('game-controls'),
                     prevDay: document.getElementById('prev-day'),
                     today: document.getElementById('today'),
-                    resetButton: document.getElementById('reset-button'),
-                    newPlayerButton: document.getElementById('new-player-button')
+                    bboxMode: document.getElementById('bbox-mode'),
+                    bboxInfo: document.getElementById('bbox-info'),
+                    bboxPuzzleName: document.getElementById('bbox-puzzle-name'),
+                    bboxAnswer: document.getElementById('bbox-answer'),
+                    bboxProgress: document.getElementById('bbox-progress'),
+                    bboxControls: document.getElementById('bbox-controls'),
+                    bboxSkip: document.getElementById('bbox-skip'),
+                    bboxSaveJson: document.getElementById('bbox-save-json'),
+                    bboxExit: document.getElementById('bbox-exit'),
+                    instructionsOverlay: document.getElementById('instructions-overlay'),
+                    startGame: document.getElementById('start-game')
                 };
 
                 this.setupEventListeners();
@@ -395,14 +541,22 @@
                     if (e.key === 'Enter') this.checkAnswer();
                 });
                 this.elements.answerInput.addEventListener('input', (e) => {
+                    const cursorPosition = e.target.selectionStart;
                     e.target.value = e.target.value.toUpperCase();
+                    e.target.setSelectionRange(cursorPosition, cursorPosition);
                 });
 
                 this.elements.prevDay.addEventListener('click', () => this.navigateToDay(this.currentDateOffset - 1));
                 this.elements.today.addEventListener('click', () => this.navigateToDay(0));
-
-                this.elements.resetButton.addEventListener('click', () => this.resetGame());
-                this.elements.newPlayerButton.addEventListener('click', () => this.resetGame());
+                
+                // Bounding box mode event listeners
+                this.elements.bboxMode.addEventListener('click', () => this.enterBboxMode());
+                this.elements.bboxSkip.addEventListener('click', () => this.skipBboxPuzzle());
+                this.elements.bboxSaveJson.addEventListener('click', () => this.downloadUpdatedJson());
+                this.elements.bboxExit.addEventListener('click', () => this.exitBboxMode());
+                
+                // Instructions event listener
+                this.elements.startGame.addEventListener('click', () => this.hideInstructions());
             }
 
             async loadPuzzles() {
@@ -412,12 +566,37 @@
                         throw new Error(`Failed to load puzzles: ${response.status}`);
                     }
                     const data = await response.json();
-                    this.puzzles = data.puzzles;
+                    
+                    // Store all puzzles for bbox mode
+                    this.allPuzzles = data.puzzles;
+                    
+                    // Only use puzzles with complete bounding boxes for normal gameplay
+                    this.puzzles = data.puzzles.filter(puzzle => puzzle.clickBox);
+                    
+                    console.log(`Loaded ${this.puzzles.length} complete puzzles out of ${this.allPuzzles.length} total`);
+                    
+                    if (this.puzzles.length === 0) {
+                        throw new Error('No complete puzzles found. Please define bounding boxes first.');
+                    }
                     
                     this.initializeGame();
                 } catch (error) {
                     console.error('Error loading puzzles:', error);
                     this.showError(`Error loading puzzles: ${error.message}`);
+                }
+            }
+
+            hideInstructions() {
+                this.elements.instructionsOverlay.style.display = 'none';
+                localStorage.setItem('crack-and-stack-instructions-seen', 'true');
+            }
+
+            checkShowInstructions() {
+                // Only show instructions on very first load, not on resets/navigation
+                if (this.showInstructions && !localStorage.getItem('crack-and-stack-instructions-seen')) {
+                    this.elements.instructionsOverlay.style.display = 'flex';
+                } else {
+                    this.elements.instructionsOverlay.style.display = 'none';
                 }
             }
 
@@ -457,7 +636,6 @@
                 this.elements.answerInput.value = '';
                 this.elements.message.style.display = 'none';
                 this.elements.stats.style.display = 'none';
-                this.elements.gameControls.style.display = 'none';
                 this.elements.inputSection.style.display = 'block';
                 this.elements.timerOverlay.style.display = 'none';
                 this.elements.puzzleImage.classList.add('cropped');
@@ -467,6 +645,7 @@
                 this.elements.puzzleImage.onload = () => {
                     this.elements.loading.style.display = 'none';
                     this.elements.gameContent.style.display = 'block';
+                    this.checkShowInstructions();
                 };
             }
 
@@ -518,7 +697,6 @@
                 this.elements.answerInput.value = '';
                 this.elements.message.style.display = 'none';
                 this.elements.stats.style.display = 'none';
-                this.elements.gameControls.style.display = 'none';
                 this.elements.inputSection.style.display = 'block';
                 this.elements.timerOverlay.style.display = 'none';
                 this.elements.puzzleImage.classList.add('cropped');
@@ -641,7 +819,6 @@
                 const totalTime = Date.now() - this.startTime + this.penaltyTime;
                 this.showMessage('Puzzle completed! Great job!', 'success');
                 this.showStats(totalTime);
-                this.elements.gameControls.style.display = 'block';
                 
                 const clickArea = document.querySelector('.click-area');
                 if (clickArea) clickArea.remove();
@@ -683,6 +860,223 @@
                         message.className = 'message';
                     }, 3000);
                 }
+            }
+
+            // Bounding Box Definition Mode
+            async enterBboxMode() {
+                this.bboxMode = true;
+                
+                // Find all puzzles without bounding boxes from the complete dataset
+                this.bboxPuzzles = this.allPuzzles.filter(puzzle => !puzzle.clickBox);
+                
+                if (this.bboxPuzzles.length === 0) {
+                    alert('All puzzles already have bounding boxes defined!');
+                    return;
+                }
+                
+                this.bboxCurrentIndex = 0;
+                this.showBboxUI();
+                this.loadBboxPuzzle();
+            }
+
+            showBboxUI() {
+                // Hide normal game UI
+                this.elements.inputSection.style.display = 'none';
+                this.elements.message.style.display = 'none';
+                this.elements.stats.style.display = 'none';
+                this.elements.gameControls.style.display = 'none';
+                this.elements.timerOverlay.style.display = 'none';
+                
+                // Show bbox UI
+                this.elements.bboxInfo.style.display = 'block';
+                this.elements.bboxControls.style.display = 'flex';
+                
+                // Update date navigation
+                this.elements.prevDay.style.display = 'none';
+                this.elements.today.style.display = 'none';
+            }
+
+            loadBboxPuzzle() {
+                if (this.bboxCurrentIndex >= this.bboxPuzzles.length) {
+                    this.completeBboxMode();
+                    return;
+                }
+                
+                const puzzle = this.bboxPuzzles[this.bboxCurrentIndex];
+                
+                // Update UI
+                this.elements.bboxPuzzleName.textContent = puzzle.image.split(' -_ ')[0];
+                this.elements.bboxAnswer.textContent = puzzle.answer;
+                this.elements.bboxProgress.textContent = `${this.bboxCurrentIndex + 1} of ${this.bboxPuzzles.length}`;
+                
+                // Load image
+                this.elements.puzzleImage.src = `images/${puzzle.image}`;
+                this.elements.puzzleImage.classList.remove('cropped');
+                this.elements.puzzleImage.classList.add('bbox-mode');
+                
+                this.elements.puzzleImage.onload = () => {
+                    this.elements.loading.style.display = 'none';
+                    this.elements.gameContent.style.display = 'block';
+                    this.setupBboxDrawing();
+                };
+            }
+
+            setupBboxDrawing() {
+                // Remove any existing drawing handlers
+                this.removeBboxDrawing();
+                
+                // Add drawing handlers
+                this.elements.puzzleImage.addEventListener('mousedown', this.handleBboxMouseDown.bind(this));
+                this.elements.puzzleImage.addEventListener('mousemove', this.handleBboxMouseMove.bind(this));
+                this.elements.puzzleImage.addEventListener('mouseup', this.handleBboxMouseUp.bind(this));
+            }
+
+            removeBboxDrawing() {
+                this.elements.puzzleImage.removeEventListener('mousedown', this.handleBboxMouseDown);
+                this.elements.puzzleImage.removeEventListener('mousemove', this.handleBboxMouseMove);
+                this.elements.puzzleImage.removeEventListener('mouseup', this.handleBboxMouseUp);
+                
+                // Remove any existing drawing box
+                const existingBox = document.querySelector('.drawing-box');
+                if (existingBox) existingBox.remove();
+            }
+
+            handleBboxMouseDown(e) {
+                e.preventDefault();
+                this.isDrawing = true;
+                
+                const rect = this.elements.puzzleImage.getBoundingClientRect();
+                this.startPoint = {
+                    x: e.clientX - rect.left,
+                    y: e.clientY - rect.top
+                };
+                
+                // Remove existing box
+                const existingBox = document.querySelector('.drawing-box');
+                if (existingBox) existingBox.remove();
+                
+                // Create new drawing box
+                this.currentBox = document.createElement('div');
+                this.currentBox.className = 'drawing-box';
+                this.currentBox.style.left = `${this.startPoint.x}px`;
+                this.currentBox.style.top = `${this.startPoint.y}px`;
+                this.currentBox.style.width = '0px';
+                this.currentBox.style.height = '0px';
+                
+                this.elements.puzzleContainer.appendChild(this.currentBox);
+            }
+
+            handleBboxMouseMove(e) {
+                if (!this.isDrawing || !this.currentBox) return;
+                
+                const rect = this.elements.puzzleImage.getBoundingClientRect();
+                const currentX = e.clientX - rect.left;
+                const currentY = e.clientY - rect.top;
+                
+                const width = Math.abs(currentX - this.startPoint.x);
+                const height = Math.abs(currentY - this.startPoint.y);
+                const left = Math.min(currentX, this.startPoint.x);
+                const top = Math.min(currentY, this.startPoint.y);
+                
+                this.currentBox.style.left = `${left}px`;
+                this.currentBox.style.top = `${top}px`;
+                this.currentBox.style.width = `${width}px`;
+                this.currentBox.style.height = `${height}px`;
+            }
+
+            handleBboxMouseUp(e) {
+                if (!this.isDrawing) return;
+                this.isDrawing = false;
+                
+                // Auto-save and advance if we have a valid box
+                if (this.currentBox && 
+                    parseInt(this.currentBox.style.width) > 10 && 
+                    parseInt(this.currentBox.style.height) > 10) {
+                    
+                    // Small delay to show the final box before advancing
+                    setTimeout(() => {
+                        this.saveBboxAndNext();
+                    }, 300);
+                }
+            }
+
+            saveBboxAndNext() {
+                if (!this.currentBox) {
+                    alert('Please draw a bounding box first!');
+                    return;
+                }
+                
+                // Calculate coordinates relative to the natural image size
+                const imageRect = this.elements.puzzleImage.getBoundingClientRect();
+                const naturalWidth = this.elements.puzzleImage.naturalWidth;
+                const naturalHeight = this.elements.puzzleImage.naturalHeight;
+                
+                const scaleX = naturalWidth / imageRect.width;
+                const scaleY = naturalHeight / imageRect.height;
+                
+                const x = Math.round(parseInt(this.currentBox.style.left) * scaleX);
+                const y = Math.round(parseInt(this.currentBox.style.top) * scaleY);
+                const width = Math.round(parseInt(this.currentBox.style.width) * scaleX);
+                const height = Math.round(parseInt(this.currentBox.style.height) * scaleY);
+                
+                // Add bounding box to current puzzle
+                this.bboxPuzzles[this.bboxCurrentIndex].clickBox = { x, y, width, height };
+                
+                // Also update in all puzzles array
+                const puzzleId = this.bboxPuzzles[this.bboxCurrentIndex].id;
+                const allPuzzle = this.allPuzzles.find(p => p.id === puzzleId);
+                if (allPuzzle) {
+                    allPuzzle.clickBox = { x, y, width, height };
+                }
+                
+                console.log(`Saved bounding box: ${JSON.stringify({ x, y, width, height })}`);
+                
+                // Move to next puzzle
+                this.bboxCurrentIndex++;
+                this.loadBboxPuzzle();
+            }
+
+            skipBboxPuzzle() {
+                this.bboxCurrentIndex++;
+                this.loadBboxPuzzle();
+            }
+
+            completeBboxMode() {
+                alert('All bounding boxes defined! Use "💾 Save JSON" to download the updated file when ready.');
+            }
+
+            downloadUpdatedJson() {
+                const updatedJson = JSON.stringify({ puzzles: this.allPuzzles }, null, 2);
+                console.log('Updated puzzles.json:');
+                console.log(updatedJson);
+                
+                // Create download link for the updated JSON
+                const blob = new Blob([updatedJson], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'puzzles-updated.json';
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                alert('Updated JSON file downloaded!');
+            }
+
+            exitBboxMode() {
+                this.bboxMode = false;
+                this.removeBboxDrawing();
+                
+                // Hide bbox UI
+                this.elements.bboxInfo.style.display = 'none';
+                this.elements.bboxControls.style.display = 'none';
+                
+                // Show normal UI
+                this.elements.prevDay.style.display = 'inline-block';
+                this.elements.today.style.display = 'inline-block';
+                
+                // Reset to normal game
+                this.elements.puzzleImage.classList.remove('bbox-mode');
+                this.resetGame();
             }
         }
 
