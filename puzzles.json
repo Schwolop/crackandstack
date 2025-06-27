@@ -32,6 +32,28 @@
         "width": 41,
         "height": 135
       }
+    },
+    {
+      "id": 4,
+      "image": "BINARY -_ BRAINY[face,1].png",
+      "answer": "BRAINY",
+      "clickBox": {
+        "x": 833,
+        "y": 71,
+        "width": 67,
+        "height": 36
+      }
+    },
+    {
+      "id": 5,
+      "image": "BLUSHES -_ BUSHELS[face,1].png",
+      "answer": "BUSHELS",
+      "clickBox": {
+        "x": 1025,
+        "y": 320,
+        "width": 42,
+        "height": 160
+      }
     }
   ]
 }

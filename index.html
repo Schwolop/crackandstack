@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crack and Stack!</title>
+    <title>Daily Word Puzzle</title>
     <style>
         * {
             margin: 0;
@@ -92,7 +92,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: all 0.5s ease;
             cursor: pointer;
-            position: relative;
         }
 
         .puzzle-image.cropped {
@@ -104,14 +103,19 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.9);
             color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 1.5em;
+            padding: 20px 40px;
+            border-radius: 15px;
+            font-size: 2em;
             font-weight: bold;
             display: none;
             z-index: 10;
+            min-width: 200px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .input-section {
@@ -164,7 +168,7 @@
             margin: 20px 0;
             font-weight: 600;
             display: none;
-            min-height: 50px; /* Fixed height to prevent layout shifts */
+            min-height: 50px;
         }
 
         .message.success {
@@ -294,7 +298,7 @@
 <body>
     <div class="game-container">
         <div class="game-header">
-            <h1>Crack and Stack</h1>
+            <h1>Daily Word Puzzle</h1>
             <div class="puzzle-date" id="puzzle-date"></div>
             <div class="date-navigation">
                 <button class="nav-button" id="prev-day">← Previous Day</button>
@@ -308,10 +312,8 @@
 
         <div id="game-content" style="display: none;">
             <div class="puzzle-container" id="puzzle-container">
-              <div class="image-wrapper" style="position: relative; display: inline-block;">
-                <img class="puzzle-image" id="puzzle-image">
-              </div>
-              <div class="timer-overlay" id="timer-overlay">00:00</div>
+                <img class="puzzle-image cropped" id="puzzle-image" alt="Daily Puzzle">
+                <div class="timer-overlay" id="timer-overlay">00:00</div>
             </div>
 
             <div class="input-section" id="input-section">
@@ -339,6 +341,7 @@
 
             <div class="game-controls" id="game-controls">
                 <button class="control-button" id="reset-button">Reset This Puzzle</button>
+                <button class="control-button" id="new-player-button">New Player</button>
             </div>
         </div>
     </div>
@@ -348,12 +351,12 @@
             constructor() {
                 this.puzzles = [];
                 this.currentPuzzle = null;
-                this.gameState = 'loading'; // loading, input, searching, completed
+                this.gameState = 'loading';
                 this.startTime = null;
                 this.timerInterval = null;
                 this.wrongClicks = 0;
                 this.penaltyTime = 0;
-                this.currentDateOffset = 0; // 0 = today, -1 = yesterday, 1 = tomorrow
+                this.currentDateOffset = 0;
                 
                 this.initializeElements();
                 this.loadPuzzles();
@@ -379,7 +382,8 @@
                     gameControls: document.getElementById('game-controls'),
                     prevDay: document.getElementById('prev-day'),
                     today: document.getElementById('today'),
-                    resetButton: document.getElementById('reset-button')
+                    resetButton: document.getElementById('reset-button'),
+                    newPlayerButton: document.getElementById('new-player-button')
                 };
 
                 this.setupEventListeners();
@@ -394,27 +398,21 @@
                     e.target.value = e.target.value.toUpperCase();
                 });
 
-                // Date navigation
                 this.elements.prevDay.addEventListener('click', () => this.navigateToDay(this.currentDateOffset - 1));
                 this.elements.today.addEventListener('click', () => this.navigateToDay(0));
 
-                // Game controls
                 this.elements.resetButton.addEventListener('click', () => this.resetGame());
+                this.elements.newPlayerButton.addEventListener('click', () => this.resetGame());
             }
 
             async loadPuzzles() {
                 try {
                     const response = await fetch('puzzles.json');
                     if (!response.ok) {
-                        throw new Error(`Failed to load puzzles.json: ${response.status} ${response.statusText}`);
+                        throw new Error(`Failed to load puzzles: ${response.status}`);
                     }
-                    
                     const data = await response.json();
                     this.puzzles = data.puzzles;
-                    
-                    if (!this.puzzles || this.puzzles.length === 0) {
-                        throw new Error('No puzzles found in puzzles.json');
-                    }
                     
                     this.initializeGame();
                 } catch (error) {
@@ -438,15 +436,37 @@
                 this.currentPuzzle = this.getPuzzleForDate(this.currentDateOffset);
                 this.updateDateDisplay();
 
+                // Reset all game state elements to initial state
+                this.gameState = 'input';
+                this.startTime = null;
+                this.wrongClicks = 0;
+                this.penaltyTime = 0;
+                
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+
+                // Remove any existing click areas
+                const existingClickArea = document.querySelector('.click-area');
+                if (existingClickArea) {
+                    existingClickArea.remove();
+                }
+
+                // Reset UI elements to initial state
+                this.elements.answerInput.value = '';
+                this.elements.message.style.display = 'none';
+                this.elements.stats.style.display = 'none';
+                this.elements.gameControls.style.display = 'none';
+                this.elements.inputSection.style.display = 'block';
+                this.elements.timerOverlay.style.display = 'none';
+                this.elements.puzzleImage.classList.add('cropped');
+                this.elements.puzzleImage.style.filter = 'none';
+
                 this.elements.puzzleImage.src = `images/${this.currentPuzzle.image}`;
                 this.elements.puzzleImage.onload = () => {
                     this.elements.loading.style.display = 'none';
                     this.elements.gameContent.style.display = 'block';
-                    this.gameState = 'input';
-                };
-                
-                this.elements.puzzleImage.onerror = () => {
-                    this.showError(`Could not load image: images/${this.currentPuzzle.image}`);
                 };
             }
 
@@ -480,7 +500,6 @@
             }
 
             resetGame() {
-                // Reset game state
                 this.gameState = 'loading';
                 this.startTime = null;
                 this.wrongClicks = 0;
@@ -491,13 +510,11 @@
                     this.timerInterval = null;
                 }
 
-                // Remove any existing click areas and event listeners
                 const existingClickArea = document.querySelector('.click-area');
                 if (existingClickArea) {
                     existingClickArea.remove();
                 }
 
-                // Reset UI elements
                 this.elements.answerInput.value = '';
                 this.elements.message.style.display = 'none';
                 this.elements.stats.style.display = 'none';
@@ -507,13 +524,11 @@
                 this.elements.puzzleImage.classList.add('cropped');
                 this.elements.puzzleImage.style.filter = 'none';
 
-                // Clone the image element to remove all event listeners
                 const oldImage = this.elements.puzzleImage;
                 const newImage = oldImage.cloneNode(true);
                 oldImage.parentNode.replaceChild(newImage, oldImage);
                 this.elements.puzzleImage = newImage;
 
-                // Reinitialize the game
                 this.elements.loading.style.display = 'block';
                 this.elements.gameContent.style.display = 'none';
                 this.initializeGame();
@@ -543,6 +558,7 @@
                 
                 setTimeout(() => {
                     this.startTimer();
+                    this.createClickableArea();
                     this.showMessage('Click on the correct answer word in the border!', 'info');
                 }, 500);
             }
@@ -550,9 +566,6 @@
             startTimer() {
                 this.startTime = Date.now();
                 this.elements.timerOverlay.style.display = 'block';
-
-                // Create area for detecting clicks on the solution word.
-                this.createClickableArea();
                 
                 this.timerInterval = setInterval(() => {
                     const elapsed = Date.now() - this.startTime + this.penaltyTime;
@@ -565,36 +578,58 @@
             }
 
             createClickableArea() {
-                const wrapper = this.elements.puzzleImage.parentNode;
-
+                console.log('Creating clickable area...'); // Debug log
+                
                 const clickArea = document.createElement('div');
                 clickArea.className = 'click-area';
-                clickArea.style.position = 'absolute';
-                clickArea.style.pointerEvents = 'auto';
-
+                
                 const box = this.currentPuzzle.clickBox;
-                const imageRect = this.elements.puzzleImage.getBoundingClientRect();
-                const scaleX = imageRect.width / this.elements.puzzleImage.naturalWidth;
-                const scaleY = imageRect.height / this.elements.puzzleImage.naturalHeight;
-
-                clickArea.style.left = `${box.x * scaleX}px`;
-                clickArea.style.top = `${box.y * scaleY}px`;
-                clickArea.style.width = `${box.width * scaleX}px`;
-                clickArea.style.height = `${box.height * scaleY}px`;
-
-                wrapper.appendChild(clickArea);
-
-                // Add event listeners
-                clickArea.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    this.handleCorrectClick();
-                });
-
-                this.elements.puzzleImage.addEventListener('click', (e) => {
-                    if (this.gameState === 'searching') {
-                        this.handleWrongClick();
-                    }
-                });
+                console.log('Click box:', box); // Debug log
+                
+                // Wait for image to be fully loaded and positioned
+                setTimeout(() => {
+                    const imageRect = this.elements.puzzleImage.getBoundingClientRect();
+                    const containerRect = this.elements.puzzleContainer.getBoundingClientRect();
+                    
+                    console.log('Image rect:', imageRect); // Debug log
+                    console.log('Container rect:', containerRect); // Debug log
+                    
+                    const offsetX = imageRect.left - containerRect.left;
+                    const offsetY = imageRect.top - containerRect.top;
+                    
+                    const naturalWidth = this.elements.puzzleImage.naturalWidth || 400;
+                    const naturalHeight = this.elements.puzzleImage.naturalHeight || 300;
+                    
+                    clickArea.style.left = `${offsetX + (box.x / naturalWidth) * imageRect.width}px`;
+                    clickArea.style.top = `${offsetY + (box.y / naturalHeight) * imageRect.height}px`;
+                    clickArea.style.width = `${(box.width / naturalWidth) * imageRect.width}px`;
+                    clickArea.style.height = `${(box.height / naturalHeight) * imageRect.height}px`;
+                    
+                    console.log('Click area position:', {
+                        left: clickArea.style.left,
+                        top: clickArea.style.top,
+                        width: clickArea.style.width,
+                        height: clickArea.style.height
+                    }); // Debug log
+                    
+                    clickArea.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        console.log('Correct area clicked!'); // Debug log
+                        this.handleCorrectClick();
+                    });
+                    
+                    // Add click handler to image for wrong clicks
+                    this.elements.puzzleImage.addEventListener('click', (e) => {
+                        if (this.gameState === 'searching') {
+                            console.log('Wrong area clicked!'); // Debug log
+                            this.handleWrongClick();
+                        }
+                    });
+                    
+                    // Fixed: Use correct container reference
+                    this.elements.puzzleContainer.appendChild(clickArea);
+                    console.log('Click area added to container'); // Debug log
+                }, 100);
             }
 
             handleCorrectClick() {
@@ -608,16 +643,14 @@
                 this.showStats(totalTime);
                 this.elements.gameControls.style.display = 'block';
                 
-                // Remove click handlers
                 const clickArea = document.querySelector('.click-area');
                 if (clickArea) clickArea.remove();
             }
 
             handleWrongClick() {
                 this.wrongClicks++;
-                this.penaltyTime += 5000; // 5 second penalty
+                this.penaltyTime += 5000;
                 
-                // Visual feedback
                 this.elements.puzzleImage.style.filter = 'hue-rotate(0deg) brightness(0.7)';
                 setTimeout(() => {
                     this.elements.puzzleImage.style.filter = 'none';
@@ -646,16 +679,13 @@
                 
                 if (type === 'error') {
                     setTimeout(() => {
-                        // Instead of hiding, show empty message to maintain layout
                         message.textContent = '';
                         message.className = 'message';
-                        // Keep it displayed but invisible to maintain space
                     }, 3000);
                 }
             }
         }
 
-        // Initialize the game when the page loads
         document.addEventListener('DOMContentLoaded', () => {
             new DailyPuzzleGame();
         });
