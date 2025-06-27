@@ -6,7 +6,7 @@
       "answer": "CLERIC",
       "clickBox": {
         "x": 847,
-        "y": 70, 
+        "y": 70,
         "width": 64,
         "height": 33
       }
@@ -17,7 +17,7 @@
       "answer": "DRAB",
       "clickBox": {
         "x": 69,
-        "y": 194, 
+        "y": 194,
         "width": 36,
         "height": 52
       }
@@ -28,7 +28,7 @@
       "answer": "CONSERVATION",
       "clickBox": {
         "x": 1017,
-        "y": 336, 
+        "y": 336,
         "width": 41,
         "height": 135
       }
@@ -54,6 +54,629 @@
         "width": 42,
         "height": 160
       }
+    },
+    {
+      "id": 6,
+      "image": "DAM -_ MAD[face,1].png",
+      "answer": "MAD",
+      "clickBox": {
+        "x": 79,
+        "y": 179,
+        "width": 26,
+        "height": 44
+      }
+    },
+    {
+      "id": 7,
+      "image": "CARVED -_ CRAVED[face,1].png",
+      "answer": "CRAVED",
+      "clickBox": {
+        "x": 657,
+        "y": 719,
+        "width": 67,
+        "height": 27
+      }
+    },
+    {
+      "id": 8,
+      "image": "CHASED -_ CASHED[face,1].png",
+      "answer": "CASHED",
+      "clickBox": {
+        "x": 1019,
+        "y": 657,
+        "width": 30,
+        "height": 74
+      }
+    },
+    {
+      "id": 9,
+      "image": "COAGULATING -_ CATALOGUING[face,1].png",
+      "answer": "CATALOGUING",
+      "clickBox": {
+        "x": 1019,
+        "y": 255,
+        "width": 30,
+        "height": 121
+      }
+    },
+    {
+      "id": 10,
+      "image": "COOLNESS -_ CONSOLES[face,1].png",
+      "answer": "CONSOLES",
+      "clickBox": {
+        "x": 584,
+        "y": 74,
+        "width": 91,
+        "height": 38
+      }
+    },
+    {
+      "id": 11,
+      "image": "CRUELTY -_ CUTLERY[face,1].png",
+      "answer": "CUTLERY",
+      "clickBox": {
+        "x": 541,
+        "y": 718,
+        "width": 78,
+        "height": 30
+      }
+    },
+    {
+      "id": 12,
+      "image": "CURED -_ CRUDE[face,1].png",
+      "answer": "CRUDE",
+      "clickBox": {
+        "x": 76,
+        "y": 381,
+        "width": 30,
+        "height": 64
+      }
+    },
+    {
+      "id": 13,
+      "image": "DECAF -_ FACED[face,1].png",
+      "answer": "FACED",
+      "clickBox": {
+        "x": 1017,
+        "y": 554,
+        "width": 32,
+        "height": 61
+      }
+    },
+    {
+      "id": 14,
+      "image": "DECANTED -_ DECADENT[face,1].png",
+      "answer": "DECADENT",
+      "clickBox": {
+        "x": 1012,
+        "y": 352,
+        "width": 36,
+        "height": 105
+      }
+    },
+    {
+      "id": 15,
+      "image": "DEEP -_ PEED[face,1].png",
+      "answer": "PEED",
+      "clickBox": {
+        "x": 1017,
+        "y": 302,
+        "width": 32,
+        "height": 59
+      }
+    },
+    {
+      "id": 16,
+      "image": "DEEPS -_ SPEED[face,1].png",
+      "answer": "SPEED",
+      "clickBox": {
+        "x": 521,
+        "y": 76,
+        "width": 70,
+        "height": 32
+      }
+    },
+    {
+      "id": 17,
+      "image": "DELIVER -_ REVILED[face,1].png",
+      "answer": "REVILED",
+      "clickBox": {
+        "x": 667,
+        "y": 71,
+        "width": 76,
+        "height": 38
+      }
+    },
+    {
+      "id": 18,
+      "image": "DENSITY -_ DESTINY[face,1].png",
+      "answer": "DESTINY",
+      "clickBox": {
+        "x": 385,
+        "y": 718,
+        "width": 81,
+        "height": 30
+      }
+    },
+    {
+      "id": 19,
+      "image": "DESSERTS -_ STRESSED[face,1].png",
+      "answer": "STRESSED",
+      "clickBox": {
+        "x": 179,
+        "y": 76,
+        "width": 91,
+        "height": 32
+      }
+    },
+    {
+      "id": 20,
+      "image": "DEVIL -_ LIVED[face,1].png",
+      "answer": "LIVED",
+      "clickBox": {
+        "x": 774,
+        "y": 80,
+        "width": 52,
+        "height": 24
+      }
+    },
+    {
+      "id": 21,
+      "image": "DISCOUNTED -_ DEDUCTIONS[face,1].png",
+      "answer": "DEDUCTIONS",
+      "clickBox": {
+        "x": 271,
+        "y": 77,
+        "width": 114,
+        "height": 32
+      }
+    },
+    {
+      "id": 22,
+      "image": "DISCRETION -_ DIRECTIONS[face,1].png",
+      "answer": "DIRECTIONS",
+      "clickBox": {
+        "x": 81,
+        "y": 498,
+        "width": 21,
+        "height": 105
+      }
+    },
+    {
+      "id": 23,
+      "image": "DIVA -_ AVID[face,1].png",
+      "answer": "AVID",
+      "clickBox": {
+        "x": 78,
+        "y": 96,
+        "width": 27,
+        "height": 52
+      }
+    },
+    {
+      "id": 24,
+      "image": "DOG -_ GOD[face,1].png",
+      "answer": "GOD"
+    },
+    {
+      "id": 25,
+      "image": "DON -_ NOD[face,1].png",
+      "answer": "NOD"
+    },
+    {
+      "id": 26,
+      "image": "DOOM -_ MOOD[face,1].png",
+      "answer": "MOOD"
+    },
+    {
+      "id": 27,
+      "image": "DRAW -_ WARD[face,1].png",
+      "answer": "WARD"
+    },
+    {
+      "id": 28,
+      "image": "DYING -_ DINGY[face,1].png",
+      "answer": "DINGY"
+    },
+    {
+      "id": 29,
+      "image": "ENDURES -_ ENSURED[face,1].png",
+      "answer": "ENSURED"
+    },
+    {
+      "id": 30,
+      "image": "ETERNITY -_ ENTIRETY[face,1].png",
+      "answer": "ENTIRETY"
+    },
+    {
+      "id": 31,
+      "image": "EXCEPTING -_ EXPECTING[face,1].png",
+      "answer": "EXPECTING"
+    },
+    {
+      "id": 32,
+      "image": "EXITS -_ EXIST[face,1].png",
+      "answer": "EXIST"
+    },
+    {
+      "id": 33,
+      "image": "FAKER -_ FREAK[face,1].png",
+      "answer": "FREAK"
+    },
+    {
+      "id": 34,
+      "image": "FEIGNED -_ FEEDING[face,1].png",
+      "answer": "FEEDING"
+    },
+    {
+      "id": 35,
+      "image": "FERAL -_ FLARE[face,1].png",
+      "answer": "FLARE"
+    },
+    {
+      "id": 36,
+      "image": "FIENDISH -_ FINISHED[face,1].png",
+      "answer": "FINISHED"
+    },
+    {
+      "id": 37,
+      "image": "FINDERS -_ FRIENDS[face,1].png",
+      "answer": "FRIENDS"
+    },
+    {
+      "id": 38,
+      "image": "FRAMED -_ FARMED[face,1].png",
+      "answer": "FARMED"
+    },
+    {
+      "id": 39,
+      "image": "FREIGHTS -_ FIGHTERS[face,1].png",
+      "answer": "FIGHTERS"
+    },
+    {
+      "id": 40,
+      "image": "FUSED -_ FEUDS[face,1].png",
+      "answer": "FEUDS"
+    },
+    {
+      "id": 41,
+      "image": "GAS -_ SAG[face,1].png",
+      "answer": "SAG"
+    },
+    {
+      "id": 42,
+      "image": "GOLF -_ FLOG[face,1].png",
+      "answer": "FLOG"
+    },
+    {
+      "id": 43,
+      "image": "GULP -_ PLUG[face,1].png",
+      "answer": "PLUG"
+    },
+    {
+      "id": 44,
+      "image": "GUT -_ TUG[face,1].png",
+      "answer": "TUG"
+    },
+    {
+      "id": 45,
+      "image": "HARDY -_ HYDRA[face,1].png",
+      "answer": "HYDRA"
+    },
+    {
+      "id": 46,
+      "image": "HIGHEST -_ HEIGHTS[face,1].png",
+      "answer": "HEIGHTS"
+    },
+    {
+      "id": 47,
+      "image": "INCESSANT -_ INSTANCES[face,1].png",
+      "answer": "INSTANCES"
+    },
+    {
+      "id": 48,
+      "image": "KNOB -_ BONK[face,1].png",
+      "answer": "BONK"
+    },
+    {
+      "id": 49,
+      "image": "LAID -_ DIAL[face,1].png",
+      "answer": "DIAL"
+    },
+    {
+      "id": 50,
+      "image": "LEPER -_ REPEL[face,1].png",
+      "answer": "REPEL"
+    },
+    {
+      "id": 51,
+      "image": "LESIONS -_ LIONESS[face,1].png",
+      "answer": "LIONESS"
+    },
+    {
+      "id": 52,
+      "image": "LEVELER -_ RELEVEL[face,1].png",
+      "answer": "RELEVEL"
+    },
+    {
+      "id": 53,
+      "image": "LEVER -_ REVEL[face,1].png",
+      "answer": "REVEL"
+    },
+    {
+      "id": 54,
+      "image": "LINKAGE -_ LEAKING[face,1].png",
+      "answer": "LEAKING"
+    },
+    {
+      "id": 55,
+      "image": "LIVED -_ DEVIL[face,1].png",
+      "answer": "DEVIL"
+    },
+    {
+      "id": 56,
+      "image": "LOOTER -_ RETOOL[face,1].png",
+      "answer": "RETOOL"
+    },
+    {
+      "id": 57,
+      "image": "MAKINGS -_ MASKING[face,1].png",
+      "answer": "MASKING"
+    },
+    {
+      "id": 58,
+      "image": "MAPS -_ SPAM[face,1].png",
+      "answer": "SPAM"
+    },
+    {
+      "id": 59,
+      "image": "MARITAL -_ MARTIAL[face,1].png",
+      "answer": "MARTIAL"
+    },
+    {
+      "id": 60,
+      "image": "METRONOMES -_ MONOTREMES[face,1].png",
+      "answer": "MONOTREMES"
+    },
+    {
+      "id": 61,
+      "image": "MISALIGNED -_ MISLEADING[face,1].png",
+      "answer": "MISLEADING"
+    },
+    {
+      "id": 62,
+      "image": "NAP -_ PAN[face,1].png",
+      "answer": "PAN"
+    },
+    {
+      "id": 63,
+      "image": "NIP -_ PIN[face,1].png",
+      "answer": "PIN"
+    },
+    {
+      "id": 64,
+      "image": "PATROLS -_ PORTALS[face,1].png",
+      "answer": "PORTALS"
+    },
+    {
+      "id": 65,
+      "image": "PEEK -_ KEEP[face,1].png",
+      "answer": "KEEP"
+    },
+    {
+      "id": 66,
+      "image": "PEELS -_ SLEEP[face,1].png",
+      "answer": "SLEEP"
+    },
+    {
+      "id": 67,
+      "image": "PEES -_ SEEP[face,1].png",
+      "answer": "SEEP"
+    },
+    {
+      "id": 68,
+      "image": "PENALTIES -_ PALESTINE[face,1].png",
+      "answer": "PALESTINE"
+    },
+    {
+      "id": 69,
+      "image": "PLUGINS -_ PULSING[face,1].png",
+      "answer": "PULSING"
+    },
+    {
+      "id": 70,
+      "image": "PORTRAYED -_ PREDATORY[face,1].png",
+      "answer": "PREDATORY"
+    },
+    {
+      "id": 71,
+      "image": "POT -_ TOP[face,1].png",
+      "answer": "TOP"
+    },
+    {
+      "id": 72,
+      "image": "PRODUCER -_ PROCURED[face,1].png",
+      "answer": "PROCURED"
+    },
+    {
+      "id": 73,
+      "image": "PROTEINS -_ POINTERS[face,1].png",
+      "answer": "POINTERS"
+    },
+    {
+      "id": 74,
+      "image": "RAW -_ WAR[face,1].png",
+      "answer": "WAR"
+    },
+    {
+      "id": 75,
+      "image": "REED -_ DEER[face,1].png",
+      "answer": "DEER"
+    },
+    {
+      "id": 76,
+      "image": "REGISTRANT -_ RESTARTING[face,1].png",
+      "answer": "RESTARTING"
+    },
+    {
+      "id": 77,
+      "image": "RELEASED -_ RESEALED[face,1].png",
+      "answer": "RESEALED"
+    },
+    {
+      "id": 78,
+      "image": "RELEVEL -_ LEVELER[face,1].png",
+      "answer": "LEVELER"
+    },
+    {
+      "id": 79,
+      "image": "RENNET -_ TENNER[face,1].png",
+      "answer": "TENNER"
+    },
+    {
+      "id": 80,
+      "image": "REPEL -_ LEPER[face,1].png",
+      "answer": "LEPER"
+    },
+    {
+      "id": 81,
+      "image": "RESERVING -_ REVERSING[face,1].png",
+      "answer": "REVERSING"
+    },
+    {
+      "id": 82,
+      "image": "RESORTING -_ RESTORING[face,1].png",
+      "answer": "RESTORING"
+    },
+    {
+      "id": 83,
+      "image": "RETOOL -_ LOOTER[face,1].png",
+      "answer": "LOOTER"
+    },
+    {
+      "id": 84,
+      "image": "REVEL -_ LEVER[face,1].png",
+      "answer": "LEVER"
+    },
+    {
+      "id": 85,
+      "image": "REVILED -_ DELIVER[face,1].png",
+      "answer": "DELIVER"
+    },
+    {
+      "id": 86,
+      "image": "REWARDING -_ REDRAWING[face,1].png",
+      "answer": "REDRAWING"
+    },
+    {
+      "id": 87,
+      "image": "SHATTERING -_ STRAIGHTEN[face,1].png",
+      "answer": "STRAIGHTEN"
+    },
+    {
+      "id": 88,
+      "image": "SLEEP -_ PEELS[face,1].png",
+      "answer": "PEELS"
+    },
+    {
+      "id": 89,
+      "image": "SNAKE -_ SNEAK[face,1].png",
+      "answer": "SNEAK"
+    },
+    {
+      "id": 90,
+      "image": "SNAPS -_ SPANS[face,1].png",
+      "answer": "SPANS"
+    },
+    {
+      "id": 91,
+      "image": "SNIPS -_ SPINS[face,1].png",
+      "answer": "SPINS"
+    },
+    {
+      "id": 92,
+      "image": "SNORES -_ SENSOR[face,1].png",
+      "answer": "SENSOR"
+    },
+    {
+      "id": 93,
+      "image": "SPANS -_ SNAPS[face,1].png",
+      "answer": "SNAPS"
+    },
+    {
+      "id": 94,
+      "image": "SPEED -_ DEEPS[face,1].png",
+      "answer": "DEEPS"
+    },
+    {
+      "id": 95,
+      "image": "SPINS -_ SNIPS[face,1].png",
+      "answer": "SNIPS"
+    },
+    {
+      "id": 96,
+      "image": "STEAMSHIP -_ SHIPMATES[face,1].png",
+      "answer": "SHIPMATES"
+    },
+    {
+      "id": 97,
+      "image": "STINGRAY -_ STRAYING[face,1].png",
+      "answer": "STRAYING"
+    },
+    {
+      "id": 98,
+      "image": "STRAW -_ WARTS[face,1].png",
+      "answer": "WARTS"
+    },
+    {
+      "id": 99,
+      "image": "STRESSED -_ DESSERTS[face,1].png",
+      "answer": "DESSERTS"
+    },
+    {
+      "id": 100,
+      "image": "STUN -_ NUTS[face,1].png",
+      "answer": "NUTS"
+    },
+    {
+      "id": 101,
+      "image": "TENNER -_ RENNET[face,1].png",
+      "answer": "RENNET"
+    },
+    {
+      "id": 102,
+      "image": "TONS -_ SNOT[face,1].png",
+      "answer": "SNOT"
+    },
+    {
+      "id": 103,
+      "image": "TOOL -_ LOOT[face,1].png",
+      "answer": "LOOT"
+    },
+    {
+      "id": 104,
+      "image": "UNRELATED -_ UNALTERED[face,1].png",
+      "answer": "UNALTERED"
+    },
+    {
+      "id": 105,
+      "image": "WAIST -_ WAITS[face,1].png",
+      "answer": "WAITS"
+    },
+    {
+      "id": 106,
+      "image": "WARTS -_ STRAW[face,1].png",
+      "answer": "STRAW"
+    },
+    {
+      "id": 107,
+      "image": "WAS -_ SAW[face,1].png",
+      "answer": "SAW"
+    },
+    {
+      "id": 108,
+      "image": "WON -_ NOW[face,1].png",
+      "answer": "NOW"
     }
   ]
 }
