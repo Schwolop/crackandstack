@@ -919,11 +919,13 @@
             }
 
             revealFullImage() {
+                console.log('Revealing full image, setting game state to searching');
                 this.gameState = 'searching';
                 this.elements.puzzleImage.classList.remove('cropped');
                 this.elements.inputSection.style.display = 'none';
                 
                 setTimeout(() => {
+                    console.log('Starting timer and creating clickable area');
                     this.startTimer();
                     this.createClickableArea();
                     // Show blue instruction message after 10 seconds if no action
@@ -949,6 +951,7 @@
 
             createClickableArea() {
                 console.log('Creating clickable area...'); // Debug log
+                console.log('Current game state:', this.gameState); // Debug log
                 
                 const clickArea = document.createElement('div');
                 clickArea.className = 'click-area';
@@ -957,13 +960,23 @@
                 this.currentClickAreaBox = box; // Store for recalculation
                 console.log('Click box:', box); // Debug log
                 
+                if (!box) {
+                    console.error('No click box defined for current puzzle!');
+                    return;
+                }
+                
                 // Wait for image to be fully loaded and positioned
                 setTimeout(() => {
                     this.positionClickArea(clickArea, box);
                     
+                    // Add visual debug border to make click area visible during testing
+                    clickArea.style.border = '2px solid rgba(255, 0, 0, 0.5)';
+                    clickArea.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+                    
                     clickArea.addEventListener('click', (e) => {
                         e.stopPropagation();
                         console.log('Correct area clicked!'); // Debug log
+                        console.log('Game state at click:', this.gameState); // Debug log
                         this.handleCorrectClick();
                     });
                     
@@ -977,6 +990,12 @@
                     
                     this.elements.puzzleContainer.appendChild(clickArea);
                     console.log('Click area added to container'); // Debug log
+                    console.log('Click area final dimensions:', {
+                        left: clickArea.style.left,
+                        top: clickArea.style.top,
+                        width: clickArea.style.width,
+                        height: clickArea.style.height
+                    });
                 }, 100);
             }
 
@@ -1017,7 +1036,14 @@
             }
 
             handleCorrectClick() {
-                if (this.gameState !== 'searching') return;
+                console.log('handleCorrectClick called, current game state:', this.gameState);
+                
+                if (this.gameState !== 'searching') {
+                    console.log('Ignoring click - game state is not searching');
+                    return;
+                }
+                
+                console.log('Processing correct click...');
                 
                 // Clear the instruction timeout since puzzle is completed
                 if (this.instructionTimeout) {
@@ -1028,17 +1054,26 @@
                 clearInterval(this.timerInterval);
                 this.gameState = 'completed';
                 
-                const totalTime = Date.now() - this.startTime + this.penaltyTime;
+                // Calculate search time and total time properly
+                const searchTime = Date.now() - this.startTime;
+                const totalTime = this.solveTime + searchTime + this.penaltyTime;
                 const totalSeconds = Math.floor(totalTime / 1000);
+                
+                console.log('Total time:', totalTime, 'Total seconds:', totalSeconds);
                 
                 // Calculate performance rating using centralized method
                 const rating = this.calculateRating(totalSeconds, this.currentPuzzle.answer.length);
                 
+                console.log('Performance rating:', rating);
+                
                 this.showMessage(`Puzzle completed! ${rating}`, 'success');
-                this.showStats(totalTime);
+                this.showStats(searchTime);
                 
                 const clickArea = document.querySelector('.click-area');
-                if (clickArea) clickArea.remove();
+                if (clickArea) {
+                    clickArea.remove();
+                    console.log('Click area removed');
+                }
             }
 
             handleWrongClick() {
