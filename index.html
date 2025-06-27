@@ -210,10 +210,25 @@
             margin-bottom: 15px;
         }
 
+        .stats-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .stats-row:last-child {
+            margin-bottom: 0;
+            grid-template-columns: 2fr 2fr;
+        }
+
         .stat-item {
-            display: inline-block;
-            margin: 0 20px;
             text-align: center;
+        }
+
+        .penalty-item {
+            grid-column: span 2;
         }
 
         .stat-value {
@@ -463,17 +478,29 @@
 
             <div class="stats" id="stats">
                 <h3>Puzzle Complete!</h3>
-                <div class="stat-item">
-                    <div class="stat-value" id="final-time">--:--</div>
-                    <div class="stat-label">Time</div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-value" id="solve-time">--:--</div>
+                        <div class="stat-label">Solve Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="search-time">--:--</div>
+                        <div class="stat-label">Search Time</div>
+                    </div>
+                    <div class="stat-item penalty-item">
+                        <div class="stat-value" id="penalty-display">0 Clicks = 0s Penalty</div>
+                        <div class="stat-label">Wrong Clicks</div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="penalty-clicks">0</div>
-                    <div class="stat-label">Wrong Clicks</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value" id="penalty-time">0s</div>
-                    <div class="stat-label">Penalty</div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-value" id="overall-time">--:--</div>
+                        <div class="stat-label">Total Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="performance-rating">--</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
                 </div>
             </div>
 
@@ -510,6 +537,10 @@
                 this.currentClickAreaBox = null;
                 this.instructionTimeout = null;
                 
+                // Overall timer (from start of puzzle session to completion)
+                this.overallStartTime = null;
+                this.solveTime = null;
+                
                 // Desktop detection for auto-focus
                 this.isDesktop = !('ontouchstart' in window || navigator.maxTouchPoints > 0);
                 
@@ -531,9 +562,11 @@
                     checkButton: document.getElementById('check-button'),
                     message: document.getElementById('message'),
                     stats: document.getElementById('stats'),
-                    finalTime: document.getElementById('final-time'),
-                    penaltyClicks: document.getElementById('penalty-clicks'),
-                    penaltyTimeDisplay: document.getElementById('penalty-time'),
+                    solveTime: document.getElementById('solve-time'),
+                    searchTime: document.getElementById('search-time'),
+                    penaltyDisplay: document.getElementById('penalty-display'),
+                    overallTime: document.getElementById('overall-time'),
+                    performanceRating: document.getElementById('performance-rating'),
                     gameControls: document.getElementById('game-controls'),
                     prevDay: document.getElementById('prev-day'),
                     today: document.getElementById('today'),
@@ -626,9 +659,14 @@
             hideInstructions() {
                 this.elements.instructionsOverlay.style.display = 'none';
                 localStorage.setItem('crack-and-stack-instructions-seen', 'true');
+                this.startOverallTimer();
                 if (this.isDesktop) {
                     this.elements.answerInput.focus();
                 }
+            }
+            
+            startOverallTimer() {
+                this.overallStartTime = Date.now();
             }
 
             checkShowInstructions() {
@@ -649,6 +687,7 @@
             navigateToDay(offset) {
                 this.currentDateOffset = offset;
                 this.resetGameQuiet();
+                this.startOverallTimer();
             }
 
             initializeGame() {
@@ -686,6 +725,10 @@
                     this.elements.loading.style.display = 'none';
                     this.elements.gameContent.style.display = 'block';
                     this.checkShowInstructions();
+                    // Start overall timer if instructions already seen
+                    if (!this.showInstructions || localStorage.getItem('crack-and-stack-instructions-seen')) {
+                        this.startOverallTimer();
+                    }
                     if (this.isDesktop) {
                         this.elements.answerInput.focus();
                     }
@@ -844,6 +887,8 @@
                 }
 
                 if (userAnswer === this.currentPuzzle.answer) {
+                    // Record solve time (from overall start to solving the anagram)
+                    this.solveTime = this.overallStartTime ? Date.now() - this.overallStartTime : 0;
                     this.showMessage('Correct! Now find the answer in the border words.', 'success');
                     this.revealFullImage();
                 } else {
@@ -962,7 +1007,35 @@
                 this.gameState = 'completed';
                 
                 const totalTime = Date.now() - this.startTime + this.penaltyTime;
-                this.showMessage('Puzzle completed! Great job!', 'success');
+                const totalSeconds = Math.floor(totalTime / 1000);
+                
+                // Determine performance rating based on total time and word length
+                const wordLength = this.currentPuzzle.answer.length;
+                let thresholds = {};
+                
+                if (wordLength <= 4) {
+                    // Short words: 3-4 letters
+                    thresholds = { amazing: 10, good: 20, average: 30 };
+                } else if (wordLength <= 6) {
+                    // Medium words: 5-6 letters  
+                    thresholds = { amazing: 15, good: 30, average: 45 };
+                } else {
+                    // Long words: 7+ letters
+                    thresholds = { amazing: 20, good: 40, average: 60 };
+                }
+                
+                let rating = '';
+                if (totalSeconds < thresholds.amazing) {
+                    rating = 'Amazing! 🔥';
+                } else if (totalSeconds < thresholds.good) {
+                    rating = 'Good! 👍';
+                } else if (totalSeconds <= thresholds.average) {
+                    rating = 'Average 👌';
+                } else {
+                    rating = 'Keep Trying! 💪';
+                }
+                
+                this.showMessage(`Puzzle completed! ${rating}`, 'success');
                 this.showStats(totalTime);
                 
                 const clickArea = document.querySelector('.click-area');
@@ -987,14 +1060,58 @@
                 this.showMessage(`Wrong spot! +5 second penalty. (${this.wrongClicks} wrong clicks)`, 'error');
             }
 
-            showStats(totalTime) {
-                const minutes = Math.floor(totalTime / 60000);
-                const seconds = Math.floor((totalTime % 60000) / 1000);
+            showStats(searchTime) {
+                // Format search time (time spent in search phase, excluding penalties)
+                const searchMinutes = Math.floor(searchTime / 60000);
+                const searchSeconds = Math.floor((searchTime % 60000) / 1000);
                 
-                this.elements.finalTime.textContent = 
-                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                this.elements.penaltyClicks.textContent = this.wrongClicks;
-                this.elements.penaltyTimeDisplay.textContent = `${this.penaltyTime / 1000}s`;
+                // Format solve time (time to solve the anagram)
+                const solveMinutes = Math.floor(this.solveTime / 60000);
+                const solveSeconds = Math.floor((this.solveTime % 60000) / 1000);
+                
+                // Calculate correct total time: solve time + search time + penalty time
+                const totalTime = this.solveTime + searchTime + this.penaltyTime;
+                const totalMinutes = Math.floor(totalTime / 60000);
+                const totalSeconds = Math.floor((totalTime % 60000) / 1000);
+                const totalTimeSeconds = Math.floor(totalTime / 1000);
+                
+                // Determine performance rating based on total time and word length
+                const wordLength = this.currentPuzzle.answer.length;
+                let thresholds = {};
+                
+                if (wordLength <= 4) {
+                    // Short words: 3-4 letters
+                    thresholds = { amazing: 10, good: 20, average: 30 };
+                } else if (wordLength <= 6) {
+                    // Medium words: 5-6 letters  
+                    thresholds = { amazing: 15, good: 30, average: 45 };
+                } else {
+                    // Long words: 7+ letters
+                    thresholds = { amazing: 20, good: 40, average: 60 };
+                }
+                
+                let rating = '';
+                if (totalTimeSeconds < thresholds.amazing) {
+                    rating = 'Amazing! 🔥';
+                } else if (totalTimeSeconds < thresholds.good) {
+                    rating = 'Good! 👍';
+                } else if (totalTimeSeconds <= thresholds.average) {
+                    rating = 'Average 👌';
+                } else {
+                    rating = 'Keep Trying! 💪';
+                }
+                
+                // Update all stats
+                this.elements.solveTime.textContent = 
+                    `${solveMinutes.toString().padStart(2, '0')}:${solveSeconds.toString().padStart(2, '0')}`;
+                this.elements.searchTime.textContent = 
+                    `${searchMinutes.toString().padStart(2, '0')}:${searchSeconds.toString().padStart(2, '0')}`;
+                this.elements.penaltyDisplay.textContent = 
+                    `${this.wrongClicks} Clicks = ${this.penaltyTime / 1000}s Penalty`;
+                this.elements.overallTime.textContent = 
+                    `${totalMinutes.toString().padStart(2, '0')}:${totalSeconds.toString().padStart(2, '0')}`;
+                this.elements.performanceRating.textContent = rating;
+                
                 this.elements.stats.style.display = 'block';
                 this.elements.timerOverlay.style.display = 'none';
             }
