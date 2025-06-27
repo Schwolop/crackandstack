@@ -400,9 +400,30 @@
                 width: 100%;
             }
             
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            .stats-row:last-child {
+                grid-template-columns: 1fr;
+            }
+            
+            .penalty-item {
+                grid-column: span 1;
+            }
+            
             .stat-item {
                 display: block;
                 margin: 10px 0;
+            }
+            
+            .stat-value {
+                font-size: 1.5em;
+            }
+            
+            .stat-label {
+                font-size: 0.8em;
             }
 
             .date-navigation {
@@ -1009,31 +1030,8 @@
                 const totalTime = Date.now() - this.startTime + this.penaltyTime;
                 const totalSeconds = Math.floor(totalTime / 1000);
                 
-                // Determine performance rating based on total time and word length
-                const wordLength = this.currentPuzzle.answer.length;
-                let thresholds = {};
-                
-                if (wordLength <= 4) {
-                    // Short words: 3-4 letters
-                    thresholds = { amazing: 10, good: 20, average: 30 };
-                } else if (wordLength <= 6) {
-                    // Medium words: 5-6 letters  
-                    thresholds = { amazing: 15, good: 30, average: 45 };
-                } else {
-                    // Long words: 7+ letters
-                    thresholds = { amazing: 20, good: 40, average: 60 };
-                }
-                
-                let rating = '';
-                if (totalSeconds < thresholds.amazing) {
-                    rating = 'Amazing! 🔥';
-                } else if (totalSeconds < thresholds.good) {
-                    rating = 'Good! 👍';
-                } else if (totalSeconds <= thresholds.average) {
-                    rating = 'Average 👌';
-                } else {
-                    rating = 'Keep Trying! 💪';
-                }
+                // Calculate performance rating using centralized method
+                const rating = this.calculateRating(totalSeconds, this.currentPuzzle.answer.length);
                 
                 this.showMessage(`Puzzle completed! ${rating}`, 'success');
                 this.showStats(totalTime);
@@ -1075,31 +1073,8 @@
                 const totalSeconds = Math.floor((totalTime % 60000) / 1000);
                 const totalTimeSeconds = Math.floor(totalTime / 1000);
                 
-                // Determine performance rating based on total time and word length
-                const wordLength = this.currentPuzzle.answer.length;
-                let thresholds = {};
-                
-                if (wordLength <= 4) {
-                    // Short words: 3-4 letters
-                    thresholds = { amazing: 10, good: 20, average: 30 };
-                } else if (wordLength <= 6) {
-                    // Medium words: 5-6 letters  
-                    thresholds = { amazing: 15, good: 30, average: 45 };
-                } else {
-                    // Long words: 7+ letters
-                    thresholds = { amazing: 20, good: 40, average: 60 };
-                }
-                
-                let rating = '';
-                if (totalTimeSeconds < thresholds.amazing) {
-                    rating = 'Amazing! 🔥';
-                } else if (totalTimeSeconds < thresholds.good) {
-                    rating = 'Good! 👍';
-                } else if (totalTimeSeconds <= thresholds.average) {
-                    rating = 'Average 👌';
-                } else {
-                    rating = 'Keep Trying! 💪';
-                }
+                // Calculate performance rating using centralized method
+                const rating = this.calculateRating(totalTimeSeconds, this.currentPuzzle.answer.length);
                 
                 // Update all stats
                 this.elements.solveTime.textContent = 
@@ -1114,6 +1089,31 @@
                 
                 this.elements.stats.style.display = 'block';
                 this.elements.timerOverlay.style.display = 'none';
+            }
+
+            calculateRating(totalTimeSeconds, wordLength) {
+                let thresholds = {};
+                
+                if (wordLength <= 4) {
+                    // Short words: 3-4 letters
+                    thresholds = { amazing: 10, good: 20, average: 30 };
+                } else if (wordLength <= 6) {
+                    // Medium words: 5-6 letters  
+                    thresholds = { amazing: 15, good: 30, average: 45 };
+                } else {
+                    // Long words: 7+ letters
+                    thresholds = { amazing: 20, good: 40, average: 60 };
+                }
+                
+                if (totalTimeSeconds < thresholds.amazing) {
+                    return 'Amazing! 🔥';
+                } else if (totalTimeSeconds < thresholds.good) {
+                    return 'Good! 👍';
+                } else if (totalTimeSeconds <= thresholds.average) {
+                    return 'Average 👌';
+                } else {
+                    return 'Keep Trying! 💪';
+                }
             }
 
             showMessage(text, type) {
