@@ -421,212 +421,464 @@
     {
       "id": 39,
       "image": "FREIGHTS -_ FIGHTERS[face,1].png",
-      "answer": "FIGHTERS"
+      "answer": "FIGHTERS",
+      "clickBox": {
+        "x": 73,
+        "y": 178,
+        "width": 36,
+        "height": 93
+      }
     },
     {
       "id": 40,
       "image": "FUSED -_ FEUDS[face,1].png",
-      "answer": "FEUDS"
+      "answer": "FEUDS",
+      "clickBox": {
+        "x": 751,
+        "y": 74,
+        "width": 61,
+        "height": 33
+      }
     },
     {
       "id": 41,
       "image": "GAS -_ SAG[face,1].png",
-      "answer": "SAG"
+      "answer": "SAG",
+      "clickBox": {
+        "x": 1023,
+        "y": 287,
+        "width": 23,
+        "height": 41
+      }
     },
     {
       "id": 42,
       "image": "GOLF -_ FLOG[face,1].png",
-      "answer": "FLOG"
+      "answer": "FLOG",
+      "clickBox": {
+        "x": 1022,
+        "y": 636,
+        "width": 24,
+        "height": 49
+      }
     },
     {
       "id": 43,
       "image": "GULP -_ PLUG[face,1].png",
-      "answer": "PLUG"
+      "answer": "PLUG",
+      "clickBox": {
+        "x": 1017,
+        "y": 539,
+        "width": 30,
+        "height": 53
+      }
     },
     {
       "id": 44,
       "image": "GUT -_ TUG[face,1].png",
-      "answer": "TUG"
+      "answer": "TUG",
+      "clickBox": {
+        "x": 79,
+        "y": 173,
+        "width": 26,
+        "height": 39
+      }
     },
     {
       "id": 45,
       "image": "HARDY -_ HYDRA[face,1].png",
-      "answer": "HYDRA"
+      "answer": "HYDRA",
+      "clickBox": {
+        "x": 1016,
+        "y": 178,
+        "width": 33,
+        "height": 71
+      }
     },
     {
       "id": 46,
       "image": "HIGHEST -_ HEIGHTS[face,1].png",
-      "answer": "HEIGHTS"
+      "answer": "HEIGHTS",
+      "clickBox": {
+        "x": 76,
+        "y": 316,
+        "width": 33,
+        "height": 82
+      }
     },
     {
       "id": 47,
       "image": "INCESSANT -_ INSTANCES[face,1].png",
-      "answer": "INSTANCES"
+      "answer": "INSTANCES",
+      "clickBox": {
+        "x": 547,
+        "y": 74,
+        "width": 100,
+        "height": 35
+      }
     },
     {
       "id": 48,
       "image": "KNOB -_ BONK[face,1].png",
-      "answer": "BONK"
+      "answer": "BONK",
+      "clickBox": {
+        "x": 971,
+        "y": 76,
+        "width": 62,
+        "height": 35
+      }
     },
     {
       "id": 49,
       "image": "LAID -_ DIAL[face,1].png",
-      "answer": "DIAL"
+      "answer": "DIAL",
+      "clickBox": {
+        "x": 859,
+        "y": 73,
+        "width": 49,
+        "height": 36
+      }
     },
     {
       "id": 50,
       "image": "LEPER -_ REPEL[face,1].png",
-      "answer": "REPEL"
+      "answer": "REPEL",
+      "clickBox": {
+        "x": 73,
+        "y": 479,
+        "width": 33,
+        "height": 59
+      }
     },
     {
       "id": 51,
       "image": "LESIONS -_ LIONESS[face,1].png",
-      "answer": "LIONESS"
+      "answer": "LIONESS",
+      "clickBox": {
+        "x": 372,
+        "y": 715,
+        "width": 79,
+        "height": 38
+      }
     },
     {
       "id": 52,
       "image": "LEVELER -_ RELEVEL[face,1].png",
-      "answer": "RELEVEL"
+      "answer": "RELEVEL",
+      "clickBox": {
+        "x": 467,
+        "y": 718,
+        "width": 82,
+        "height": 35
+      }
     },
     {
       "id": 53,
       "image": "LEVER -_ REVEL[face,1].png",
-      "answer": "REVEL"
+      "answer": "REVEL",
+      "clickBox": {
+        "x": 1017,
+        "y": 620,
+        "width": 32,
+        "height": 57
+      }
     },
     {
       "id": 54,
       "image": "LINKAGE -_ LEAKING[face,1].png",
-      "answer": "LEAKING"
+      "answer": "LEAKING",
+      "clickBox": {
+        "x": 392,
+        "y": 716,
+        "width": 84,
+        "height": 35
+      }
     },
     {
       "id": 55,
       "image": "LIVED -_ DEVIL[face,1].png",
-      "answer": "DEVIL"
+      "answer": "DEVIL",
+      "clickBox": {
+        "x": 920,
+        "y": 68,
+        "width": 61,
+        "height": 47
+      }
     },
     {
       "id": 56,
       "image": "LOOTER -_ RETOOL[face,1].png",
-      "answer": "RETOOL"
+      "answer": "RETOOL",
+      "clickBox": {
+        "x": 471,
+        "y": 71,
+        "width": 79,
+        "height": 38
+      }
     },
     {
       "id": 57,
       "image": "MAKINGS -_ MASKING[face,1].png",
-      "answer": "MASKING"
+      "answer": "MASKING",
+      "clickBox": {
+        "x": 946,
+        "y": 76,
+        "width": 84,
+        "height": 29
+      }
     },
     {
       "id": 58,
       "image": "MAPS -_ SPAM[face,1].png",
-      "answer": "SPAM"
+      "answer": "SPAM",
+      "clickBox": {
+        "x": 74,
+        "y": 296,
+        "width": 33,
+        "height": 58
+      }
     },
     {
       "id": 59,
       "image": "MARITAL -_ MARTIAL[face,1].png",
-      "answer": "MARTIAL"
+      "answer": "MARTIAL",
+      "clickBox": {
+        "x": 78,
+        "y": 250,
+        "width": 26,
+        "height": 86
+      }
     },
     {
       "id": 60,
       "image": "METRONOMES -_ MONOTREMES[face,1].png",
-      "answer": "MONOTREMES"
+      "answer": "MONOTREMES",
+      "clickBox": {
+        "x": 906,
+        "y": 73,
+        "width": 125,
+        "height": 35
+      }
     },
     {
       "id": 61,
       "image": "MISALIGNED -_ MISLEADING[face,1].png",
-      "answer": "MISLEADING"
+      "answer": "MISLEADING",
+      "clickBox": {
+        "x": 818,
+        "y": 77,
+        "width": 109,
+        "height": 30
+      }
     },
     {
       "id": 62,
       "image": "NAP -_ PAN[face,1].png",
-      "answer": "PAN"
+      "answer": "PAN",
+      "clickBox": {
+        "x": 175,
+        "y": 719,
+        "width": 43,
+        "height": 29
+      }
     },
     {
       "id": 63,
       "image": "NIP -_ PIN[face,1].png",
-      "answer": "PIN"
+      "answer": "PIN",
+      "clickBox": {
+        "x": 73,
+        "y": 158,
+        "width": 35,
+        "height": 41
+      }
     },
     {
       "id": 64,
       "image": "PATROLS -_ PORTALS[face,1].png",
-      "answer": "PORTALS"
+      "answer": "PORTALS",
+      "clickBox": {
+        "x": 76,
+        "y": 235,
+        "width": 30,
+        "height": 102
+      }
     },
     {
       "id": 65,
       "image": "PEEK -_ KEEP[face,1].png",
-      "answer": "KEEP"
+      "answer": "KEEP",
+      "clickBox": {
+        "x": 278,
+        "y": 718,
+        "width": 52,
+        "height": 33
+      }
     },
     {
       "id": 66,
       "image": "PEELS -_ SLEEP[face,1].png",
-      "answer": "SLEEP"
+      "answer": "SLEEP",
+      "clickBox": {
+        "x": 76,
+        "y": 357,
+        "width": 30,
+        "height": 62
+      }
     },
     {
       "id": 67,
       "image": "PEES -_ SEEP[face,1].png",
-      "answer": "SEEP"
+      "answer": "SEEP",
+      "clickBox": {
+        "x": 76,
+        "y": 225,
+        "width": 30,
+        "height": 53
+      }
     },
     {
       "id": 68,
       "image": "PENALTIES -_ PALESTINE[face,1].png",
-      "answer": "PALESTINE"
+      "answer": "PALESTINE",
+      "clickBox": {
+        "x": 1014,
+        "y": 361,
+        "width": 35,
+        "height": 100
+      }
     },
     {
       "id": 69,
       "image": "PLUGINS -_ PULSING[face,1].png",
-      "answer": "PULSING"
+      "answer": "PULSING",
+      "clickBox": {
+        "x": 877,
+        "y": 74,
+        "width": 85,
+        "height": 36
+      }
     },
     {
       "id": 70,
       "image": "PORTRAYED -_ PREDATORY[face,1].png",
-      "answer": "PREDATORY"
+      "answer": "PREDATORY",
+      "clickBox": {
+        "x": 307,
+        "y": 73,
+        "width": 102,
+        "height": 33
+      }
     },
     {
       "id": 71,
       "image": "POT -_ TOP[face,1].png",
-      "answer": "TOP"
+      "answer": "TOP",
+      "clickBox": {
+        "x": 494,
+        "y": 70,
+        "width": 46,
+        "height": 41
+      }
     },
     {
       "id": 72,
       "image": "PRODUCER -_ PROCURED[face,1].png",
-      "answer": "PROCURED"
+      "answer": "PROCURED",
+      "clickBox": {
+        "x": 76,
+        "y": 549,
+        "width": 33,
+        "height": 102
+      }
     },
     {
       "id": 73,
       "image": "PROTEINS -_ POINTERS[face,1].png",
-      "answer": "POINTERS"
+      "answer": "POINTERS",
+      "clickBox": {
+        "x": 79,
+        "y": 176,
+        "width": 29,
+        "height": 99
+      }
     },
     {
       "id": 74,
       "image": "RAW -_ WAR[face,1].png",
-      "answer": "WAR"
+      "answer": "WAR",
+      "clickBox": {
+        "x": 902,
+        "y": 76,
+        "width": 46,
+        "height": 35
+      }
     },
     {
       "id": 75,
       "image": "REED -_ DEER[face,1].png",
-      "answer": "DEER"
+      "answer": "DEER",
+      "clickBox": {
+        "x": 71,
+        "y": 185,
+        "width": 41,
+        "height": 59
+      }
     },
     {
       "id": 76,
       "image": "REGISTRANT -_ RESTARTING[face,1].png",
-      "answer": "RESTARTING"
+      "answer": "RESTARTING",
+      "clickBox": {
+        "x": 73,
+        "y": 311,
+        "width": 38,
+        "height": 114
+      }
     },
     {
       "id": 77,
       "image": "RELEASED -_ RESEALED[face,1].png",
-      "answer": "RESEALED"
+      "answer": "RESEALED",
+      "clickBox": {
+        "x": 503,
+        "y": 76,
+        "width": 97,
+        "height": 30
+      }
     },
     {
       "id": 78,
       "image": "RELEVEL -_ LEVELER[face,1].png",
-      "answer": "LEVELER"
+      "answer": "LEVELER",
+      "clickBox": {
+        "x": 1017,
+        "y": 651,
+        "width": 35,
+        "height": 79
+      }
     },
     {
       "id": 79,
       "image": "RENNET -_ TENNER[face,1].png",
-      "answer": "TENNER"
+      "answer": "TENNER",
+      "clickBox": {
+        "x": 377,
+        "y": 76,
+        "width": 81,
+        "height": 36
+      }
     },
     {
       "id": 80,
       "image": "REPEL -_ LEPER[face,1].png",
-      "answer": "LEPER"
+      "answer": "LEPER",
+      "clickBox": {
+        "x": 639,
+        "y": 76,
+        "width": 64,
+        "height": 32
+      }
     },
     {
       "id": 81,
