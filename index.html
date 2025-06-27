@@ -969,9 +969,6 @@
                 setTimeout(() => {
                     this.positionClickArea(clickArea, box);
                     
-                    // Add visual debug border to make click area visible during testing
-                    clickArea.style.border = '2px solid rgba(255, 0, 0, 0.5)';
-                    clickArea.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
                     
                     clickArea.addEventListener('click', (e) => {
                         e.stopPropagation();
