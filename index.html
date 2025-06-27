@@ -610,7 +610,7 @@
 
             navigateToDay(offset) {
                 this.currentDateOffset = offset;
-                this.resetGame();
+                this.resetGameQuiet();
             }
 
             initializeGame() {
@@ -712,6 +712,74 @@
                 this.elements.loading.style.display = 'block';
                 this.elements.gameContent.style.display = 'none';
                 this.initializeGame();
+            }
+
+            resetGameQuiet() {
+                this.gameState = 'loading';
+                this.startTime = null;
+                this.wrongClicks = 0;
+                this.penaltyTime = 0;
+                
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+
+                const existingClickArea = document.querySelector('.click-area');
+                if (existingClickArea) {
+                    existingClickArea.remove();
+                }
+
+                this.elements.answerInput.value = '';
+                this.elements.message.style.display = 'none';
+                this.elements.stats.style.display = 'none';
+                this.elements.inputSection.style.display = 'block';
+                this.elements.timerOverlay.style.display = 'none';
+                this.elements.puzzleImage.classList.add('cropped');
+                this.elements.puzzleImage.style.filter = 'none';
+
+                const oldImage = this.elements.puzzleImage;
+                const newImage = oldImage.cloneNode(true);
+                oldImage.parentNode.replaceChild(newImage, oldImage);
+                this.elements.puzzleImage = newImage;
+
+                // Skip showing loading screen for navigation
+                this.initializeGameQuiet();
+            }
+
+            initializeGameQuiet() {
+                this.currentPuzzle = this.getPuzzleForDate(this.currentDateOffset);
+                this.updateDateDisplay();
+
+                // Reset all game state elements to initial state
+                this.gameState = 'input';
+                this.startTime = null;
+                this.wrongClicks = 0;
+                this.penaltyTime = 0;
+                
+                if (this.timerInterval) {
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+                }
+
+                // Remove any existing click areas
+                const existingClickArea = document.querySelector('.click-area');
+                if (existingClickArea) {
+                    existingClickArea.remove();
+                }
+
+                // Reset UI elements to initial state
+                this.elements.answerInput.value = '';
+                this.elements.message.style.display = 'none';
+                this.elements.stats.style.display = 'none';
+                this.elements.inputSection.style.display = 'block';
+                this.elements.timerOverlay.style.display = 'none';
+                this.elements.puzzleImage.classList.add('cropped');
+                this.elements.puzzleImage.style.filter = 'none';
+
+                this.elements.puzzleImage.src = `images/${this.currentPuzzle.image}`;
+                // No loading screen - direct transition
+                this.elements.gameContent.style.display = 'block';
             }
 
             checkAnswer() {
