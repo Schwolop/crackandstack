@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Updated: 2025-06-28 13:30 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -102,13 +103,14 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -65%);
             background: white;
             color: black;
-            padding: 40px 50px;
+            padding: 45px 50px 35px 50px;
             border-radius: 19px;
             font-size: 2.5em;
             font-weight: bold;
+            line-height: 1;
             display: none;
             z-index: 10;
             width: 82.5%;
@@ -392,7 +394,8 @@
         .landscape-hint {
             position: absolute;
             top: 10px;
-            right: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 8px 12px;
@@ -464,14 +467,9 @@
             }
         }
         
-        @media (max-width: 600px) and (orientation: portrait) {
-            .landscape-hint {
-                display: block;
-            }
-        }
         
         @media (max-width: 600px) {
-            footer {
+            .mobile-attribution {
                 display: block !important;
             }
         }
@@ -516,7 +514,10 @@
                 <img class="puzzle-image cropped" id="puzzle-image" alt="Crack and Stack - Daily Puzzle">
                 <div class="timer-overlay" id="timer-overlay">00:00</div>
                 <div class="message" id="message"></div>
-                <div class="landscape-hint" id="landscape-hint"><img src="assets/phone-rotate.svg" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;">Rotate for better view</div>
+                <div class="landscape-hint" id="landscape-hint">
+                    <img src="assets/noun-phone-rotate-7769061.png" style="width: 80%; height: auto; display: block; margin: 0 auto 4px auto;">
+                    <div style="font-size: 0.8em;">Rotate for better view</div>
+                </div>
             </div>
 
             <div class="input-section" id="input-section">
@@ -568,11 +569,11 @@
             <div class="game-controls" id="game-controls" style="display: none;">
             </div>
         </div>
+        
+        <div class="mobile-attribution" style="display: none; text-align: center; margin-top: 20px; padding: 10px; font-size: 0.7em; color: #999;">
+            Phone Rotate by Arkinasi from <a href="https://thenounproject.com/browse/icons/term/phone-rotate/" target="_blank" title="Phone Rotate Icons" style="color: #999;">Noun Project</a> (CC BY 3.0)
+        </div>
     </div>
-    
-    <footer style="position: fixed; bottom: 5px; right: 5px; font-size: 0.7em; color: #999; z-index: 1000; display: none;">
-        Phone Rotate by Arkinasi from <a href="https://thenounproject.com/browse/icons/term/phone-rotate/" target="_blank" title="Phone Rotate Icons" style="color: #999;">Noun Project</a> (CC BY 3.0)
-    </footer>
 
     <script>
         class CrackAndStackGame {
@@ -975,13 +976,13 @@
                 this.elements.puzzleImage.classList.remove('cropped');
                 this.elements.inputSection.style.display = 'none';
                 
-                // Show landscape hint on mobile portrait during searching phase
-                this.showLandscapeHintIfNeeded();
                 
                 setTimeout(() => {
                     console.log('Starting timer and creating clickable area');
                     this.startTimer();
                     this.createClickableArea();
+                    // Show landscape hint on mobile portrait after revealing full image
+                    this.showLandscapeHintIfNeeded();
                     // Show blue instruction message after 10 seconds if no action
                     this.instructionTimeout = setTimeout(() => {
                         this.showMessage('Click on the correct answer word in the border!', 'info');
@@ -1225,6 +1226,38 @@
                 // Only show on mobile devices in portrait mode during searching phase
                 if (window.innerWidth <= 600 && window.innerHeight > window.innerWidth && this.gameState === 'searching') {
                     this.elements.landscapeHint.style.display = 'block';
+                    
+                    // Auto-hide after 10 seconds
+                    setTimeout(() => {
+                        this.hideLandscapeHint();
+                    }, 10000);
+                    
+                    // Hide on any tap/click
+                    const hideOnTouch = () => {
+                        this.hideLandscapeHint();
+                        document.removeEventListener('click', hideOnTouch);
+                        document.removeEventListener('touchstart', hideOnTouch);
+                        window.removeEventListener('orientationchange', hideOnOrientationChange);
+                        window.removeEventListener('resize', hideOnOrientationChange);
+                    };
+                    
+                    // Hide when device is rotated to landscape
+                    const hideOnOrientationChange = () => {
+                        setTimeout(() => {
+                            if (window.innerWidth > window.innerHeight) {
+                                this.hideLandscapeHint();
+                                window.removeEventListener('orientationchange', hideOnOrientationChange);
+                                window.removeEventListener('resize', hideOnOrientationChange);
+                                document.removeEventListener('click', hideOnTouch);
+                                document.removeEventListener('touchstart', hideOnTouch);
+                            }
+                        }, 100);
+                    };
+                    
+                    document.addEventListener('click', hideOnTouch);
+                    document.addEventListener('touchstart', hideOnTouch);
+                    window.addEventListener('orientationchange', hideOnOrientationChange);
+                    window.addEventListener('resize', hideOnOrientationChange);
                 }
             }
             
