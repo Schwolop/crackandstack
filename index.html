@@ -227,7 +227,7 @@
             align-items: center;
         }
 
-        .stats-row:last-child {
+        .stats-row-last {
             margin-bottom: 0;
             grid-template-columns: 2fr 2fr;
         }
@@ -434,12 +434,18 @@
                 gap: 15px;
             }
             
-            .stats-row:last-child {
+            .stats-row-last {
                 grid-template-columns: 1fr;
             }
             
+            .stats-row-last .stat-item {
+                grid-column: 1;
+                margin-bottom: 15px;
+            }
+            
             .penalty-item {
-                grid-column: span 1;
+                grid-column: span 2;
+                text-align: center;
             }
             
             .stat-item {
@@ -475,6 +481,41 @@
         }
         
         
+        .toast-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 1.1em;
+            z-index: 9999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: none;
+            text-align: center;
+            max-width: 90%;
+            cursor: pointer;
+            /* Force above everything on mobile */
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 600px) {
+            .toast-notification {
+                z-index: 99999;
+                top: 50vh;
+                font-size: 1.2em;
+                padding: 25px 35px;
+                max-width: 85%;
+                border-width: 2px;
+            }
+        }
+
         @media (max-width: 600px) {
             .mobile-attribution {
                 display: block !important;
@@ -561,7 +602,7 @@
                         <div class="stat-label">Wrong Clicks</div>
                     </div>
                 </div>
-                <div class="stats-row">
+                <div class="stats-row stats-row-last">
                     <div class="stat-item">
                         <div class="stat-value" id="overall-time">--:--</div>
                         <div class="stat-label">Total Time</div>
@@ -571,6 +612,9 @@
                         <div class="stat-label">Rating</div>
                     </div>
                 </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <button class="check-button" id="share-score" style="display: inline-block; margin: 0;">📋 Share My Score</button>
+                </div>
             </div>
 
             <div class="game-controls" id="game-controls" style="display: none;">
@@ -578,9 +622,11 @@
         </div>
         
         <div class="mobile-attribution" style="display: none; text-align: center; margin-top: 20px; padding: 10px; font-size: 0.7em; color: #999;">
-            Phone Rotate by Arkinasi from <a href="https://thenounproject.com/browse/icons/term/phone-rotate/" target="_blank" title="Phone Rotate Icons" style="color: #999;">Noun Project</a> (CC BY 3.0)
+            Phone Rotate icon by Arkinasi from <a href="https://thenounproject.com/browse/icons/term/phone-rotate/" target="_blank" title="Phone Rotate Icons" style="color: #999;">Noun Project</a> (CC BY 3.0)
         </div>
     </div>
+
+    <div class="toast-notification" id="toast-notification"></div>
 
     <script>
         class CrackAndStackGame {
@@ -640,6 +686,7 @@
                     penaltyDisplay: document.getElementById('penalty-display'),
                     overallTime: document.getElementById('overall-time'),
                     performanceRating: document.getElementById('performance-rating'),
+                    shareScore: document.getElementById('share-score'),
                     gameControls: document.getElementById('game-controls'),
                     prevDay: document.getElementById('prev-day'),
                     today: document.getElementById('today'),
@@ -655,7 +702,8 @@
                     bboxExit: document.getElementById('bbox-exit'),
                     instructionsOverlay: document.getElementById('instructions-overlay'),
                     startGame: document.getElementById('start-game'),
-                    landscapeHint: document.getElementById('landscape-hint')
+                    landscapeHint: document.getElementById('landscape-hint'),
+                    toastNotification: document.getElementById('toast-notification')
                 };
 
                 this.setupEventListeners();
@@ -675,6 +723,7 @@
                 this.elements.prevDay.addEventListener('click', () => this.navigateToDay(this.currentDateOffset - 1));
                 this.elements.today.addEventListener('click', () => this.navigateToDay(0));
                 this.elements.nextDay.addEventListener('click', () => this.navigateToDay(this.currentDateOffset + 1));
+                this.elements.shareScore.addEventListener('click', () => this.shareScore());
                 
                 // Bounding box mode event listeners
                 this.elements.bboxMode.addEventListener('click', () => this.enterBboxMode());
@@ -1167,6 +1216,7 @@
                 
                 // Calculate correct total time: solve time + search time + penalty time
                 const totalTime = this.solveTime + searchTime + this.penaltyTime;
+                this.totalTime = totalTime; // Store for sharing
                 const totalMinutes = Math.floor(totalTime / 60000);
                 const totalSeconds = Math.floor((totalTime % 60000) / 1000);
                 const totalTimeSeconds = Math.floor(totalTime / 1000);
@@ -1187,6 +1237,41 @@
                 
                 this.elements.stats.style.display = 'block';
                 this.elements.timerOverlay.style.display = 'none';
+            }
+
+            shareScore() {
+                // Show toast first
+                this.showToast('Score copied to clipboard! 📋');
+                
+                const totalSeconds = Math.floor(this.totalTime / 1000);
+                
+                const bragText = `I solved today's Crack and Stack puzzle in ${totalSeconds} seconds! Try to beat my score at https://tinyurl.com/crackandstack`;
+                
+                navigator.clipboard.writeText(bragText).then(() => {
+                    // Don't show another toast since we already showed one
+                }).catch(err => {
+                    console.error('Failed to copy to clipboard:', err);
+                    // Could show error toast here if needed
+                });
+            }
+
+            showToast(message) {
+                const toast = this.elements.toastNotification;
+                toast.textContent = message;
+                toast.style.display = 'block';
+                
+                // Auto-hide after 5 seconds
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 5000);
+                
+                // Hide on click
+                const hideOnClick = () => {
+                    toast.style.display = 'none';
+                    toast.removeEventListener('click', hideOnClick);
+                };
+                
+                toast.addEventListener('click', hideOnClick);
             }
 
             calculateRating(totalTimeSeconds, wordLength) {
