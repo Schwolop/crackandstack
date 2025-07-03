@@ -575,7 +575,7 @@
 
             <div class="bbox-info" id="bbox-info" style="display: none;">
                 <strong>Bounding Box Definition Mode</strong><br>
-                Puzzle: <span id="bbox-puzzle-name"></span> → <span id="bbox-answer"></span><br>
+                Answer: <span id="bbox-answer"></span><br>
                 Progress: <span id="bbox-progress"></span><br>
                 <em>Drag from top-left to bottom-right around the answer word in the border</em>
             </div>
@@ -693,7 +693,6 @@
                     nextDay: document.getElementById('next-day'),
                     bboxMode: document.getElementById('bbox-mode'),
                     bboxInfo: document.getElementById('bbox-info'),
-                    bboxPuzzleName: document.getElementById('bbox-puzzle-name'),
                     bboxAnswer: document.getElementById('bbox-answer'),
                     bboxProgress: document.getElementById('bbox-progress'),
                     bboxControls: document.getElementById('bbox-controls'),
@@ -746,7 +745,7 @@
 
             async loadPuzzles() {
                 try {
-                    const response = await fetch('puzzles.json');
+                    const response = await fetch(`puzzles.json?v=${Date.now()}`);
                     if (!response.ok) {
                         throw new Error(`Failed to load puzzles: ${response.status}`);
                     }
@@ -893,7 +892,7 @@
                 const puzzle = this.puzzles[puzzleIndex];
                 
                 // Debug logging to track current puzzle
-                console.log('📅 Current puzzle:', puzzle.answer, '| Day offset:', dayOffset, '| Puzzle index:', puzzleIndex);
+                console.log('📅 Current puzzle:', puzzle.answer, '| Day offset:', dayOffset, '| Puzzle index:', puzzleIndex, 'Puzzle Type: ', puzzle.type);
                 
                 return puzzle;
             }
@@ -1240,18 +1239,43 @@
             }
 
             shareScore() {
-                // Show toast first
-                this.showToast('Score copied to clipboard! 📋');
-                
                 const totalSeconds = Math.floor(this.totalTime / 1000);
+                const puzzleType = this.currentPuzzle.type;
                 
-                const bragText = `I solved today's Crack and Stack puzzle in ${totalSeconds} seconds! Try to beat my score at https://tinyurl.com/crackandstack`;
+                // Format time display
+                let timeText;
+                if (totalSeconds < 60) {
+                    timeText = `${totalSeconds} seconds`;
+                } else {
+                    const minutes = Math.floor(totalSeconds / 60);
+                    const seconds = totalSeconds % 60;
+                    timeText = `${minutes}m${seconds}s`;
+                }
+                
+                // Format date text based on currentDateOffset
+                let dateText;
+                if (this.currentDateOffset === 0) {
+                    dateText = "today's";
+                } else {
+                    const targetDate = new Date();
+                    targetDate.setDate(targetDate.getDate() + this.currentDateOffset);
+                    const day = targetDate.getDate();
+                    const month = targetDate.toLocaleDateString('en-US', { month: 'short' });
+                    const year = targetDate.getFullYear();
+                    dateText = `the ${day} ${month} ${year}`;
+                }
+                
+                // Choose emoji based on puzzle type
+                const typeEmoji = puzzleType === 'semordnilap' ? '🔄' : '🔤';
+                const typeText = puzzleType === 'semordnilap' ? 'SEMORDNILAP' : 'ANAGRAM';
+                
+                const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡ (Puzzle ID: ${this.currentPuzzle.id})`;
                 
                 navigator.clipboard.writeText(bragText).then(() => {
-                    // Don't show another toast since we already showed one
+                    this.showToast('Score copied to clipboard! 📋');
                 }).catch(err => {
                     console.error('Failed to copy to clipboard:', err);
-                    // Could show error toast here if needed
+                    this.showToast('Failed to copy to clipboard');
                 });
             }
 
@@ -1400,7 +1424,6 @@
                 const puzzle = this.bboxPuzzles[this.bboxCurrentIndex];
                 
                 // Update UI
-                this.elements.bboxPuzzleName.textContent = puzzle.image.split(' -_ ')[0];
                 this.elements.bboxAnswer.textContent = puzzle.answer;
                 this.elements.bboxProgress.textContent = `${this.bboxCurrentIndex + 1} of ${this.bboxPuzzles.length}`;
                 
