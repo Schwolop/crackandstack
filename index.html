@@ -1269,7 +1269,7 @@
                 const typeEmoji = puzzleType === 'semordnilap' ? '🔄' : '🔤';
                 const typeText = puzzleType === 'semordnilap' ? 'SEMORDNILAP' : 'ANAGRAM';
                 
-                const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡ (Puzzle ID: ${this.currentPuzzle.id})`;
+                const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡`;
                 
                 navigator.clipboard.writeText(bragText).then(() => {
                     this.showToast('Score copied to clipboard! 📋');
