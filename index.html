@@ -333,10 +333,10 @@
         }
 
         .card-icon {
-            height: 32px;
-            width: auto;
-            vertical-align: baseline;
-            transform: translateY(10px);
+            height: auto;
+            width: 48px;
+            vertical-align: middle;
+            
             display: inline-block;
         }
 
@@ -527,15 +527,23 @@
     <div class="instructions-overlay" id="instructions-overlay">
         <div class="instructions-panel">
             <h2>Welcome to Crack and Stack!</h2>
-            <p>Crack and Stack is an upcoming card game from <strong>Triple Point Publishing</strong>. This game lets you solve its puzzle cards and then race to find the solution hidden in the card's border.</p>
+            <p>Crack and Stack is an upcoming card game from <strong>Triple Point Publishing</strong>. This website lets you solve its puzzle cards and then race to find the solution hidden in the card's border. Find out more at <a href="https://www.triplepointpublishing.com.au">www.triplepointpublishing.com.au</a></p>
             
-            <p>There are two types of puzzle cards:</p>
+            <p>There are six types of puzzle cards:</p>
             
-            <p><strong>Semordnilaps</strong> use this symbol: <span class="card-type"><img src="assets/simply_reverse_symbol.png" class="card-icon" alt="Semordnilap symbol"></span> and require you to spell the clue word backwards to get the answer.</p>
+            <p><strong>Reversible Words</strong> cards use this symbol: <span class="card-type"><img src="assets/semordnilap_symbol.png" class="card-icon" alt="Semordnilap symbol"></span> and require you to spell the clue word backwards to get the answer.</p>
             
-            <p><strong>Anagrams</strong> use this symbol: <span class="card-type"><img src="assets/anagram_symbol.png" class="card-icon" alt="Anagram symbol"></span> and require you to find the ONE valid anagram of the clue word. The anagram will always start with the same letter as the clue.</p>
-            
-            <p>Once you've typed in the solution (and got it right!) the border will be revealed. Try to find the hidden answer as fast as you can!</p>
+            <p><strong>Anagrams</strong> cards use this symbol: <span class="card-type"><img src="assets/anagram_symbol.png" class="card-icon" alt="Anagram symbol"></span> and require you to find the ONE valid anagram of the clue word. The anagram will always start with the same letter as the clue.</p>
+
+            <p><strong>Simple Maths</strong> cards use this symbol: <span class="card-type"><img src="assets/simple_maths_symbol.png" class="card-icon" alt="Simple Maths symbol"></span> and require you to enter the answer to the mathematic equation.</p>
+
+            <p><strong>Complex Maths</strong> cards use this symbol: <span class="card-type"><img src="assets/complex_maths_symbol.png" class="card-icon" alt="Complex Maths symbol"></span> and require you to enter the answer to the mathematic equation or the missing value in a sequence.</p>
+
+            <p><strong>Simple Memory</strong> cards use this symbol: <span class="card-type"><img src="assets/simple_memory_symbol.png" class="card-icon" alt="Simple Memory symbol"></span> and require you to type the colour and shapes from left to right, like "Red Square Blue Triangle". The words on the card give you the answer, so these are pretty easy... :-)</p>
+
+            <p><strong>Complex Maths</strong> cards use this symbol: <span class="card-type"><img src="assets/complex_memory_symbol.png" class="card-icon" alt="Complex Memory symbol"></span> and require you to type the colour and shapes from left to right, like "Yellow Circle Blue Square". But the words on the card are WRONG, so don't get confused! :-P<br></br>
+
+            (Capitalisation and punctuation are ignored.)</p>
             
             <button class="instructions-button" id="start-game">Start Playing!</button>
         </div>
@@ -569,7 +577,7 @@
             </div>
 
             <div class="input-section" id="input-section">
-                <input type="text" class="answer-input" id="answer-input" placeholder="Enter your answer..." maxlength="20">
+                <input type="text" class="answer-input" id="answer-input" placeholder="Enter your answer..." maxlength="50">
                 <button class="check-button" id="check-button">Check Answer</button>
             </div>
 
@@ -1009,7 +1017,7 @@
             checkAnswer() {
                 if (this.gameState !== 'input') return;
 
-                const userAnswer = this.elements.answerInput.value.trim().toUpperCase();
+                const userAnswer = this.elements.answerInput.value.trim().replace(/[^A-Z0-9]/g, '').toUpperCase();
                 if (!userAnswer) {
                     this.showMessage('Please enter an answer first!', 'error');
                     return;
@@ -1266,8 +1274,27 @@
                 }
                 
                 // Choose emoji based on puzzle type
-                const typeEmoji = puzzleType === 'semordnilap' ? '🔄' : '🔤';
-                const typeText = puzzleType === 'semordnilap' ? 'SEMORDNILAP' : 'ANAGRAM';
+                const typeEmoji = '🎲';
+                const typeText = 'PUZZLE';
+                if (puzzleType === 'semordnilap') {
+                    typeEmoji = '🔄';
+                    typeText = 'SEMORDNILAP';
+                } else if (puzzleType === 'anagram') {
+                    typeEmoji = '🔤';
+                    typeText = 'ANAGRAM';
+                } else if (puzzleType === 'simple_memory') {
+                    typeEmoji = '✅';
+                    typeText = 'SIMPLE MEMORY';
+                } else if (puzzleType === 'complex_memory') {
+                    typeEmoji = '🤔';
+                    typeText = 'COMPLEX MEMORY';
+                } else if (puzzleType === 'simple_memory') {
+                    typeEmoji = '🔢';
+                    typeText = 'SIMPLE MATHS';
+                } else if (puzzleType === 'complex_memory') {
+                    typeEmoji = '😳';
+                    typeText = 'COMPLEX MATHS';
+                }
                 
                 const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡`;
                 

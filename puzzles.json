@@ -2,1298 +2,1298 @@
   "puzzles": [
     {
       "id": 1,
-      "image": "CIRCLE -_ CLERIC[face,1].png",
-      "answer": "CLERIC",
-      "type": "anagram",
+      "image": "Maths1__11_-_6_5[face,1].jpg",
+      "answer": "5",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 847,
-        "y": 70,
-        "width": 64,
-        "height": 33
+        "x": 62,
+        "y": 117,
+        "width": 61,
+        "height": 50
       }
     },
     {
       "id": 2,
-      "image": "BARD -_ DRAB[face,1].png",
-      "answer": "DRAB",
-      "type": "semordnilap",
+      "image": "Maths1__15___8_23[face,1].jpg",
+      "answer": "23",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 69,
-        "y": 194,
-        "width": 36,
-        "height": 52
+        "x": 631,
+        "y": 67,
+        "width": 62,
+        "height": 42
       }
     },
     {
       "id": 3,
-      "image": "CONVERSATION -_ CONSERVATION[face,1].png",
-      "answer": "CONSERVATION",
-      "type": "anagram",
-      "clickBox": {
-        "x": 1017,
-        "y": 336,
-        "width": 41,
-        "height": 135
-      }
-    },
-    {
-      "id": 4,
-      "image": "BINARY -_ BRAINY[face,1].png",
-      "answer": "BRAINY",
-      "type": "anagram",
-      "clickBox": {
-        "x": 833,
-        "y": 71,
-        "width": 67,
-        "height": 36
-      }
-    },
-    {
-      "id": 5,
-      "image": "BLUSHES -_ BUSHELS[face,1].png",
-      "answer": "BUSHELS",
-      "type": "anagram",
-      "clickBox": {
-        "x": 1025,
-        "y": 320,
-        "width": 42,
-        "height": 160
-      }
-    },
-    {
-      "id": 6,
-      "image": "DAM -_ MAD[face,1].png",
-      "answer": "MAD",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 79,
-        "y": 179,
-        "width": 26,
-        "height": 44
-      }
-    },
-    {
-      "id": 7,
-      "image": "CARVED -_ CRAVED[face,1].png",
-      "answer": "CRAVED",
-      "type": "anagram",
-      "clickBox": {
-        "x": 657,
-        "y": 719,
-        "width": 67,
-        "height": 27
-      }
-    },
-    {
-      "id": 8,
-      "image": "CHASED -_ CASHED[face,1].png",
-      "answer": "CASHED",
-      "type": "anagram",
-      "clickBox": {
-        "x": 1019,
-        "y": 657,
-        "width": 30,
-        "height": 74
-      }
-    },
-    {
-      "id": 9,
-      "image": "COAGULATING -_ CATALOGUING[face,1].png",
-      "answer": "CATALOGUING",
-      "type": "anagram",
-      "clickBox": {
-        "x": 1019,
-        "y": 255,
-        "width": 30,
-        "height": 121
-      }
-    },
-    {
-      "id": 10,
-      "image": "COOLNESS -_ CONSOLES[face,1].png",
-      "answer": "CONSOLES",
-      "type": "anagram",
-      "clickBox": {
-        "x": 584,
-        "y": 74,
-        "width": 91,
-        "height": 38
-      }
-    },
-    {
-      "id": 11,
-      "image": "CRUELTY -_ CUTLERY[face,1].png",
-      "answer": "CUTLERY",
-      "type": "anagram",
-      "clickBox": {
-        "x": 541,
-        "y": 718,
-        "width": 78,
-        "height": 30
-      }
-    },
-    {
-      "id": 12,
-      "image": "CURED -_ CRUDE[face,1].png",
-      "answer": "CRUDE",
-      "type": "anagram",
-      "clickBox": {
-        "x": 76,
-        "y": 381,
-        "width": 30,
-        "height": 64
-      }
-    },
-    {
-      "id": 13,
-      "image": "DECAF -_ FACED[face,1].png",
-      "answer": "FACED",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 1017,
-        "y": 554,
-        "width": 32,
-        "height": 61
-      }
-    },
-    {
-      "id": 14,
-      "image": "DECANTED -_ DECADENT[face,1].png",
-      "answer": "DECADENT",
-      "type": "anagram",
+      "image": "Maths1__18___7_25[face,1].jpg",
+      "answer": "25",
+      "type": "simple_maths",
       "clickBox": {
         "x": 1012,
-        "y": 352,
-        "width": 36,
-        "height": 105
-      }
-    },
-    {
-      "id": 15,
-      "image": "DEEP -_ PEED[face,1].png",
-      "answer": "PEED",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 1017,
-        "y": 302,
-        "width": 32,
-        "height": 59
-      }
-    },
-    {
-      "id": 16,
-      "image": "DEEPS -_ SPEED[face,1].png",
-      "answer": "SPEED",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 521,
-        "y": 76,
-        "width": 70,
-        "height": 32
-      }
-    },
-    {
-      "id": 17,
-      "image": "DELIVER -_ REVILED[face,1].png",
-      "answer": "REVILED",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 667,
-        "y": 71,
-        "width": 76,
-        "height": 38
-      }
-    },
-    {
-      "id": 18,
-      "image": "DENSITY -_ DESTINY[face,1].png",
-      "answer": "DESTINY",
-      "type": "anagram",
-      "clickBox": {
-        "x": 385,
-        "y": 718,
-        "width": 81,
-        "height": 30
-      }
-    },
-    {
-      "id": 19,
-      "image": "DESSERTS -_ STRESSED[face,1].png",
-      "answer": "STRESSED",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 179,
-        "y": 76,
-        "width": 91,
-        "height": 32
-      }
-    },
-    {
-      "id": 20,
-      "image": "DEVIL -_ LIVED[face,1].png",
-      "answer": "LIVED",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 774,
-        "y": 80,
-        "width": 52,
-        "height": 24
-      }
-    },
-    {
-      "id": 21,
-      "image": "DISCOUNTED -_ DEDUCTIONS[face,1].png",
-      "answer": "DEDUCTIONS",
-      "type": "anagram",
-      "clickBox": {
-        "x": 271,
-        "y": 77,
-        "width": 114,
-        "height": 32
-      }
-    },
-    {
-      "id": 22,
-      "image": "DISCRETION -_ DIRECTIONS[face,1].png",
-      "answer": "DIRECTIONS",
-      "type": "anagram",
-      "clickBox": {
-        "x": 81,
-        "y": 498,
-        "width": 21,
-        "height": 105
-      }
-    },
-    {
-      "id": 23,
-      "image": "DIVA -_ AVID[face,1].png",
-      "answer": "AVID",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 78,
-        "y": 96,
-        "width": 27,
+        "y": 282,
+        "width": 40,
         "height": 52
       }
     },
     {
-      "id": 24,
-      "image": "DOG -_ GOD[face,1].png",
-      "answer": "GOD",
-      "type": "semordnilap",
+      "id": 4,
+      "image": "Maths1__20___13_33[face,1].jpg",
+      "answer": "33",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 79,
-        "y": 208,
-        "width": 24,
+        "x": 429,
+        "y": 68,
+        "width": 56,
+        "height": 39
+      }
+    },
+    {
+      "id": 5,
+      "image": "Maths1__21___13_34[face,1].jpg",
+      "answer": "34",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 404,
+        "y": 70,
+        "width": 65,
+        "height": 39
+      }
+    },
+    {
+      "id": 6,
+      "image": "Maths1__23_-_11_12[face,1].jpg",
+      "answer": "12",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 71,
+        "y": 228,
+        "width": 40,
         "height": 49
       }
     },
     {
-      "id": 25,
-      "image": "DON -_ NOD[face,1].png",
-      "answer": "NOD",
-      "type": "semordnilap",
+      "id": 7,
+      "image": "Maths1__29_-_16_13[face,1].jpg",
+      "answer": "13",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 79,
-        "y": 536,
-        "width": 26,
-        "height": 44
-      }
-    },
-    {
-      "id": 26,
-      "image": "DOOM -_ MOOD[face,1].png",
-      "answer": "MOOD",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 470,
-        "y": 715,
-        "width": 61,
-        "height": 36
-      }
-    },
-    {
-      "id": 27,
-      "image": "DRAW -_ WARD[face,1].png",
-      "answer": "WARD",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 1016,
-        "y": 354,
-        "width": 36,
-        "height": 62
-      }
-    },
-    {
-      "id": 28,
-      "image": "DYING -_ DINGY[face,1].png",
-      "answer": "DINGY",
-      "type": "anagram",
-      "clickBox": {
-        "x": 1016,
-        "y": 507,
-        "width": 32,
-        "height": 67
-      }
-    },
-    {
-      "id": 29,
-      "image": "ENDURES -_ ENSURED[face,1].png",
-      "answer": "ENSURED",
-      "type": "anagram",
-      "clickBox": {
-        "x": 79,
-        "y": 490,
-        "width": 26,
-        "height": 83
-      }
-    },
-    {
-      "id": 30,
-      "image": "ETERNITY -_ ENTIRETY[face,1].png",
-      "answer": "ENTIRETY",
-      "type": "anagram",
-      "clickBox": {
-        "x": 342,
-        "y": 74,
-        "width": 102,
-        "height": 36
-      }
-    },
-    {
-      "id": 31,
-      "image": "EXCEPTING -_ EXPECTING[face,1].png",
-      "answer": "EXPECTING",
-      "type": "anagram",
-      "clickBox": {
-        "x": 730,
-        "y": 79,
-        "width": 108,
-        "height": 27
-      }
-    },
-    {
-      "id": 32,
-      "image": "EXITS -_ EXIST[face,1].png",
-      "answer": "EXIST",
-      "type": "anagram",
-      "clickBox": {
-        "x": 73,
-        "y": 349,
-        "width": 33,
-        "height": 64
-      }
-    },
-    {
-      "id": 33,
-      "image": "FAKER -_ FREAK[face,1].png",
-      "answer": "FREAK",
-      "type": "anagram",
-      "clickBox": {
-        "x": 357,
-        "y": 76,
-        "width": 62,
-        "height": 32
-      }
-    },
-    {
-      "id": 34,
-      "image": "FEIGNED -_ FEEDING[face,1].png",
-      "answer": "FEEDING",
-      "type": "anagram",
-      "clickBox": {
-        "x": 76,
-        "y": 313,
-        "width": 29,
-        "height": 86
-      }
-    },
-    {
-      "id": 35,
-      "image": "FERAL -_ FLARE[face,1].png",
-      "answer": "FLARE",
-      "type": "anagram",
-      "clickBox": {
-        "x": 491,
-        "y": 719,
-        "width": 64,
-        "height": 30
-      }
-    },
-    {
-      "id": 36,
-      "image": "FIENDISH -_ FINISHED[face,1].png",
-      "answer": "FINISHED",
-      "type": "anagram",
-      "clickBox": {
-        "x": 1019,
-        "y": 646,
-        "width": 27,
-        "height": 86
-      }
-    },
-    {
-      "id": 37,
-      "image": "FINDERS -_ FRIENDS[face,1].png",
-      "answer": "FRIENDS",
-      "type": "anagram",
-      "clickBox": {
-        "x": 515,
-        "y": 71,
-        "width": 79,
+        "x": 832,
+        "y": 68,
+        "width": 53,
         "height": 38
       }
     },
     {
-      "id": 38,
-      "image": "FRAMED -_ FARMED[face,1].png",
-      "answer": "FARMED",
-      "type": "anagram",
+      "id": 8,
+      "image": "Maths1__4___9_13[face,1].jpg",
+      "answer": "13",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 76,
-        "y": 164,
-        "width": 32,
-        "height": 88
+        "x": 1012,
+        "y": 528,
+        "width": 41,
+        "height": 52
       }
     },
     {
-      "id": 39,
-      "image": "FREIGHTS -_ FIGHTERS[face,1].png",
-      "answer": "FIGHTERS",
-      "type": "anagram",
+      "id": 9,
+      "image": "Maths1__7___5_12[face,1].jpg",
+      "answer": "12",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 1011,
+        "y": 546,
+        "width": 41,
+        "height": 50
+      }
+    },
+    {
+      "id": 10,
+      "image": "Maths2__14___8_-_2_20[face,1].jpg",
+      "answer": "20",
+      "type": "simple_maths",
       "clickBox": {
         "x": 73,
-        "y": 178,
-        "width": 36,
-        "height": 93
+        "y": 382,
+        "width": 43,
+        "height": 56
       }
     },
     {
-      "id": 40,
-      "image": "FUSED -_ FEUDS[face,1].png",
-      "answer": "FEUDS",
-      "type": "anagram",
+      "id": 11,
+      "image": "Maths2__16___9_-_7_18[face,1].jpg",
+      "answer": "18",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 751,
-        "y": 74,
-        "width": 61,
-        "height": 33
+        "x": 74,
+        "y": 341,
+        "width": 40,
+        "height": 59
       }
     },
     {
-      "id": 41,
-      "image": "GAS -_ SAG[face,1].png",
-      "answer": "SAG",
-      "type": "semordnilap",
+      "id": 12,
+      "image": "Maths2__17_-_9___4_12[face,1].jpg",
+      "answer": "12",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 1023,
-        "y": 287,
-        "width": 23,
+        "x": 71,
+        "y": 229,
+        "width": 41,
+        "height": 47
+      }
+    },
+    {
+      "id": 13,
+      "image": "Maths2__19___7_-_4_22[face,1].jpg",
+      "answer": "22",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 651,
+        "y": 67,
+        "width": 65,
+        "height": 42
+      }
+    },
+    {
+      "id": 14,
+      "image": "Maths2__21_-_6___3_18[face,1].jpg",
+      "answer": "18",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 1011,
+        "y": 423,
+        "width": 40,
+        "height": 56
+      }
+    },
+    {
+      "id": 15,
+      "image": "Maths2__21_-_9___14_26[face,1].jpg",
+      "answer": "26",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 570,
+        "y": 68,
+        "width": 58,
         "height": 41
       }
     },
     {
-      "id": 42,
-      "image": "GOLF -_ FLOG[face,1].png",
-      "answer": "FLOG",
-      "type": "semordnilap",
+      "id": 16,
+      "image": "Maths2__24_-_7___2_19[face,1].jpg",
+      "answer": "19",
+      "type": "simple_maths",
       "clickBox": {
-        "x": 1022,
-        "y": 636,
-        "width": 24,
+        "x": 715,
+        "y": 70,
+        "width": 55,
+        "height": 41
+      }
+    },
+    {
+      "id": 17,
+      "image": "Maths2__27_-_6___13_34[face,1].jpg",
+      "answer": "34",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 1012,
+        "y": 93,
+        "width": 36,
+        "height": 59
+      }
+    },
+    {
+      "id": 18,
+      "image": "Maths2__29_-_8_-_6_15[face,1].jpg",
+      "answer": "15",
+      "type": "simple_maths",
+      "clickBox": {
+        "x": 71,
+        "y": 284,
+        "width": 41,
+        "height": 56
+      }
+    },
+    {
+      "id": 19,
+      "image": "Maths3__12___18__div___3_18[face,1].jpg",
+      "answer": "18",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 731,
+        "y": 68,
+        "width": 58,
+        "height": 42
+      }
+    },
+    {
+      "id": 20,
+      "image": "Maths3__16__div___4___9_13[face,1].jpg",
+      "answer": "13",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 833,
+        "y": 71,
+        "width": 47,
+        "height": 35
+      }
+    },
+    {
+      "id": 21,
+      "image": "Maths3__20__div___4___3_8[face,1].jpg",
+      "answer": "8",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 926,
+        "y": 71,
+        "width": 47,
+        "height": 36
+      }
+    },
+    {
+      "id": 22,
+      "image": "Maths3__25__div___5___26_31[face,1].jpg",
+      "answer": "31",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 470,
+        "y": 65,
+        "width": 56,
+        "height": 46
+      }
+    },
+    {
+      "id": 23,
+      "image": "Maths3__30__div___5___7_13[face,1].jpg",
+      "answer": "13",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 239,
+        "y": 712,
+        "width": 55,
+        "height": 42
+      }
+    },
+    {
+      "id": 24,
+      "image": "Maths3__4__mult___4_-_7_9[face,1].jpg",
+      "answer": "9",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 73,
+        "y": 168,
+        "width": 43,
+        "height": 41
+      }
+    },
+    {
+      "id": 25,
+      "image": "Maths3__5__mult___6_-_4_26[face,1].jpg",
+      "answer": "26",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 1006,
+        "y": 258,
+        "width": 46,
+        "height": 61
+      }
+    },
+    {
+      "id": 26,
+      "image": "Maths3__6__mult___2___5_17[face,1].jpg",
+      "answer": "17",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 1009,
+        "y": 442,
+        "width": 43,
+        "height": 61
+      }
+    },
+    {
+      "id": 27,
+      "image": "Maths3__64__div___4___5_21[face,1].jpg",
+      "answer": "21",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 675,
+        "y": 65,
+        "width": 53,
+        "height": 44
+      }
+    },
+    {
+      "id": 28,
+      "image": "Maths4___5___7___mult___2_-_4_20[face,1].jpg",
+      "answer": "20",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 71,
+        "y": 382,
+        "width": 46,
+        "height": 56
+      }
+    },
+    {
+      "id": 29,
+      "image": "Maths4__1,_1,_2,_3,_5,_8,___13[face,1].jpg",
+      "answer": "13",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 833,
+        "y": 67,
+        "width": 56,
+        "height": 42
+      }
+    },
+    {
+      "id": 30,
+      "image": "Maths4__10___6__mult___2_-_5_17[face,1].jpg",
+      "answer": "17",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 751,
+        "y": 65,
+        "width": 64,
+        "height": 49
+      }
+    },
+    {
+      "id": 31,
+      "image": "Maths4__13,_9,_12,_10,___11[face,1].jpg",
+      "answer": "11",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 1014,
+        "y": 561,
+        "width": 36,
+        "height": 55
+      }
+    },
+    {
+      "id": 32,
+      "image": "Maths4__2__mult____3___4____8_22[face,1].jpg",
+      "answer": "22",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 651,
+        "y": 68,
+        "width": 65,
+        "height": 41
+      }
+    },
+    {
+      "id": 33,
+      "image": "Maths4__2__mult___4__mult___6_-_14_34[face,1].jpg",
+      "answer": "34",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 73,
+        "y": 677,
+        "width": 41,
+        "height": 52
+      }
+    },
+    {
+      "id": 34,
+      "image": "Maths4__2,_-4,_8,_-16,___32[face,1].jpg",
+      "answer": "32",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 447,
+        "y": 70,
+        "width": 64,
+        "height": 41
+      }
+    },
+    {
+      "id": 35,
+      "image": "Maths4__3,_4,_6,_9,_13,___18[face,1].jpg",
+      "answer": "18",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 1011,
+        "y": 426,
+        "width": 46,
+        "height": 55
+      }
+    },
+    {
+      "id": 36,
+      "image": "Maths4__36_-_2__mult___8___3_23[face,1].jpg",
+      "answer": "23",
+      "type": "complex_maths",
+      "clickBox": {
+        "x": 631,
+        "y": 68,
+        "width": 59,
+        "height": 41
+      }
+    },
+    {
+      "id": 37,
+      "image": "Memory__1.2-BLUE_CIRCLE_YELLOW_CIRCLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "BLUE CIRCLE YELLOW CIRCLE",
+      "clickBox": {
+        "x": 178,
+        "y": 67,
+        "width": 274,
+        "height": 49
+      }
+    },
+    {
+      "id": 38,
+      "image": "Memory__1.2-BLUE_SQUARE_BLUE_TRIANGLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "BLUE SQUARE BLUE TRIANGLE",
+      "clickBox": {
+        "x": 71,
+        "y": 370,
+        "width": 49,
+        "height": 278
+      }
+    },
+    {
+      "id": 39,
+      "image": "Memory__1.2-BLUE_TRIANGLE_BLUE_CIRCLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "BLUE TRIANGLE BLUE CIRCLE",
+      "clickBox": {
+        "x": 73,
+        "y": 384,
+        "width": 44,
+        "height": 269
+      }
+    },
+    {
+      "id": 40,
+      "image": "Memory__1.2-RED_CIRCLE_RED_SQUARE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "RED CIRCLE RED SQUARE",
+      "clickBox": {
+        "x": 1008,
+        "y": 279,
+        "width": 50,
+        "height": 226
+      }
+    },
+    {
+      "id": 41,
+      "image": "Memory__1.2-RED_SQUARE_BLUE_SQUARE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "RED SQUARE BLUE SQUARE",
+      "clickBox": {
+        "x": 1009,
+        "y": 520,
+        "width": 44,
+        "height": 231
+      }
+    },
+    {
+      "id": 42,
+      "image": "Memory__1.2-RED_TRIANGLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "RED TRIANGLE YELLOW TRIANGLE",
+      "clickBox": {
+        "x": 505,
+        "y": 68,
+        "width": 309,
         "height": 49
       }
     },
     {
       "id": 43,
-      "image": "GULP -_ PLUG[face,1].png",
-      "answer": "PLUG",
-      "type": "semordnilap",
+      "image": "Memory__1.2-YELLOW_CIRCLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "YELLOW CIRCLE YELLOW TRIANGLE",
       "clickBox": {
-        "x": 1017,
-        "y": 539,
-        "width": 30,
-        "height": 53
+        "x": 313,
+        "y": 712,
+        "width": 306,
+        "height": 46
       }
     },
     {
       "id": 44,
-      "image": "GUT -_ TUG[face,1].png",
-      "answer": "TUG",
-      "type": "semordnilap",
+      "image": "Memory__1.2-YELLOW_SQUARE_RED_SQUARE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "YELLOW SQUARE RED SQUARE",
       "clickBox": {
-        "x": 79,
-        "y": 173,
-        "width": 26,
-        "height": 39
+        "x": 794,
+        "y": 67,
+        "width": 263,
+        "height": 42
       }
     },
     {
       "id": 45,
-      "image": "HARDY -_ HYDRA[face,1].png",
-      "answer": "HYDRA",
-      "type": "anagram",
+      "image": "Memory__1.2-YELLOW_TRIANGLE_BLUE_TRIANGLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "YELLOW TRIANGLE BLUE TRIANGLE",
       "clickBox": {
-        "x": 1016,
-        "y": 178,
-        "width": 33,
-        "height": 71
+        "x": 599,
+        "y": 710,
+        "width": 313,
+        "height": 47
       }
     },
     {
       "id": 46,
-      "image": "HIGHEST -_ HEIGHTS[face,1].png",
-      "answer": "HEIGHTS",
-      "type": "anagram",
+      "image": "Memory__2.2-BLUE_CIRCLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "BLUE CIRCLE YELLOW TRIANGLE",
       "clickBox": {
-        "x": 76,
-        "y": 316,
-        "width": 33,
-        "height": 82
+        "x": 1006,
+        "y": 460,
+        "width": 50,
+        "height": 294
       }
     },
     {
       "id": 47,
-      "image": "INCESSANT -_ INSTANCES[face,1].png",
-      "answer": "INSTANCES",
-      "type": "anagram",
+      "image": "Memory__2.2-BLUE_SQUARE_RED_TRIANGLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "BLUE SQUARE RED TRIANGLE",
       "clickBox": {
-        "x": 547,
-        "y": 74,
-        "width": 100,
-        "height": 35
+        "x": 1005,
+        "y": 492,
+        "width": 59,
+        "height": 266
       }
     },
     {
       "id": 48,
-      "image": "KNOB -_ BONK[face,1].png",
-      "answer": "BONK",
-      "type": "semordnilap",
+      "image": "Memory__2.2-BLUE_TRIANGLE_RED_CIRCLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "BLUE TRIANGLE RED CIRCLE",
       "clickBox": {
-        "x": 971,
-        "y": 76,
-        "width": 62,
-        "height": 35
+        "x": 68,
+        "y": 74,
+        "width": 50,
+        "height": 244
       }
     },
     {
       "id": 49,
-      "image": "LAID -_ DIAL[face,1].png",
-      "answer": "DIAL",
-      "type": "semordnilap",
+      "image": "Memory__2.2-RED_CIRCLE_BLUE_SQUARE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "RED CIRCLE BLUE SQUARE",
       "clickBox": {
-        "x": 859,
-        "y": 73,
-        "width": 49,
-        "height": 36
+        "x": 1005,
+        "y": 229,
+        "width": 47,
+        "height": 256
       }
     },
     {
       "id": 50,
-      "image": "LEPER -_ REPEL[face,1].png",
-      "answer": "REPEL",
-      "type": "semordnilap",
+      "image": "Memory__2.2-RED_SQUARE_BLUE_CIRCLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "RED SQUARE BLUE CIRCLE",
       "clickBox": {
-        "x": 73,
-        "y": 479,
-        "width": 33,
-        "height": 59
+        "x": 345,
+        "y": 709,
+        "width": 231,
+        "height": 55
       }
     },
     {
       "id": 51,
-      "image": "LESIONS -_ LIONESS[face,1].png",
-      "answer": "LIONESS",
-      "type": "anagram",
+      "image": "Memory__2.2-RED_TRIANGLE_YELLOW_SQUARE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "RED TRIANGLE YELLOW SQUARE",
       "clickBox": {
-        "x": 372,
-        "y": 715,
-        "width": 79,
-        "height": 38
+        "x": 319,
+        "y": 68,
+        "width": 284,
+        "height": 47
       }
     },
     {
       "id": 52,
-      "image": "LEVELER -_ RELEVEL[face,1].png",
-      "answer": "RELEVEL",
-      "type": "semordnilap",
+      "image": "Memory__2.2-YELLOW_CIRCLE_BLUE_SQUARE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "YELLOW CIRCLE BLUE SQUARE",
       "clickBox": {
-        "x": 467,
-        "y": 718,
-        "width": 82,
-        "height": 35
+        "x": 781,
+        "y": 67,
+        "width": 278,
+        "height": 44
       }
     },
     {
       "id": 53,
-      "image": "LEVER -_ REVEL[face,1].png",
-      "answer": "REVEL",
-      "type": "semordnilap",
+      "image": "Memory__2.2-YELLOW_SQUARE_RED_CIRCLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "YELLOW SQUARE RED CIRCLE",
       "clickBox": {
-        "x": 1017,
-        "y": 620,
-        "width": 32,
-        "height": 57
+        "x": 73,
+        "y": 316,
+        "width": 40,
+        "height": 258
       }
     },
     {
       "id": 54,
-      "image": "LINKAGE -_ LEAKING[face,1].png",
-      "answer": "LEAKING",
-      "type": "anagram",
+      "image": "Memory__3.2-BLUE_CIRCLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "BLUE CIRCLE YELLOW TRIANGLE",
       "clickBox": {
-        "x": 392,
-        "y": 716,
-        "width": 84,
-        "height": 35
+        "x": 470,
+        "y": 70,
+        "width": 296,
+        "height": 41
       }
     },
     {
       "id": 55,
-      "image": "LIVED -_ DEVIL[face,1].png",
-      "answer": "DEVIL",
-      "type": "semordnilap",
+      "image": "Memory__3.2-BLUE_SQUARE_RED_TRIANGLE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "BLUE SQUARE RED TRIANGLE",
       "clickBox": {
-        "x": 920,
+        "x": 280,
         "y": 68,
-        "width": 61,
+        "width": 258,
         "height": 47
       }
     },
     {
       "id": 56,
-      "image": "LOOTER -_ RETOOL[face,1].png",
-      "answer": "RETOOL",
-      "type": "semordnilap",
+      "image": "Memory__3.2-BLUE_TRIANGLE_RED_CIRCLE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "BLUE TRIANGLE RED CIRCLE",
       "clickBox": {
-        "x": 471,
-        "y": 71,
-        "width": 79,
-        "height": 38
+        "x": 524,
+        "y": 67,
+        "width": 251,
+        "height": 49
       }
     },
     {
       "id": 57,
-      "image": "MAKINGS -_ MASKING[face,1].png",
-      "answer": "MASKING",
-      "type": "anagram",
+      "image": "Memory__3.2-RED_CIRCLE_BLUE_SQUARE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "RED CIRCLE BLUE SQUARE",
       "clickBox": {
-        "x": 946,
-        "y": 76,
-        "width": 84,
-        "height": 29
+        "x": 529,
+        "y": 73,
+        "width": 242,
+        "height": 38
       }
     },
     {
       "id": 58,
-      "image": "MAPS -_ SPAM[face,1].png",
-      "answer": "SPAM",
-      "type": "semordnilap",
+      "image": "Memory__3.2-RED_SQUARE_BLUE_CIRCLE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "RED SQUARE BLUE CIRCLE",
       "clickBox": {
-        "x": 74,
-        "y": 296,
-        "width": 33,
-        "height": 58
+        "x": 1011,
+        "y": 513,
+        "width": 41,
+        "height": 238
       }
     },
     {
       "id": 59,
-      "image": "MARITAL -_ MARTIAL[face,1].png",
-      "answer": "MARTIAL",
-      "type": "anagram",
+      "image": "Memory__3.2-RED_TRIANGLE_YELLOW_SQUARE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "RED TRIANGLE YELLOW SQUARE",
       "clickBox": {
-        "x": 78,
-        "y": 250,
-        "width": 26,
-        "height": 86
+        "x": 73,
+        "y": 71,
+        "width": 41,
+        "height": 282
       }
     },
     {
       "id": 60,
-      "image": "METRONOMES -_ MONOTREMES[face,1].png",
-      "answer": "MONOTREMES",
-      "type": "anagram",
+      "image": "Memory__3.2-YELLOW_CIRCLE_BLUE_CIRCLE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "YELLOW CIRCLE BLUE CIRCLE",
       "clickBox": {
-        "x": 906,
-        "y": 73,
-        "width": 125,
-        "height": 35
+        "x": 1016,
+        "y": 223,
+        "width": 32,
+        "height": 246
       }
     },
     {
       "id": 61,
-      "image": "MISALIGNED -_ MISLEADING[face,1].png",
-      "answer": "MISLEADING",
-      "type": "anagram",
+      "image": "Memory__3.2-YELLOW_SQUARE_RED_SQUARE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "YELLOW SQUARE RED SQUARE",
       "clickBox": {
-        "x": 818,
-        "y": 77,
-        "width": 109,
-        "height": 30
+        "x": 76,
+        "y": 300,
+        "width": 41,
+        "height": 269
       }
     },
     {
       "id": 62,
-      "image": "NAP -_ PAN[face,1].png",
-      "answer": "PAN",
-      "type": "semordnilap",
+      "image": "Memory__3.2-YELLOW_TRIANGLE_BLUE_TRIANGLE__[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "YELLOW TRIANGLE BLUE TRIANGLE",
       "clickBox": {
-        "x": 175,
-        "y": 719,
-        "width": 43,
-        "height": 29
+        "x": 477,
+        "y": 70,
+        "width": 319,
+        "height": 44
       }
     },
     {
       "id": 63,
-      "image": "NIP -_ PIN[face,1].png",
-      "answer": "PIN",
-      "type": "semordnilap",
+      "image": "Memory__4.3-BLUE_CIRCLE_YELLOW_SQUARE_YELLOW_SQUARE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "BLUE CIRCLE YELLOW SQUARE YELLOW SQUARE",
       "clickBox": {
-        "x": 73,
-        "y": 158,
-        "width": 35,
-        "height": 41
+        "x": 648,
+        "y": 67,
+        "width": 412,
+        "height": 42
       }
     },
     {
       "id": 64,
-      "image": "PATROLS -_ PORTALS[face,1].png",
-      "answer": "PORTALS",
-      "type": "anagram",
+      "image": "Memory__4.3-BLUE_SQUARE_RED_SQUARE_YELLOW_SQUARE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "BLUE SQUARE RED SQUARE YELLOW SQUARE",
       "clickBox": {
         "x": 76,
-        "y": 235,
-        "width": 30,
-        "height": 102
+        "y": 73,
+        "width": 38,
+        "height": 376
       }
     },
     {
       "id": 65,
-      "image": "PEEK -_ KEEP[face,1].png",
-      "answer": "KEEP",
-      "type": "semordnilap",
+      "image": "Memory__4.3-BLUE_TRIANGLE_RED_TRIANGLE_RED_CIRCLE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "BLUE TRIANGLE RED TRIANGLE RED CIRCLE",
       "clickBox": {
-        "x": 278,
-        "y": 718,
-        "width": 52,
-        "height": 33
+        "x": 681,
+        "y": 70,
+        "width": 377,
+        "height": 38
       }
     },
     {
       "id": 66,
-      "image": "PEELS -_ SLEEP[face,1].png",
-      "answer": "SLEEP",
-      "type": "semordnilap",
+      "image": "Memory__4.3-RED_CIRCLE_YELLOW_SQUARE_BLUE_CIRCLE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "RED CIRCLE YELLOW SQUARE BLUE CIRCLE",
       "clickBox": {
-        "x": 76,
-        "y": 357,
-        "width": 30,
-        "height": 62
+        "x": 324,
+        "y": 73,
+        "width": 353,
+        "height": 38
       }
     },
     {
       "id": 67,
-      "image": "PEES -_ SEEP[face,1].png",
-      "answer": "SEEP",
-      "type": "semordnilap",
+      "image": "Memory__4.3-RED_SQUARE_YELLOW_CIRCLE_BLUE_TRIANGLE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "RED SQUARE YELLOW CIRCLE BLUE TRIANGLE",
       "clickBox": {
-        "x": 76,
-        "y": 225,
-        "width": 30,
-        "height": 53
+        "x": 1011,
+        "y": 344,
+        "width": 41,
+        "height": 407
       }
     },
     {
       "id": 68,
-      "image": "PENALTIES -_ PALESTINE[face,1].png",
-      "answer": "PALESTINE",
-      "type": "anagram",
+      "image": "Memory__4.3-RED_TRIANGLE_BLUE_SQUARE_YELLOW_SQUARE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "RED TRIANGLE BLUE SQUARE YELLOW SQUARE",
       "clickBox": {
-        "x": 1014,
-        "y": 361,
-        "width": 35,
-        "height": 100
+        "x": 1011,
+        "y": 349,
+        "width": 43,
+        "height": 404
       }
     },
     {
       "id": 69,
-      "image": "PLUGINS -_ PULSING[face,1].png",
-      "answer": "PULSING",
-      "type": "anagram",
+      "image": "Memory__4.3-YELLOW_CIRCLE_RED_TRIANGLE_BLUE_TRIANGLE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "YELLOW CIRCLE RED TRIANGLE BLUE TRIANGLE",
       "clickBox": {
-        "x": 877,
-        "y": 74,
-        "width": 85,
-        "height": 36
+        "x": 71,
+        "y": 715,
+        "width": 406,
+        "height": 39
       }
     },
     {
       "id": 70,
-      "image": "PORTRAYED -_ PREDATORY[face,1].png",
-      "answer": "PREDATORY",
-      "type": "anagram",
+      "image": "Memory__4.3-YELLOW_SQUARE_YELLOW_CIRCLE_RED_CIRCLE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "YELLOW SQUARE YELLOW CIRCLE RED CIRCLE",
       "clickBox": {
-        "x": 307,
-        "y": 73,
-        "width": 102,
-        "height": 33
+        "x": 1014,
+        "y": 370,
+        "width": 38,
+        "height": 382
       }
     },
     {
       "id": 71,
-      "image": "POT -_ TOP[face,1].png",
-      "answer": "TOP",
-      "type": "semordnilap",
+      "image": "Memory__4.3-YELLOW_TRIANGLE_YELLOW_SQUARE_BLUE_CIRCLE[face,1].jpg",
+      "type": "complex_memory",
+      "answer": "YELLOW TRIANGLE YELLOW SQUARE BLUE CIRCLE",
       "clickBox": {
-        "x": 494,
-        "y": 70,
-        "width": 46,
-        "height": 41
+        "x": 78,
+        "y": 74,
+        "width": 36,
+        "height": 435
       }
     },
     {
       "id": 72,
-      "image": "PRODUCER -_ PROCURED[face,1].png",
-      "answer": "PROCURED",
-      "type": "anagram",
+      "image": "Words1.3__RAW_-__WAR[face,1].jpg",
+      "answer": "WAR",
+      "type": "semordnilap",
       "clickBox": {
         "x": 76,
-        "y": 549,
-        "width": 33,
-        "height": 102
+        "y": 463,
+        "width": 36,
+        "height": 53
       }
     },
     {
       "id": 73,
-      "image": "PROTEINS -_ POINTERS[face,1].png",
-      "answer": "POINTERS",
-      "type": "anagram",
+      "image": "Words1.4__BARD_-__DRAB[face,1].jpg",
+      "answer": "DRAB",
+      "type": "semordnilap",
       "clickBox": {
-        "x": 79,
-        "y": 176,
-        "width": 29,
-        "height": 99
+        "x": 540,
+        "y": 70,
+        "width": 65,
+        "height": 36
       }
     },
     {
       "id": 74,
-      "image": "RAW -_ WAR[face,1].png",
-      "answer": "WAR",
+      "image": "Words1.4__DEEP_-__PEED[face,1].jpg",
+      "answer": "PEED",
       "type": "semordnilap",
       "clickBox": {
-        "x": 902,
-        "y": 76,
-        "width": 46,
-        "height": 35
+        "x": 73,
+        "y": 419,
+        "width": 40,
+        "height": 62
       }
     },
     {
       "id": 75,
-      "image": "REED -_ DEER[face,1].png",
-      "answer": "DEER",
+      "image": "Words1.4__DIVA_-__AVID[face,1].jpg",
+      "answer": "AVID",
       "type": "semordnilap",
       "clickBox": {
-        "x": 71,
-        "y": 185,
-        "width": 41,
+        "x": 78,
+        "y": 285,
+        "width": 33,
         "height": 59
       }
     },
     {
       "id": 76,
-      "image": "REGISTRANT -_ RESTARTING[face,1].png",
-      "answer": "RESTARTING",
-      "type": "anagram",
-      "clickBox": {
-        "x": 73,
-        "y": 311,
-        "width": 38,
-        "height": 114
-      }
-    },
-    {
-      "id": 77,
-      "image": "RELEASED -_ RESEALED[face,1].png",
-      "answer": "RESEALED",
-      "type": "anagram",
-      "clickBox": {
-        "x": 503,
-        "y": 76,
-        "width": 97,
-        "height": 30
-      }
-    },
-    {
-      "id": 78,
-      "image": "RELEVEL -_ LEVELER[face,1].png",
-      "answer": "LEVELER",
+      "image": "Words1.4__DOOM_-__MOOD[face,1].jpg",
+      "answer": "MOOD",
       "type": "semordnilap",
-      "clickBox": {
-        "x": 1017,
-        "y": 651,
-        "width": 35,
-        "height": 79
-      }
-    },
-    {
-      "id": 79,
-      "image": "RENNET -_ TENNER[face,1].png",
-      "answer": "TENNER",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 377,
-        "y": 76,
-        "width": 81,
-        "height": 36
-      }
-    },
-    {
-      "id": 80,
-      "image": "REPEL -_ LEPER[face,1].png",
-      "answer": "LEPER",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 639,
-        "y": 76,
-        "width": 64,
-        "height": 32
-      }
-    },
-    {
-      "id": 81,
-      "image": "RESERVING -_ REVERSING[face,1].png",
-      "answer": "REVERSING",
-      "type": "anagram",
-      "clickBox": {
-        "x": 74,
-        "y": 467,
-        "width": 32,
-        "height": 106
-      }
-    },
-    {
-      "id": 82,
-      "image": "RESORTING -_ RESTORING[face,1].png",
-      "answer": "RESTORING",
-      "type": "anagram",
-      "clickBox": {
-        "x": 76,
-        "y": 96,
-        "width": 30,
-        "height": 106
-      }
-    },
-    {
-      "id": 83,
-      "image": "RETOOL -_ LOOTER[face,1].png",
-      "answer": "LOOTER",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 1020,
-        "y": 522,
-        "width": 29,
-        "height": 76
-      }
-    },
-    {
-      "id": 84,
-      "image": "REVEL -_ LEVER[face,1].png",
-      "answer": "LEVER",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 1017,
-        "y": 220,
-        "width": 30,
-        "height": 68
-      }
-    },
-    {
-      "id": 85,
-      "image": "REVILED -_ DELIVER[face,1].png",
-      "answer": "DELIVER",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 70,
-        "y": 158,
-        "width": 40,
-        "height": 88
-      }
-    },
-    {
-      "id": 86,
-      "image": "REWARDING -_ REDRAWING[face,1].png",
-      "answer": "REDRAWING",
-      "type": "anagram",
       "clickBox": {
         "x": 1012,
-        "y": 621,
+        "y": 311,
         "width": 40,
-        "height": 112
-      }
-    },
-    {
-      "id": 87,
-      "image": "SHATTERING -_ STRAIGHTEN[face,1].png",
-      "answer": "STRAIGHTEN",
-      "type": "anagram",
-      "clickBox": {
-        "x": 91,
-        "y": 718,
-        "width": 122,
-        "height": 35
-      }
-    },
-    {
-      "id": 88,
-      "image": "SLEEP -_ PEELS[face,1].png",
-      "answer": "PEELS",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 417,
-        "y": 716,
-        "width": 61,
-        "height": 39
-      }
-    },
-    {
-      "id": 89,
-      "image": "SNAKE -_ SNEAK[face,1].png",
-      "answer": "SNEAK",
-      "type": "anagram",
-      "clickBox": {
-        "x": 433,
-        "y": 76,
-        "width": 71,
-        "height": 32
-      }
-    },
-    {
-      "id": 90,
-      "image": "SNAPS -_ SPANS[face,1].png",
-      "answer": "SPANS",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 74,
-        "y": 153,
-        "width": 36,
         "height": 64
       }
     },
     {
-      "id": 91,
-      "image": "SNIPS -_ SPINS[face,1].png",
-      "answer": "SPINS",
+      "id": 77,
+      "image": "Words1.4__GOLF_-__FLOG[face,1].jpg",
+      "answer": "FLOG",
       "type": "semordnilap",
-      "clickBox": {
-        "x": 287,
-        "y": 712,
-        "width": 71,
-        "height": 41
-      }
-    },
-    {
-      "id": 92,
-      "image": "SNORES -_ SENSOR[face,1].png",
-      "answer": "SENSOR",
-      "type": "anagram",
       "clickBox": {
         "x": 73,
-        "y": 429,
-        "width": 36,
-        "height": 80
+        "y": 423,
+        "width": 40,
+        "height": 61
       }
     },
     {
-      "id": 93,
-      "image": "SPANS -_ SNAPS[face,1].png",
-      "answer": "SNAPS",
+      "id": 78,
+      "image": "Words1.4__GULP_-__PLUG[face,1].jpg",
+      "answer": "PLUG",
       "type": "semordnilap",
       "clickBox": {
-        "x": 964,
+        "x": 756,
         "y": 73,
-        "width": 71,
+        "width": 62,
+        "height": 36
+      }
+    },
+    {
+      "id": 79,
+      "image": "Words1.4__KNOB_-__BONK[face,1].jpg",
+      "answer": "BONK",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 1012,
+        "y": 255,
+        "width": 36,
+        "height": 68
+      }
+    },
+    {
+      "id": 80,
+      "image": "Words1.4__STUN_-__NUTS[face,1].jpg",
+      "answer": "NUTS",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 78,
+        "y": 121,
+        "width": 35,
+        "height": 67
+      }
+    },
+    {
+      "id": 81,
+      "image": "Words2.5__DEVIL_-__LIVED[face,1].jpg",
+      "answer": "LIVED",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 1012,
+        "y": 525,
+        "width": 40,
+        "height": 67
+      }
+    },
+    {
+      "id": 82,
+      "image": "Words2.5__LEVER_-__REVEL[face,1].jpg",
+      "answer": "REVEL",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 1016,
+        "y": 625,
+        "width": 35,
+        "height": 67
+      }
+    },
+    {
+      "id": 83,
+      "image": "Words2.5__REPEL_-__LEPER[face,1].jpg",
+      "answer": "LEPER",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 929,
+        "y": 71,
+        "width": 74,
         "height": 38
       }
     },
     {
-      "id": 94,
-      "image": "SPEED -_ DEEPS[face,1].png",
+      "id": 84,
+      "image": "Words2.5__SLEEP_-__PEELS[face,1].jpg",
+      "answer": "PEELS",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 1014,
+        "y": 577,
+        "width": 38,
+        "height": 70
+      }
+    },
+    {
+      "id": 85,
+      "image": "Words2.5__SPANS_-__SNAPS[face,1].jpg",
+      "answer": "SNAPS",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 745,
+        "y": 71,
+        "width": 78,
+        "height": 39
+      }
+    },
+    {
+      "id": 86,
+      "image": "Words2.5__SPEED_-__DEEPS[face,1].jpg",
       "answer": "DEEPS",
       "type": "semordnilap",
       "clickBox": {
-        "x": 631,
+        "x": 78,
+        "y": 250,
+        "width": 35,
+        "height": 68
+      }
+    },
+    {
+      "id": 87,
+      "image": "Words2.5__SPINS_-__SNIPS[face,1].jpg",
+      "answer": "SNIPS",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 740,
+        "y": 70,
+        "width": 68,
+        "height": 41
+      }
+    },
+    {
+      "id": 88,
+      "image": "Words2.5__STRAW_-__WARTS[face,1].jpg",
+      "answer": "WARTS",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 73,
+        "y": 592,
+        "width": 40,
+        "height": 73
+      }
+    },
+    {
+      "id": 89,
+      "image": "Words2.8__STRESSED_-__DESSERTS[face,1].jpg",
+      "answer": "DESSERTS",
+      "type": "semordnilap",
+      "clickBox": {
+        "x": 1014,
+        "y": 558,
+        "width": 36,
+        "height": 100
+      }
+    },
+    {
+      "id": 90,
+      "image": "Words3.5__CURED_-__CRUDE[face,1].jpg",
+      "answer": "CRUDE",
+      "type": "anagram",
+      "clickBox": {
+        "x": 626,
         "y": 73,
+        "width": 74,
+        "height": 35
+      }
+    },
+    {
+      "id": 91,
+      "image": "Words3.5__DYING_-__DINGY[face,1].jpg",
+      "answer": "DINGY",
+      "type": "anagram",
+      "clickBox": {
+        "x": 932,
+        "y": 71,
         "width": 68,
         "height": 38
       }
     },
     {
-      "id": 95,
-      "image": "SPINS -_ SNIPS[face,1].png",
-      "answer": "SNIPS",
-      "type": "semordnilap",
+      "id": 92,
+      "image": "Words3.5__EXITS_-__EXIST[face,1].jpg",
+      "answer": "EXIST",
+      "type": "anagram",
       "clickBox": {
-        "x": 813,
-        "y": 76,
-        "width": 76,
-        "height": 38
+        "x": 1014,
+        "y": 580,
+        "width": 38,
+        "height": 64
+      }
+    },
+    {
+      "id": 93,
+      "image": "Words3.5__FAKER_-__FREAK[face,1].jpg",
+      "answer": "FREAK",
+      "type": "anagram",
+      "clickBox": {
+        "x": 917,
+        "y": 71,
+        "width": 85,
+        "height": 39
+      }
+    },
+    {
+      "id": 94,
+      "image": "Words3.5__FERAL_-__FLARE[face,1].jpg",
+      "answer": "FLARE",
+      "type": "anagram",
+      "clickBox": {
+        "x": 74,
+        "y": 479,
+        "width": 40,
+        "height": 77
+      }
+    },
+    {
+      "id": 95,
+      "image": "Words3.5__FUSED_-__FEUDS[face,1].jpg",
+      "answer": "FEUDS",
+      "type": "anagram",
+      "clickBox": {
+        "x": 423,
+        "y": 68,
+        "width": 81,
+        "height": 42
       }
     },
     {
       "id": 96,
-      "image": "STEAMSHIP -_ SHIPMATES[face,1].png",
-      "answer": "SHIPMATES",
+      "image": "Words3.5__WAIST_-__WAITS[face,1].jpg",
+      "answer": "WAITS",
       "type": "anagram",
       "clickBox": {
-        "x": 733,
+        "x": 873,
         "y": 73,
-        "width": 105,
-        "height": 38
+        "width": 78,
+        "height": 35
       }
     },
     {
       "id": 97,
-      "image": "STINGRAY -_ STRAYING[face,1].png",
-      "answer": "STRAYING",
+      "image": "Words3.6__CHASED_-__CASHED[face,1].jpg",
+      "answer": "CASHED",
       "type": "anagram",
       "clickBox": {
-        "x": 933,
+        "x": 458,
         "y": 73,
-        "width": 96,
-        "height": 39
-      }
-    },
-    {
-      "id": 98,
-      "image": "STRAW -_ WARTS[face,1].png",
-      "answer": "WARTS",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 278,
-        "y": 718,
-        "width": 81,
-        "height": 30
-      }
-    },
-    {
-      "id": 99,
-      "image": "STRESSED -_ DESSERTS[face,1].png",
-      "answer": "DESSERTS",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 73,
-        "y": 519,
-        "width": 35,
-        "height": 96
-      }
-    },
-    {
-      "id": 100,
-      "image": "STUN -_ NUTS[face,1].png",
-      "answer": "NUTS",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 76,
-        "y": 187,
-        "width": 32,
-        "height": 62
-      }
-    },
-    {
-      "id": 101,
-      "image": "TENNER -_ RENNET[face,1].png",
-      "answer": "RENNET",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 73,
-        "y": 451,
-        "width": 40,
-        "height": 82
-      }
-    },
-    {
-      "id": 102,
-      "image": "TONS -_ SNOT[face,1].png",
-      "answer": "SNOT",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 91,
-        "y": 719,
-        "width": 62,
-        "height": 32
-      }
-    },
-    {
-      "id": 103,
-      "image": "TOOL -_ LOOT[face,1].png",
-      "answer": "LOOT",
-      "type": "semordnilap",
-      "clickBox": {
-        "x": 71,
-        "y": 385,
-        "width": 43,
-        "height": 62
-      }
-    },
-    {
-      "id": 104,
-      "image": "UNRELATED -_ UNALTERED[face,1].png",
-      "answer": "UNALTERED",
-      "type": "anagram",
-      "clickBox": {
-        "x": 325,
-        "y": 73,
-        "width": 109,
+        "width": 90,
         "height": 36
       }
     },
     {
-      "id": 105,
-      "image": "WAIST -_ WAITS[face,1].png",
-      "answer": "WAITS",
+      "id": 98,
+      "image": "Words3.6__CIRCLE_-__CLERIC[face,1].jpg",
+      "answer": "CLERIC",
       "type": "anagram",
       "clickBox": {
-        "x": 73,
-        "y": 419,
-        "width": 41,
-        "height": 68
+        "x": 1016,
+        "y": 677,
+        "width": 38,
+        "height": 76
+      }
+    },
+    {
+      "id": 99,
+      "image": "Words4.10__DISCOUNTED_-__DEDUCTIONS[face,1].jpg",
+      "answer": "DEDUCTIONS",
+      "type": "anagram",
+      "clickBox": {
+        "x": 1012,
+        "y": 197,
+        "width": 38,
+        "height": 124
+      }
+    },
+    {
+      "id": 100,
+      "image": "Words4.10__DISCRETION_-__DIRECTIONS[face,1].jpg",
+      "answer": "DIRECTIONS",
+      "type": "anagram",
+      "clickBox": {
+        "x": 178,
+        "y": 713,
+        "width": 122,
+        "height": 38
+      }
+    },
+    {
+      "id": 101,
+      "image": "Words4.10__METRONOMES_-__MONOTREMES[face,1].jpg",
+      "answer": "MONOTREMES",
+      "type": "anagram",
+      "clickBox": {
+        "x": 79,
+        "y": 73,
+        "width": 33,
+        "height": 137
+      }
+    },
+    {
+      "id": 102,
+      "image": "Words4.10__MISALIGNED_-__MISLEADING[face,1].jpg",
+      "answer": "MISLEADING",
+      "type": "anagram",
+      "clickBox": {
+        "x": 74,
+        "y": 181,
+        "width": 38,
+        "height": 120
+      }
+    },
+    {
+      "id": 103,
+      "image": "Words4.10__REGISTRANT_-__RESTARTING[face,1].jpg",
+      "answer": "RESTARTING",
+      "type": "anagram",
+      "clickBox": {
+        "x": 76,
+        "y": 202,
+        "width": 38,
+        "height": 129
+      }
+    },
+    {
+      "id": 104,
+      "image": "Words4.10__SHATTERING_-__STRAIGHTEN[face,1].jpg",
+      "answer": "STRAIGHTEN",
+      "type": "anagram",
+      "clickBox": {
+        "x": 1016,
+        "y": 202,
+        "width": 33,
+        "height": 124
+      }
+    },
+    {
+      "id": 105,
+      "image": "Words4.8__COOLNESS_-__CONSOLES[face,1].jpg",
+      "answer": "CONSOLES",
+      "type": "anagram",
+      "clickBox": {
+        "x": 379,
+        "y": 71,
+        "width": 105,
+        "height": 39
       }
     },
     {
       "id": 106,
-      "image": "WARTS -_ STRAW[face,1].png",
-      "answer": "STRAW",
-      "type": "semordnilap",
+      "image": "Words4.8__FIENDISH_-__FINISHED[face,1].jpg",
+      "answer": "FINISHED",
+      "type": "anagram",
       "clickBox": {
-        "x": 1017,
-        "y": 176,
-        "width": 32,
-        "height": 73
+        "x": 74,
+        "y": 317,
+        "width": 43,
+        "height": 90
       }
     },
     {
       "id": 107,
-      "image": "WAS -_ SAW[face,1].png",
-      "answer": "SAW",
-      "type": "semordnilap",
+      "image": "Words4.9__PORTRAYED_-__PREDATORY[face,1].jpg",
+      "answer": "PREDATORY",
+      "type": "anagram",
       "clickBox": {
-        "x": 1016,
-        "y": 530,
-        "width": 38,
-        "height": 50
+        "x": 1011,
+        "y": 639,
+        "width": 43,
+        "height": 112
       }
     },
     {
       "id": 108,
-      "image": "WON -_ NOW[face,1].png",
-      "answer": "NOW",
-      "type": "semordnilap",
+      "image": "Memory__2.2-YELLOW_TRIANGLE_BLUE_CIRCLE__[face,1].jpg",
+      "type": "simple_memory",
+      "answer": "YELLOW TRIANGLE BLUE CIRCLE",
       "clickBox": {
-        "x": 265,
-        "y": 715,
-        "width": 58,
-        "height": 39
+        "x": 1014,
+        "y": 475,
+        "width": 38,
+        "height": 276
       }
     }
   ]
