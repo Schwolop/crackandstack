@@ -1064,7 +1064,7 @@
             checkAnswer() {
                 if (this.gameState !== 'input') return;
 
-                const userAnswer = this.elements.answerInput.value.trim().replace(/[^A-Z0-9]/g, '').toUpperCase();
+                const userAnswer = this.elements.answerInput.value.trim().toUpperCase().replace(/[^A-Z0-9 ]/g, '');
                 if (!userAnswer) {
                     this.showMessage('Please enter an answer first!', 'error');
                     return;
