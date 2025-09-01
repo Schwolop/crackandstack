@@ -1078,7 +1078,16 @@
                 if (userAnswer === this.currentPuzzle.answer) {
                     // Record solve time (from overall start to solving the anagram)
                     this.solveTime = this.overallStartTime ? Date.now() - this.overallStartTime : 0;
-                    this.showMessage('Correct! Now find the answer in the border words.', 'success');
+                    var msg = 'Correct!';
+                    const puzzleType = this.currentPuzzle.type;
+                    if (puzzleType === 'semordnilap' || puzzleType === 'anagram') {
+                        msg = msg + ' Now find the answer in the border words.';
+                    } else if (puzzleType === 'simple_memory' || puzzleType === 'complex_memory') {
+                        msg = msg + ' Now find the correct description amongst the border words.';
+                    } else if (puzzleType === 'simple_maths' || puzzleType === 'complex_maths') {
+                        msg = msg + ' Now find the pair of repeated numbers somewhere in the border.';
+                    }
+                    this.showMessage(msg, 'success');
                     this.revealFullImage();
                 } else {
                     this.showMessage('Not quite right. Try again!', 'error');
@@ -1099,8 +1108,17 @@
                     // Show landscape hint on mobile portrait after revealing full image
                     this.showLandscapeHintIfNeeded();
                     // Show blue instruction message after 10 seconds if no action
+                    var msg = '';
+                    const puzzleType = this.currentPuzzle.type;
+                    if (puzzleType === 'semordnilap' || puzzleType === 'anagram') {
+                        msg = 'Click on the correct answer word in the border.';
+                    } else if (puzzleType === 'simple_memory' || puzzleType === 'complex_memory') {
+                        msg = 'Click on the correct description amongst the border words.';
+                    } else if (puzzleType === 'simple_maths' || puzzleType === 'complex_maths') {
+                        msg = 'Click on the pair of repeated numbers somewhere in the border.';
+                    }
                     this.instructionTimeout = setTimeout(() => {
-                        this.showMessage('Click on the correct answer word in the border!', 'info');
+                        this.showMessage(msg, 'info');
                     }, 10000);
                 }, 500);
             }
@@ -1340,10 +1358,10 @@
                 } else if (puzzleType === 'complex_memory') {
                     typeEmoji = '🤔';
                     typeText = 'COMPLEX MEMORY';
-                } else if (puzzleType === 'simple_memory') {
+                } else if (puzzleType === 'simple_maths') {
                     typeEmoji = '🔢';
                     typeText = 'SIMPLE MATHS';
-                } else if (puzzleType === 'complex_memory') {
+                } else if (puzzleType === 'complex_maths') {
                     typeEmoji = '😳';
                     typeText = 'COMPLEX MATHS';
                 }
