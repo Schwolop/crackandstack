@@ -43,20 +43,19 @@
             font-weight: 700;
         }
 
+        .game-header h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .game-header h1 a:hover {
+            text-decoration: underline;
+        }
+
         .puzzle-date {
             color: #666;
             font-size: 1.1em;
             margin-bottom: 20px;
-        }
-
-        .promo {
-            color: #662222;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .promo a {
-            color: inherit;
         }
 
         .date-navigation {
@@ -180,6 +179,22 @@
             background: #ccc;
             cursor: not-allowed;
             transform: none;
+        }
+
+        .completion-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .completion-actions .check-button {
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 0;
+            text-decoration: none;
         }
 
         .message {
@@ -537,7 +552,7 @@
     <div class="instructions-overlay" id="instructions-overlay">
         <div class="instructions-panel">
             <h2>Welcome to Crack and Stack!</h2>
-            <p>Crack and Stack is a dice-stacking puzzle-solving game from <strong>Triple Point Publishing</strong>. This website lets you solve its puzzle cards and then race to find the solution hidden in the card's border. Find out more at <a href="https://www.triplepointpublishing.com.au">www.triplepointpublishing.com.au</a></p>
+            <p>Crack and Stack is a dice-stacking puzzle-solving game from <strong>Triple Point Publishing</strong>. This website lets you solve its puzzle cards and then race to find the solution hidden in the card's border. Find out more at <a href="https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game">the Crack &amp; Stack product page</a>.</p>
             
             <p>There are six types of puzzle cards:</p>
             
@@ -566,11 +581,8 @@
 
     <div class="game-container">
         <div class="game-header">
-            <h1>Crack and Stack</h1>
+            <h1><a href="https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game">Crack &amp; Stack</a></h1>
             <div class="puzzle-date" id="puzzle-date"></div>
-            <div class="promo">
-                <a href="https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game">Buy Crack &amp; Stack Now!</a>
-            </div>
             <div class="date-navigation">
                 <button class="nav-button" id="prev-day">← Previous Day</button>
                 <button class="nav-button" id="today">Today</button>
@@ -638,8 +650,9 @@
                         <div class="stat-label">Rating</div>
                     </div>
                 </div>
-                <div style="margin-top: 20px; text-align: center;">
-                    <button class="check-button" id="share-score" style="display: inline-block; margin: 0;">📋 Share My Score</button>
+                <div class="completion-actions">
+                    <button class="check-button" id="share-score">📋 Share My Score</button>
+                    <a class="check-button" href="https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game" target="_blank" rel="noopener noreferrer">🛒 Buy Crack &amp; Stack Now!</a>
                 </div>
             </div>
 
@@ -1403,7 +1416,8 @@
                     typeText = 'COMPLEX MATHS';
                 }
                 
-                const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡`;
+                const productUrl = 'https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game';
+                const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} puzzle in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡ Buy Crack & Stack: ${productUrl} 🛒`;
                 
                 navigator.clipboard.writeText(bragText).then(() => {
                     this.showToast('Score copied to clipboard! 📋');
