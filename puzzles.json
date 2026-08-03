@@ -2,7 +2,7 @@
   "puzzles": [
     {
       "id": 1,
-      "image": "Maths1__11_-_6_5[face,1].jpg",
+      "image": "Maths1__11_-_6_5[face,1].webp",
       "answer": "5",
       "type": "simple_maths",
       "clickBox": {
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "image": "Maths1__15___8_23[face,1].jpg",
+      "image": "Maths1__15___8_23[face,1].webp",
       "answer": "23",
       "type": "simple_maths",
       "clickBox": {
@@ -26,7 +26,7 @@
     },
     {
       "id": 3,
-      "image": "Maths1__18___7_25[face,1].jpg",
+      "image": "Maths1__18___7_25[face,1].webp",
       "answer": "25",
       "type": "simple_maths",
       "clickBox": {
@@ -38,7 +38,7 @@
     },
     {
       "id": 4,
-      "image": "Maths1__20___13_33[face,1].jpg",
+      "image": "Maths1__20___13_33[face,1].webp",
       "answer": "33",
       "type": "simple_maths",
       "clickBox": {
@@ -50,7 +50,7 @@
     },
     {
       "id": 5,
-      "image": "Maths1__21___13_34[face,1].jpg",
+      "image": "Maths1__21___13_34[face,1].webp",
       "answer": "34",
       "type": "simple_maths",
       "clickBox": {
@@ -62,7 +62,7 @@
     },
     {
       "id": 6,
-      "image": "Maths1__23_-_11_12[face,1].jpg",
+      "image": "Maths1__23_-_11_12[face,1].webp",
       "answer": "12",
       "type": "simple_maths",
       "clickBox": {
@@ -74,7 +74,7 @@
     },
     {
       "id": 7,
-      "image": "Maths1__29_-_16_13[face,1].jpg",
+      "image": "Maths1__29_-_16_13[face,1].webp",
       "answer": "13",
       "type": "simple_maths",
       "clickBox": {
@@ -86,7 +86,7 @@
     },
     {
       "id": 8,
-      "image": "Maths1__4___9_13[face,1].jpg",
+      "image": "Maths1__4___9_13[face,1].webp",
       "answer": "13",
       "type": "simple_maths",
       "clickBox": {
@@ -98,7 +98,7 @@
     },
     {
       "id": 9,
-      "image": "Maths1__7___5_12[face,1].jpg",
+      "image": "Maths1__7___5_12[face,1].webp",
       "answer": "12",
       "type": "simple_maths",
       "clickBox": {
@@ -110,7 +110,7 @@
     },
     {
       "id": 10,
-      "image": "Maths2__14___8_-_2_20[face,1].jpg",
+      "image": "Maths2__14___8_-_2_20[face,1].webp",
       "answer": "20",
       "type": "simple_maths",
       "clickBox": {
@@ -122,7 +122,7 @@
     },
     {
       "id": 11,
-      "image": "Maths2__16___9_-_7_18[face,1].jpg",
+      "image": "Maths2__16___9_-_7_18[face,1].webp",
       "answer": "18",
       "type": "simple_maths",
       "clickBox": {
@@ -134,7 +134,7 @@
     },
     {
       "id": 12,
-      "image": "Maths2__17_-_9___4_12[face,1].jpg",
+      "image": "Maths2__17_-_9___4_12[face,1].webp",
       "answer": "12",
       "type": "simple_maths",
       "clickBox": {
@@ -146,7 +146,7 @@
     },
     {
       "id": 13,
-      "image": "Maths2__19___7_-_4_22[face,1].jpg",
+      "image": "Maths2__19___7_-_4_22[face,1].webp",
       "answer": "22",
       "type": "simple_maths",
       "clickBox": {
@@ -158,7 +158,7 @@
     },
     {
       "id": 14,
-      "image": "Maths2__21_-_6___3_18[face,1].jpg",
+      "image": "Maths2__21_-_6___3_18[face,1].webp",
       "answer": "18",
       "type": "simple_maths",
       "clickBox": {
@@ -170,7 +170,7 @@
     },
     {
       "id": 15,
-      "image": "Maths2__21_-_9___14_26[face,1].jpg",
+      "image": "Maths2__21_-_9___14_26[face,1].webp",
       "answer": "26",
       "type": "simple_maths",
       "clickBox": {
@@ -182,7 +182,7 @@
     },
     {
       "id": 16,
-      "image": "Maths2__24_-_7___2_19[face,1].jpg",
+      "image": "Maths2__24_-_7___2_19[face,1].webp",
       "answer": "19",
       "type": "simple_maths",
       "clickBox": {
@@ -194,7 +194,7 @@
     },
     {
       "id": 17,
-      "image": "Maths2__27_-_6___13_34[face,1].jpg",
+      "image": "Maths2__27_-_6___13_34[face,1].webp",
       "answer": "34",
       "type": "simple_maths",
       "clickBox": {
@@ -206,7 +206,7 @@
     },
     {
       "id": 18,
-      "image": "Maths2__29_-_8_-_6_15[face,1].jpg",
+      "image": "Maths2__29_-_8_-_6_15[face,1].webp",
       "answer": "15",
       "type": "simple_maths",
       "clickBox": {
@@ -218,7 +218,7 @@
     },
     {
       "id": 19,
-      "image": "Maths3__12___18__div___3_18[face,1].jpg",
+      "image": "Maths3__12___18__div___3_18[face,1].webp",
       "answer": "18",
       "type": "complex_maths",
       "clickBox": {
@@ -230,7 +230,7 @@
     },
     {
       "id": 20,
-      "image": "Maths3__16__div___4___9_13[face,1].jpg",
+      "image": "Maths3__16__div___4___9_13[face,1].webp",
       "answer": "13",
       "type": "complex_maths",
       "clickBox": {
@@ -242,7 +242,7 @@
     },
     {
       "id": 21,
-      "image": "Maths3__20__div___4___3_8[face,1].jpg",
+      "image": "Maths3__20__div___4___3_8[face,1].webp",
       "answer": "8",
       "type": "complex_maths",
       "clickBox": {
@@ -254,7 +254,7 @@
     },
     {
       "id": 22,
-      "image": "Maths3__25__div___5___26_31[face,1].jpg",
+      "image": "Maths3__25__div___5___26_31[face,1].webp",
       "answer": "31",
       "type": "complex_maths",
       "clickBox": {
@@ -266,7 +266,7 @@
     },
     {
       "id": 23,
-      "image": "Maths3__30__div___5___7_13[face,1].jpg",
+      "image": "Maths3__30__div___5___7_13[face,1].webp",
       "answer": "13",
       "type": "complex_maths",
       "clickBox": {
@@ -278,7 +278,7 @@
     },
     {
       "id": 24,
-      "image": "Maths3__4__mult___4_-_7_9[face,1].jpg",
+      "image": "Maths3__4__mult___4_-_7_9[face,1].webp",
       "answer": "9",
       "type": "complex_maths",
       "clickBox": {
@@ -290,7 +290,7 @@
     },
     {
       "id": 25,
-      "image": "Maths3__5__mult___6_-_4_26[face,1].jpg",
+      "image": "Maths3__5__mult___6_-_4_26[face,1].webp",
       "answer": "26",
       "type": "complex_maths",
       "clickBox": {
@@ -302,7 +302,7 @@
     },
     {
       "id": 26,
-      "image": "Maths3__6__mult___2___5_17[face,1].jpg",
+      "image": "Maths3__6__mult___2___5_17[face,1].webp",
       "answer": "17",
       "type": "complex_maths",
       "clickBox": {
@@ -314,7 +314,7 @@
     },
     {
       "id": 27,
-      "image": "Maths3__64__div___4___5_21[face,1].jpg",
+      "image": "Maths3__64__div___4___5_21[face,1].webp",
       "answer": "21",
       "type": "complex_maths",
       "clickBox": {
@@ -326,7 +326,7 @@
     },
     {
       "id": 28,
-      "image": "Maths4___5___7___mult___2_-_4_20[face,1].jpg",
+      "image": "Maths4___5___7___mult___2_-_4_20[face,1].webp",
       "answer": "20",
       "type": "complex_maths",
       "clickBox": {
@@ -338,7 +338,7 @@
     },
     {
       "id": 29,
-      "image": "Maths4__1,_1,_2,_3,_5,_8,___13[face,1].jpg",
+      "image": "Maths4__1,_1,_2,_3,_5,_8,___13[face,1].webp",
       "answer": "13",
       "type": "complex_maths",
       "clickBox": {
@@ -350,7 +350,7 @@
     },
     {
       "id": 30,
-      "image": "Maths4__10___6__mult___2_-_5_17[face,1].jpg",
+      "image": "Maths4__10___6__mult___2_-_5_17[face,1].webp",
       "answer": "17",
       "type": "complex_maths",
       "clickBox": {
@@ -362,7 +362,7 @@
     },
     {
       "id": 31,
-      "image": "Maths4__13,_9,_12,_10,___11[face,1].jpg",
+      "image": "Maths4__13,_9,_12,_10,___11[face,1].webp",
       "answer": "11",
       "type": "complex_maths",
       "clickBox": {
@@ -374,7 +374,7 @@
     },
     {
       "id": 32,
-      "image": "Maths4__2__mult____3___4____8_22[face,1].jpg",
+      "image": "Maths4__2__mult____3___4____8_22[face,1].webp",
       "answer": "22",
       "type": "complex_maths",
       "clickBox": {
@@ -386,7 +386,7 @@
     },
     {
       "id": 33,
-      "image": "Maths4__2__mult___4__mult___6_-_14_34[face,1].jpg",
+      "image": "Maths4__2__mult___4__mult___6_-_14_34[face,1].webp",
       "answer": "34",
       "type": "complex_maths",
       "clickBox": {
@@ -398,7 +398,7 @@
     },
     {
       "id": 34,
-      "image": "Maths4__2,_-4,_8,_-16,___32[face,1].jpg",
+      "image": "Maths4__2,_-4,_8,_-16,___32[face,1].webp",
       "answer": "32",
       "type": "complex_maths",
       "clickBox": {
@@ -410,7 +410,7 @@
     },
     {
       "id": 35,
-      "image": "Maths4__3,_4,_6,_9,_13,___18[face,1].jpg",
+      "image": "Maths4__3,_4,_6,_9,_13,___18[face,1].webp",
       "answer": "18",
       "type": "complex_maths",
       "clickBox": {
@@ -422,7 +422,7 @@
     },
     {
       "id": 36,
-      "image": "Maths4__36_-_2__mult___8___3_23[face,1].jpg",
+      "image": "Maths4__36_-_2__mult___8___3_23[face,1].webp",
       "answer": "23",
       "type": "complex_maths",
       "clickBox": {
@@ -434,7 +434,7 @@
     },
     {
       "id": 37,
-      "image": "Memory__1.2-BLUE_CIRCLE_YELLOW_CIRCLE__[face,1].jpg",
+      "image": "Memory__1.2-BLUE_CIRCLE_YELLOW_CIRCLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "BLUE CIRCLE YELLOW CIRCLE",
       "clickBox": {
@@ -446,7 +446,7 @@
     },
     {
       "id": 38,
-      "image": "Memory__1.2-BLUE_SQUARE_BLUE_TRIANGLE__[face,1].jpg",
+      "image": "Memory__1.2-BLUE_SQUARE_BLUE_TRIANGLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "BLUE SQUARE BLUE TRIANGLE",
       "clickBox": {
@@ -458,7 +458,7 @@
     },
     {
       "id": 39,
-      "image": "Memory__1.2-BLUE_TRIANGLE_BLUE_CIRCLE__[face,1].jpg",
+      "image": "Memory__1.2-BLUE_TRIANGLE_BLUE_CIRCLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "BLUE TRIANGLE BLUE CIRCLE",
       "clickBox": {
@@ -470,7 +470,7 @@
     },
     {
       "id": 40,
-      "image": "Memory__1.2-RED_CIRCLE_RED_SQUARE__[face,1].jpg",
+      "image": "Memory__1.2-RED_CIRCLE_RED_SQUARE__[face,1].webp",
       "type": "simple_memory",
       "answer": "RED CIRCLE RED SQUARE",
       "clickBox": {
@@ -482,7 +482,7 @@
     },
     {
       "id": 41,
-      "image": "Memory__1.2-RED_SQUARE_BLUE_SQUARE__[face,1].jpg",
+      "image": "Memory__1.2-RED_SQUARE_BLUE_SQUARE__[face,1].webp",
       "type": "simple_memory",
       "answer": "RED SQUARE BLUE SQUARE",
       "clickBox": {
@@ -494,7 +494,7 @@
     },
     {
       "id": 42,
-      "image": "Memory__1.2-RED_TRIANGLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "image": "Memory__1.2-RED_TRIANGLE_YELLOW_TRIANGLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "RED TRIANGLE YELLOW TRIANGLE",
       "clickBox": {
@@ -506,7 +506,7 @@
     },
     {
       "id": 43,
-      "image": "Memory__1.2-YELLOW_CIRCLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "image": "Memory__1.2-YELLOW_CIRCLE_YELLOW_TRIANGLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "YELLOW CIRCLE YELLOW TRIANGLE",
       "clickBox": {
@@ -518,7 +518,7 @@
     },
     {
       "id": 44,
-      "image": "Memory__1.2-YELLOW_SQUARE_RED_SQUARE__[face,1].jpg",
+      "image": "Memory__1.2-YELLOW_SQUARE_RED_SQUARE__[face,1].webp",
       "type": "simple_memory",
       "answer": "YELLOW SQUARE RED SQUARE",
       "clickBox": {
@@ -530,7 +530,7 @@
     },
     {
       "id": 45,
-      "image": "Memory__1.2-YELLOW_TRIANGLE_BLUE_TRIANGLE__[face,1].jpg",
+      "image": "Memory__1.2-YELLOW_TRIANGLE_BLUE_TRIANGLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "YELLOW TRIANGLE BLUE TRIANGLE",
       "clickBox": {
@@ -542,7 +542,7 @@
     },
     {
       "id": 46,
-      "image": "Memory__2.2-BLUE_CIRCLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "image": "Memory__2.2-BLUE_CIRCLE_YELLOW_TRIANGLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "BLUE CIRCLE YELLOW TRIANGLE",
       "clickBox": {
@@ -554,7 +554,7 @@
     },
     {
       "id": 47,
-      "image": "Memory__2.2-BLUE_SQUARE_RED_TRIANGLE__[face,1].jpg",
+      "image": "Memory__2.2-BLUE_SQUARE_RED_TRIANGLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "BLUE SQUARE RED TRIANGLE",
       "clickBox": {
@@ -566,7 +566,7 @@
     },
     {
       "id": 48,
-      "image": "Memory__2.2-BLUE_TRIANGLE_RED_CIRCLE__[face,1].jpg",
+      "image": "Memory__2.2-BLUE_TRIANGLE_RED_CIRCLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "BLUE TRIANGLE RED CIRCLE",
       "clickBox": {
@@ -578,7 +578,7 @@
     },
     {
       "id": 49,
-      "image": "Memory__2.2-RED_CIRCLE_BLUE_SQUARE__[face,1].jpg",
+      "image": "Memory__2.2-RED_CIRCLE_BLUE_SQUARE__[face,1].webp",
       "type": "simple_memory",
       "answer": "RED CIRCLE BLUE SQUARE",
       "clickBox": {
@@ -590,7 +590,7 @@
     },
     {
       "id": 50,
-      "image": "Memory__2.2-RED_SQUARE_BLUE_CIRCLE__[face,1].jpg",
+      "image": "Memory__2.2-RED_SQUARE_BLUE_CIRCLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "RED SQUARE BLUE CIRCLE",
       "clickBox": {
@@ -602,7 +602,7 @@
     },
     {
       "id": 51,
-      "image": "Memory__2.2-RED_TRIANGLE_YELLOW_SQUARE__[face,1].jpg",
+      "image": "Memory__2.2-RED_TRIANGLE_YELLOW_SQUARE__[face,1].webp",
       "type": "simple_memory",
       "answer": "RED TRIANGLE YELLOW SQUARE",
       "clickBox": {
@@ -614,7 +614,7 @@
     },
     {
       "id": 52,
-      "image": "Memory__2.2-YELLOW_CIRCLE_BLUE_SQUARE__[face,1].jpg",
+      "image": "Memory__2.2-YELLOW_CIRCLE_BLUE_SQUARE__[face,1].webp",
       "type": "simple_memory",
       "answer": "YELLOW CIRCLE BLUE SQUARE",
       "clickBox": {
@@ -626,7 +626,7 @@
     },
     {
       "id": 53,
-      "image": "Memory__2.2-YELLOW_SQUARE_RED_CIRCLE__[face,1].jpg",
+      "image": "Memory__2.2-YELLOW_SQUARE_RED_CIRCLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "YELLOW SQUARE RED CIRCLE",
       "clickBox": {
@@ -638,7 +638,7 @@
     },
     {
       "id": 54,
-      "image": "Memory__3.2-BLUE_CIRCLE_YELLOW_TRIANGLE__[face,1].jpg",
+      "image": "Memory__3.2-BLUE_CIRCLE_YELLOW_TRIANGLE__[face,1].webp",
       "type": "complex_memory",
       "answer": "BLUE CIRCLE YELLOW TRIANGLE",
       "clickBox": {
@@ -650,7 +650,7 @@
     },
     {
       "id": 55,
-      "image": "Memory__3.2-BLUE_SQUARE_RED_TRIANGLE__[face,1].jpg",
+      "image": "Memory__3.2-BLUE_SQUARE_RED_TRIANGLE__[face,1].webp",
       "type": "complex_memory",
       "answer": "BLUE SQUARE RED TRIANGLE",
       "clickBox": {
@@ -662,7 +662,7 @@
     },
     {
       "id": 56,
-      "image": "Memory__3.2-BLUE_TRIANGLE_RED_CIRCLE__[face,1].jpg",
+      "image": "Memory__3.2-BLUE_TRIANGLE_RED_CIRCLE__[face,1].webp",
       "type": "complex_memory",
       "answer": "BLUE TRIANGLE RED CIRCLE",
       "clickBox": {
@@ -674,7 +674,7 @@
     },
     {
       "id": 57,
-      "image": "Memory__3.2-RED_CIRCLE_BLUE_SQUARE__[face,1].jpg",
+      "image": "Memory__3.2-RED_CIRCLE_BLUE_SQUARE__[face,1].webp",
       "type": "complex_memory",
       "answer": "RED CIRCLE BLUE SQUARE",
       "clickBox": {
@@ -686,7 +686,7 @@
     },
     {
       "id": 58,
-      "image": "Memory__3.2-RED_SQUARE_BLUE_CIRCLE__[face,1].jpg",
+      "image": "Memory__3.2-RED_SQUARE_BLUE_CIRCLE__[face,1].webp",
       "type": "complex_memory",
       "answer": "RED SQUARE BLUE CIRCLE",
       "clickBox": {
@@ -698,7 +698,7 @@
     },
     {
       "id": 59,
-      "image": "Memory__3.2-RED_TRIANGLE_YELLOW_SQUARE__[face,1].jpg",
+      "image": "Memory__3.2-RED_TRIANGLE_YELLOW_SQUARE__[face,1].webp",
       "type": "complex_memory",
       "answer": "RED TRIANGLE YELLOW SQUARE",
       "clickBox": {
@@ -710,7 +710,7 @@
     },
     {
       "id": 60,
-      "image": "Memory__3.2-YELLOW_CIRCLE_BLUE_CIRCLE__[face,1].jpg",
+      "image": "Memory__3.2-YELLOW_CIRCLE_BLUE_CIRCLE__[face,1].webp",
       "type": "complex_memory",
       "answer": "YELLOW CIRCLE BLUE CIRCLE",
       "clickBox": {
@@ -722,7 +722,7 @@
     },
     {
       "id": 61,
-      "image": "Memory__3.2-YELLOW_SQUARE_RED_SQUARE__[face,1].jpg",
+      "image": "Memory__3.2-YELLOW_SQUARE_RED_SQUARE__[face,1].webp",
       "type": "complex_memory",
       "answer": "YELLOW SQUARE RED SQUARE",
       "clickBox": {
@@ -734,7 +734,7 @@
     },
     {
       "id": 62,
-      "image": "Memory__3.2-YELLOW_TRIANGLE_BLUE_TRIANGLE__[face,1].jpg",
+      "image": "Memory__3.2-YELLOW_TRIANGLE_BLUE_TRIANGLE__[face,1].webp",
       "type": "complex_memory",
       "answer": "YELLOW TRIANGLE BLUE TRIANGLE",
       "clickBox": {
@@ -746,7 +746,7 @@
     },
     {
       "id": 63,
-      "image": "Memory__4.3-BLUE_CIRCLE_YELLOW_SQUARE_YELLOW_SQUARE[face,1].jpg",
+      "image": "Memory__4.3-BLUE_CIRCLE_YELLOW_SQUARE_YELLOW_SQUARE[face,1].webp",
       "type": "complex_memory",
       "answer": "BLUE CIRCLE YELLOW SQUARE YELLOW SQUARE",
       "clickBox": {
@@ -758,7 +758,7 @@
     },
     {
       "id": 64,
-      "image": "Memory__4.3-BLUE_SQUARE_RED_SQUARE_YELLOW_SQUARE[face,1].jpg",
+      "image": "Memory__4.3-BLUE_SQUARE_RED_SQUARE_YELLOW_SQUARE[face,1].webp",
       "type": "complex_memory",
       "answer": "BLUE SQUARE RED SQUARE YELLOW SQUARE",
       "clickBox": {
@@ -770,7 +770,7 @@
     },
     {
       "id": 65,
-      "image": "Memory__4.3-BLUE_TRIANGLE_RED_TRIANGLE_RED_CIRCLE[face,1].jpg",
+      "image": "Memory__4.3-BLUE_TRIANGLE_RED_TRIANGLE_RED_CIRCLE[face,1].webp",
       "type": "complex_memory",
       "answer": "BLUE TRIANGLE RED TRIANGLE RED CIRCLE",
       "clickBox": {
@@ -782,7 +782,7 @@
     },
     {
       "id": 66,
-      "image": "Memory__4.3-RED_CIRCLE_YELLOW_SQUARE_BLUE_CIRCLE[face,1].jpg",
+      "image": "Memory__4.3-RED_CIRCLE_YELLOW_SQUARE_BLUE_CIRCLE[face,1].webp",
       "type": "complex_memory",
       "answer": "RED CIRCLE YELLOW SQUARE BLUE CIRCLE",
       "clickBox": {
@@ -794,7 +794,7 @@
     },
     {
       "id": 67,
-      "image": "Memory__4.3-RED_SQUARE_YELLOW_CIRCLE_BLUE_TRIANGLE[face,1].jpg",
+      "image": "Memory__4.3-RED_SQUARE_YELLOW_CIRCLE_BLUE_TRIANGLE[face,1].webp",
       "type": "complex_memory",
       "answer": "RED SQUARE YELLOW CIRCLE BLUE TRIANGLE",
       "clickBox": {
@@ -806,7 +806,7 @@
     },
     {
       "id": 68,
-      "image": "Memory__4.3-RED_TRIANGLE_BLUE_SQUARE_YELLOW_SQUARE[face,1].jpg",
+      "image": "Memory__4.3-RED_TRIANGLE_BLUE_SQUARE_YELLOW_SQUARE[face,1].webp",
       "type": "complex_memory",
       "answer": "RED TRIANGLE BLUE SQUARE YELLOW SQUARE",
       "clickBox": {
@@ -818,7 +818,7 @@
     },
     {
       "id": 69,
-      "image": "Memory__4.3-YELLOW_CIRCLE_RED_TRIANGLE_BLUE_TRIANGLE[face,1].jpg",
+      "image": "Memory__4.3-YELLOW_CIRCLE_RED_TRIANGLE_BLUE_TRIANGLE[face,1].webp",
       "type": "complex_memory",
       "answer": "YELLOW CIRCLE RED TRIANGLE BLUE TRIANGLE",
       "clickBox": {
@@ -830,7 +830,7 @@
     },
     {
       "id": 70,
-      "image": "Memory__4.3-YELLOW_SQUARE_YELLOW_CIRCLE_RED_CIRCLE[face,1].jpg",
+      "image": "Memory__4.3-YELLOW_SQUARE_YELLOW_CIRCLE_RED_CIRCLE[face,1].webp",
       "type": "complex_memory",
       "answer": "YELLOW SQUARE YELLOW CIRCLE RED CIRCLE",
       "clickBox": {
@@ -842,7 +842,7 @@
     },
     {
       "id": 71,
-      "image": "Memory__4.3-YELLOW_TRIANGLE_YELLOW_SQUARE_BLUE_CIRCLE[face,1].jpg",
+      "image": "Memory__4.3-YELLOW_TRIANGLE_YELLOW_SQUARE_BLUE_CIRCLE[face,1].webp",
       "type": "complex_memory",
       "answer": "YELLOW TRIANGLE YELLOW SQUARE BLUE CIRCLE",
       "clickBox": {
@@ -854,7 +854,7 @@
     },
     {
       "id": 72,
-      "image": "Words1.3__RAW_-__WAR[face,1].jpg",
+      "image": "Words1.3__RAW_-__WAR[face,1].webp",
       "answer": "WAR",
       "type": "semordnilap",
       "clickBox": {
@@ -866,7 +866,7 @@
     },
     {
       "id": 73,
-      "image": "Words1.4__BARD_-__DRAB[face,1].jpg",
+      "image": "Words1.4__BARD_-__DRAB[face,1].webp",
       "answer": "DRAB",
       "type": "semordnilap",
       "clickBox": {
@@ -878,7 +878,7 @@
     },
     {
       "id": 74,
-      "image": "Words1.4__DEEP_-__PEED[face,1].jpg",
+      "image": "Words1.4__DEEP_-__PEED[face,1].webp",
       "answer": "PEED",
       "type": "semordnilap",
       "clickBox": {
@@ -890,7 +890,7 @@
     },
     {
       "id": 75,
-      "image": "Words1.4__DIVA_-__AVID[face,1].jpg",
+      "image": "Words1.4__DIVA_-__AVID[face,1].webp",
       "answer": "AVID",
       "type": "semordnilap",
       "clickBox": {
@@ -902,7 +902,7 @@
     },
     {
       "id": 76,
-      "image": "Words1.4__DOOM_-__MOOD[face,1].jpg",
+      "image": "Words1.4__DOOM_-__MOOD[face,1].webp",
       "answer": "MOOD",
       "type": "semordnilap",
       "clickBox": {
@@ -914,7 +914,7 @@
     },
     {
       "id": 77,
-      "image": "Words1.4__GOLF_-__FLOG[face,1].jpg",
+      "image": "Words1.4__GOLF_-__FLOG[face,1].webp",
       "answer": "FLOG",
       "type": "semordnilap",
       "clickBox": {
@@ -926,7 +926,7 @@
     },
     {
       "id": 78,
-      "image": "Words1.4__GULP_-__PLUG[face,1].jpg",
+      "image": "Words1.4__GULP_-__PLUG[face,1].webp",
       "answer": "PLUG",
       "type": "semordnilap",
       "clickBox": {
@@ -938,7 +938,7 @@
     },
     {
       "id": 79,
-      "image": "Words1.4__KNOB_-__BONK[face,1].jpg",
+      "image": "Words1.4__KNOB_-__BONK[face,1].webp",
       "answer": "BONK",
       "type": "semordnilap",
       "clickBox": {
@@ -950,7 +950,7 @@
     },
     {
       "id": 80,
-      "image": "Words1.4__STUN_-__NUTS[face,1].jpg",
+      "image": "Words1.4__STUN_-__NUTS[face,1].webp",
       "answer": "NUTS",
       "type": "semordnilap",
       "clickBox": {
@@ -962,7 +962,7 @@
     },
     {
       "id": 81,
-      "image": "Words2.5__DEVIL_-__LIVED[face,1].jpg",
+      "image": "Words2.5__DEVIL_-__LIVED[face,1].webp",
       "answer": "LIVED",
       "type": "semordnilap",
       "clickBox": {
@@ -974,7 +974,7 @@
     },
     {
       "id": 82,
-      "image": "Words2.5__LEVER_-__REVEL[face,1].jpg",
+      "image": "Words2.5__LEVER_-__REVEL[face,1].webp",
       "answer": "REVEL",
       "type": "semordnilap",
       "clickBox": {
@@ -986,7 +986,7 @@
     },
     {
       "id": 83,
-      "image": "Words2.5__REPEL_-__LEPER[face,1].jpg",
+      "image": "Words2.5__REPEL_-__LEPER[face,1].webp",
       "answer": "LEPER",
       "type": "semordnilap",
       "clickBox": {
@@ -998,7 +998,7 @@
     },
     {
       "id": 84,
-      "image": "Words2.5__SLEEP_-__PEELS[face,1].jpg",
+      "image": "Words2.5__SLEEP_-__PEELS[face,1].webp",
       "answer": "PEELS",
       "type": "semordnilap",
       "clickBox": {
@@ -1010,7 +1010,7 @@
     },
     {
       "id": 85,
-      "image": "Words2.5__SPANS_-__SNAPS[face,1].jpg",
+      "image": "Words2.5__SPANS_-__SNAPS[face,1].webp",
       "answer": "SNAPS",
       "type": "semordnilap",
       "clickBox": {
@@ -1022,7 +1022,7 @@
     },
     {
       "id": 86,
-      "image": "Words2.5__SPEED_-__DEEPS[face,1].jpg",
+      "image": "Words2.5__SPEED_-__DEEPS[face,1].webp",
       "answer": "DEEPS",
       "type": "semordnilap",
       "clickBox": {
@@ -1034,7 +1034,7 @@
     },
     {
       "id": 87,
-      "image": "Words2.5__SPINS_-__SNIPS[face,1].jpg",
+      "image": "Words2.5__SPINS_-__SNIPS[face,1].webp",
       "answer": "SNIPS",
       "type": "semordnilap",
       "clickBox": {
@@ -1046,7 +1046,7 @@
     },
     {
       "id": 88,
-      "image": "Words2.5__STRAW_-__WARTS[face,1].jpg",
+      "image": "Words2.5__STRAW_-__WARTS[face,1].webp",
       "answer": "WARTS",
       "type": "semordnilap",
       "clickBox": {
@@ -1058,7 +1058,7 @@
     },
     {
       "id": 89,
-      "image": "Words2.8__STRESSED_-__DESSERTS[face,1].jpg",
+      "image": "Words2.8__STRESSED_-__DESSERTS[face,1].webp",
       "answer": "DESSERTS",
       "type": "semordnilap",
       "clickBox": {
@@ -1070,7 +1070,7 @@
     },
     {
       "id": 90,
-      "image": "Words3.5__CURED_-__CRUDE[face,1].jpg",
+      "image": "Words3.5__CURED_-__CRUDE[face,1].webp",
       "answer": "CRUDE",
       "type": "anagram",
       "clickBox": {
@@ -1082,7 +1082,7 @@
     },
     {
       "id": 91,
-      "image": "Words3.5__DYING_-__DINGY[face,1].jpg",
+      "image": "Words3.5__DYING_-__DINGY[face,1].webp",
       "answer": "DINGY",
       "type": "anagram",
       "clickBox": {
@@ -1094,7 +1094,7 @@
     },
     {
       "id": 92,
-      "image": "Words3.5__EXITS_-__EXIST[face,1].jpg",
+      "image": "Words3.5__EXITS_-__EXIST[face,1].webp",
       "answer": "EXIST",
       "type": "anagram",
       "clickBox": {
@@ -1106,7 +1106,7 @@
     },
     {
       "id": 93,
-      "image": "Words3.5__FAKER_-__FREAK[face,1].jpg",
+      "image": "Words3.5__FAKER_-__FREAK[face,1].webp",
       "answer": "FREAK",
       "type": "anagram",
       "clickBox": {
@@ -1118,7 +1118,7 @@
     },
     {
       "id": 94,
-      "image": "Words3.5__FERAL_-__FLARE[face,1].jpg",
+      "image": "Words3.5__FERAL_-__FLARE[face,1].webp",
       "answer": "FLARE",
       "type": "anagram",
       "clickBox": {
@@ -1130,7 +1130,7 @@
     },
     {
       "id": 95,
-      "image": "Words3.5__FUSED_-__FEUDS[face,1].jpg",
+      "image": "Words3.5__FUSED_-__FEUDS[face,1].webp",
       "answer": "FEUDS",
       "type": "anagram",
       "clickBox": {
@@ -1142,7 +1142,7 @@
     },
     {
       "id": 96,
-      "image": "Words3.5__WAIST_-__WAITS[face,1].jpg",
+      "image": "Words3.5__WAIST_-__WAITS[face,1].webp",
       "answer": "WAITS",
       "type": "anagram",
       "clickBox": {
@@ -1154,7 +1154,7 @@
     },
     {
       "id": 97,
-      "image": "Words3.6__CHASED_-__CASHED[face,1].jpg",
+      "image": "Words3.6__CHASED_-__CASHED[face,1].webp",
       "answer": "CASHED",
       "type": "anagram",
       "clickBox": {
@@ -1166,7 +1166,7 @@
     },
     {
       "id": 98,
-      "image": "Words3.6__CIRCLE_-__CLERIC[face,1].jpg",
+      "image": "Words3.6__CIRCLE_-__CLERIC[face,1].webp",
       "answer": "CLERIC",
       "type": "anagram",
       "clickBox": {
@@ -1178,7 +1178,7 @@
     },
     {
       "id": 99,
-      "image": "Words4.10__DISCOUNTED_-__DEDUCTIONS[face,1].jpg",
+      "image": "Words4.10__DISCOUNTED_-__DEDUCTIONS[face,1].webp",
       "answer": "DEDUCTIONS",
       "type": "anagram",
       "clickBox": {
@@ -1190,7 +1190,7 @@
     },
     {
       "id": 100,
-      "image": "Words4.10__DISCRETION_-__DIRECTIONS[face,1].jpg",
+      "image": "Words4.10__DISCRETION_-__DIRECTIONS[face,1].webp",
       "answer": "DIRECTIONS",
       "type": "anagram",
       "clickBox": {
@@ -1202,7 +1202,7 @@
     },
     {
       "id": 101,
-      "image": "Words4.10__METRONOMES_-__MONOTREMES[face,1].jpg",
+      "image": "Words4.10__METRONOMES_-__MONOTREMES[face,1].webp",
       "answer": "MONOTREMES",
       "type": "anagram",
       "clickBox": {
@@ -1214,7 +1214,7 @@
     },
     {
       "id": 102,
-      "image": "Words4.10__MISALIGNED_-__MISLEADING[face,1].jpg",
+      "image": "Words4.10__MISALIGNED_-__MISLEADING[face,1].webp",
       "answer": "MISLEADING",
       "type": "anagram",
       "clickBox": {
@@ -1226,7 +1226,7 @@
     },
     {
       "id": 103,
-      "image": "Words4.10__REGISTRANT_-__RESTARTING[face,1].jpg",
+      "image": "Words4.10__REGISTRANT_-__RESTARTING[face,1].webp",
       "answer": "RESTARTING",
       "type": "anagram",
       "clickBox": {
@@ -1238,7 +1238,7 @@
     },
     {
       "id": 104,
-      "image": "Words4.10__SHATTERING_-__STRAIGHTEN[face,1].jpg",
+      "image": "Words4.10__SHATTERING_-__STRAIGHTEN[face,1].webp",
       "answer": "STRAIGHTEN",
       "type": "anagram",
       "clickBox": {
@@ -1250,7 +1250,7 @@
     },
     {
       "id": 105,
-      "image": "Words4.8__COOLNESS_-__CONSOLES[face,1].jpg",
+      "image": "Words4.8__COOLNESS_-__CONSOLES[face,1].webp",
       "answer": "CONSOLES",
       "type": "anagram",
       "clickBox": {
@@ -1262,7 +1262,7 @@
     },
     {
       "id": 106,
-      "image": "Words4.8__FIENDISH_-__FINISHED[face,1].jpg",
+      "image": "Words4.8__FIENDISH_-__FINISHED[face,1].webp",
       "answer": "FINISHED",
       "type": "anagram",
       "clickBox": {
@@ -1274,7 +1274,7 @@
     },
     {
       "id": 107,
-      "image": "Words4.9__PORTRAYED_-__PREDATORY[face,1].jpg",
+      "image": "Words4.9__PORTRAYED_-__PREDATORY[face,1].webp",
       "answer": "PREDATORY",
       "type": "anagram",
       "clickBox": {
@@ -1286,7 +1286,7 @@
     },
     {
       "id": 108,
-      "image": "Memory__2.2-YELLOW_TRIANGLE_BLUE_CIRCLE__[face,1].jpg",
+      "image": "Memory__2.2-YELLOW_TRIANGLE_BLUE_CIRCLE__[face,1].webp",
       "type": "simple_memory",
       "answer": "YELLOW TRIANGLE BLUE CIRCLE",
       "clickBox": {
