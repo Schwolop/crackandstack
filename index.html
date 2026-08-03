@@ -49,6 +49,16 @@
             margin-bottom: 20px;
         }
 
+        .promo {
+            color: #662222;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .promo a {
+            color: inherit;
+        }
+
         .date-navigation {
             display: flex;
             justify-content: center;
@@ -527,7 +537,7 @@
     <div class="instructions-overlay" id="instructions-overlay">
         <div class="instructions-panel">
             <h2>Welcome to Crack and Stack!</h2>
-            <p>Crack and Stack is an upcoming card game from <strong>Triple Point Publishing</strong>. This website lets you solve its puzzle cards and then race to find the solution hidden in the card's border. Find out more at <a href="https://www.triplepointpublishing.com.au">www.triplepointpublishing.com.au</a></p>
+            <p>Crack and Stack is a dice-stacking puzzle-solving game from <strong>Triple Point Publishing</strong>. This website lets you solve its puzzle cards and then race to find the solution hidden in the card's border. Find out more at <a href="https://www.triplepointpublishing.com.au">www.triplepointpublishing.com.au</a></p>
             
             <p>There are six types of puzzle cards:</p>
             
@@ -558,6 +568,9 @@
         <div class="game-header">
             <h1>Crack and Stack</h1>
             <div class="puzzle-date" id="puzzle-date"></div>
+            <div class="promo">
+                <a href="https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game">Buy Crack &amp; Stack Now!</a>
+            </div>
             <div class="date-navigation">
                 <button class="nav-button" id="prev-day">← Previous Day</button>
                 <button class="nav-button" id="today">Today</button>
@@ -668,6 +681,13 @@
                 this.resizeTimeout = null;
                 this.currentClickAreaBox = null;
                 this.instructionTimeout = null;
+                this.revealTimeout = null;
+                this.clickAreaTimeout = null;
+
+                // Keep stable references so bounding-box listeners can be removed.
+                this.boundBboxMouseDown = this.handleBboxMouseDown.bind(this);
+                this.boundBboxMouseMove = this.handleBboxMouseMove.bind(this);
+                this.boundBboxMouseUp = this.handleBboxMouseUp.bind(this);
                 
                 // Overall timer (from start of puzzle session to completion)
                 this.overallStartTime = null;
@@ -834,6 +854,15 @@
                 this.overallStartTime = Date.now();
             }
 
+            clearPuzzleTimeouts() {
+                clearTimeout(this.revealTimeout);
+                clearTimeout(this.clickAreaTimeout);
+                clearTimeout(this.instructionTimeout);
+                this.revealTimeout = null;
+                this.clickAreaTimeout = null;
+                this.instructionTimeout = null;
+            }
+
             checkShowInstructions() {
                 // Only show instructions on very first load, not on resets/navigation
                 if (this.showInstructions && !localStorage.getItem('crack-and-stack-instructions-seen')) {
@@ -962,6 +991,7 @@
                 this.startTime = null;
                 this.wrongClicks = 0;
                 this.penaltyTime = 0;
+                this.clearPuzzleTimeouts();
                 
                 if (this.timerInterval) {
                     clearInterval(this.timerInterval);
@@ -998,6 +1028,7 @@
                 this.startTime = null;
                 this.wrongClicks = 0;
                 this.penaltyTime = 0;
+                this.clearPuzzleTimeouts();
                 
                 if (this.timerInterval) {
                     clearInterval(this.timerInterval);
@@ -1101,7 +1132,10 @@
                 this.elements.inputSection.style.display = 'none';
                 
                 
-                setTimeout(() => {
+                this.revealTimeout = setTimeout(() => {
+                    this.revealTimeout = null;
+                    if (this.gameState !== 'searching') return;
+
                     console.log('Starting timer and creating clickable area');
                     this.startTimer();
                     this.createClickableArea();
@@ -1154,7 +1188,10 @@
                 }
                 
                 // Wait for image to be fully loaded and positioned
-                setTimeout(() => {
+                this.clickAreaTimeout = setTimeout(() => {
+                    this.clickAreaTimeout = null;
+                    if (this.gameState !== 'searching') return;
+
                     this.positionClickArea(clickArea, box);
                     
                     
@@ -1541,15 +1578,15 @@
                 this.removeBboxDrawing();
                 
                 // Add drawing handlers
-                this.elements.puzzleImage.addEventListener('mousedown', this.handleBboxMouseDown.bind(this));
-                this.elements.puzzleImage.addEventListener('mousemove', this.handleBboxMouseMove.bind(this));
-                this.elements.puzzleImage.addEventListener('mouseup', this.handleBboxMouseUp.bind(this));
+                this.elements.puzzleImage.addEventListener('mousedown', this.boundBboxMouseDown);
+                this.elements.puzzleImage.addEventListener('mousemove', this.boundBboxMouseMove);
+                this.elements.puzzleImage.addEventListener('mouseup', this.boundBboxMouseUp);
             }
 
             removeBboxDrawing() {
-                this.elements.puzzleImage.removeEventListener('mousedown', this.handleBboxMouseDown);
-                this.elements.puzzleImage.removeEventListener('mousemove', this.handleBboxMouseMove);
-                this.elements.puzzleImage.removeEventListener('mouseup', this.handleBboxMouseUp);
+                this.elements.puzzleImage.removeEventListener('mousedown', this.boundBboxMouseDown);
+                this.elements.puzzleImage.removeEventListener('mousemove', this.boundBboxMouseMove);
+                this.elements.puzzleImage.removeEventListener('mouseup', this.boundBboxMouseUp);
                 
                 // Remove any existing drawing box
                 const existingBox = document.querySelector('.drawing-box');

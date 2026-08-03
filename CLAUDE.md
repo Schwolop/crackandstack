@@ -17,6 +17,63 @@ python3 -m http.server 8001
 python3 -m http.server 8000
 ```
 
+## Deploying to Vercel
+
+This repository is a static HTML/CSS/JavaScript site. It does not need a build step or
+runtime environment variables. Deploy the repository root so that `index.html`,
+`puzzles.json`, `images/`, and `assets/` are published together.
+
+### Preferred: Vercel MCP
+
+When Vercel MCP tools are available, use them instead of asking the user to deploy
+manually:
+
+1. Confirm the target Vercel team and project. Reuse the existing project if the
+   repository is already linked; do not create a duplicate project.
+2. Configure the project as Framework Preset **Other**, with the repository root as the
+   Root Directory, no Build Command, and `.` as the Output Directory.
+3. Create a preview deployment first. Verify that `/`, `/puzzles.json`, and at least one
+   referenced image load successfully and that the game starts without browser errors.
+4. Report the preview URL. Promote or deploy to production only when the user explicitly
+   requests a production release.
+5. After a production deployment, report the production URL and deployment status.
+
+Do not add secrets or environment variables: this app currently has no server-side
+configuration. Never expose Vercel access tokens in files, logs, or chat.
+
+### Git integration
+
+In the Vercel dashboard, import `Schwolop/crackandstack` and use these settings:
+
+- Framework Preset: `Other`
+- Root Directory: repository root
+- Build Command: leave blank
+- Output Directory: `.`
+
+Once connected, pushes create deployments automatically. Non-production branches create
+preview deployments; pushes to the configured production branch (normally `main`) create
+production deployments.
+
+### Vercel CLI fallback
+
+From the repository root:
+
+```bash
+# Authenticate and link the local checkout when needed
+npx vercel login
+npx vercel link
+
+# Create a preview deployment
+npx vercel
+
+# Deploy to production only after explicit approval
+npx vercel --prod
+```
+
+Do not commit the generated `.vercel/` directory. It contains local project-link metadata.
+No `vercel.json` is required for the current app; add one only if routing, headers, or other
+project-level configuration becomes necessary.
+
 ### Testing with Puppeteer
 The puppeteer MCP server is available. When I mention a visual bug you should consider
 whether it's appropriate to run a test where you drive the app and take screenshots to
