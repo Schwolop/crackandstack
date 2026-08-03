@@ -182,6 +182,22 @@
             transform: none;
         }
 
+        .completion-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .completion-actions .check-button {
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 0;
+            text-decoration: none;
+        }
+
         .message {
             position: absolute;
             top: 20%;
@@ -638,8 +654,9 @@
                         <div class="stat-label">Rating</div>
                     </div>
                 </div>
-                <div style="margin-top: 20px; text-align: center;">
-                    <button class="check-button" id="share-score" style="display: inline-block; margin: 0;">📋 Share My Score</button>
+                <div class="completion-actions">
+                    <button class="check-button" id="share-score">📋 Share My Score</button>
+                    <a class="check-button" href="https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game" target="_blank" rel="noopener noreferrer">🛒 Buy Crack &amp; Stack Now!</a>
                 </div>
             </div>
 
@@ -1403,7 +1420,8 @@
                     typeText = 'COMPLEX MATHS';
                 }
                 
-                const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡`;
+                const productUrl = 'https://www.triplepointpublishing.com.au/products/crack-stack-rapid-fire-dice-puzzle-game';
+                const bragText = `${typeEmoji} Solved ${dateText} Crack and Stack ${typeText} in ${timeText}! 🧩 Try to beat my score: https://tinyurl.com/crackandstack ⚡\n\n🛒 Buy Crack & Stack: ${productUrl}`;
                 
                 navigator.clipboard.writeText(bragText).then(() => {
                     this.showToast('Score copied to clipboard! 📋');
